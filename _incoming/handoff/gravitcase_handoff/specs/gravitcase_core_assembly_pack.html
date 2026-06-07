@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Core Assembly Engineering Pack</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f0f2f5; color: #1a1a2e; padding: 32px 20px; line-height: 1.55; }
+  .doc { max-width: 920px; margin: 0 auto; background: white; padding: 44px 52px; border-radius: 6px; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+  h1 { font-size: 25px; color: #1F4E79; margin-bottom: 2px; }
+  .meta { font-size: 12.5px; color: #888; font-family: Arial, sans-serif; margin-bottom: 4px; }
+  h2 { font-size: 17px; color: #1F4E79; margin: 28px 0 8px; border-bottom: 2px solid #1F4E79; padding-bottom: 4px; }
+  h3 { font-size: 14px; color: #2c3e50; margin: 16px 0 5px; font-family: Arial, sans-serif; }
+  p, li { font-size: 13.5px; }
+  ul, ol { margin: 6px 0 6px 22px; }
+  li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: Arial, sans-serif; font-size: 11.5px; }
+  th { background: #1F4E79; color: white; padding: 7px 8px; text-align: left; font-weight: bold; }
+  td { padding: 6px 8px; border-bottom: 1px solid #e0e0e6; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fb; }
+  .lock { color: #1a7a4a; font-weight: bold; font-family: Arial, sans-serif; font-size: 11px; }
+  .val { color: #c0392b; font-weight: bold; font-family: Arial, sans-serif; font-size: 11px; }
+  .tag { display:inline-block; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; padding: 1px 7px; border-radius: 3px; }
+  .tlock { background:#e6f4ea; color:#1a7a4a; }
+  .tval { background:#fbeae8; color:#c0392b; }
+  .box { background: #f7f9fb; border-left: 4px solid #1F4E79; padding: 12px 16px; margin: 12px 0; font-size: 13px; font-family: Arial, sans-serif; }
+  .gate { background: #fff8e8; border:1px solid #f0d878; border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+  .lede { font-size: 14px; color:#333; font-style: italic; margin-bottom: 8px; }
+  code { font-family: 'Courier New', monospace; font-size: 12px; background:#eef; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<h1>Core Assembly — Engineering Pack</h1>
+<p class="meta">Gravitcase · COM-height pivot core · Rev A · for contract engineer + CAD + manufacturer hand-off</p>
+<p class="lede">The single most loaded, most crowded region of the product. Five jobs, one steel core. Geometry and fits are specifiable now; load-driven sizing is flagged for the engineer's FEA and bench test against a load spec we do not yet have.</p>
+
+<div class="box">
+<b>Reading the tags.</b> <span class="tag tlock">LOCKED</span> = geometry, layout, attachment, fit — decided, ready for CAD. <span class="tag tval">VALIDATE</span> = a number driven by force/load — a reasoned starting value that the design load spec + FEA + a bench test must confirm. I will not dress a VALIDATE number up as final; that is how parts fail in the field.</p>
+</div>
+
+<h2>1 · What lives in the core</h2>
+<p>The COM-height zone (280 mm up, centered on the 14″ width) now carries five functions on one fixed shaft and one rotating hub:</p>
+<ol>
+<li><b>Pivot</b> — the spine swings 0°→45° on the hub.</li>
+<li><b>Angle hold</b> — a light friction pack keeps the handle wherever you leave it.</li>
+<li><b>Load path</b> — a 45° hard stop carries the tow and lift loads (friction holds the <i>angle</i>, the stop takes the <i>load</i>).</li>
+<li><b>Stow latch</b> — a 0° hook on the hub grabs a fixed pin, bin-safe.</li>
+<li><b>Train drawbar</b> — a swing arm on the <i>same shaft</i>, lower arc, tows the next case at COM height.</li>
+</ol>
+<p>And the same steel structure extends upward as the brace that carries the slide-stabilizer guides. So this part is not a bracket — it is the structural spine of the whole product. It deserves the most engineering attention and the first, most careful CAD model.</p>
+
+<h2>2 · Axial stack-up (along the shaft)</h2>
+<p>The crowding Rod flagged is real and it is <i>axial</i> — everything wants room on the shaft between the bracket walls. Proposed budget:</p>
+<table>
+<tr><th>From wall, inward</th><th>Width (mm)</th><th>Why</th><th>Status</th></tr>
+<tr><td>Bracket wall (×2, ends)</td><td>3 ea</td><td>Steel side walls, shaft bores</td><td><span class="lock">LOCKED</span></td></tr>
+<tr><td>Wall bushing (×2)</td><td>2 ea</td><td>Set the running gap; shaft seat</td><td><span class="lock">LOCKED</span></td></tr>
+<tr><td>Drawbar yoke collar (×2)</td><td>7 ea</td><td>Outboard near walls = wide, stable yoke base for cornering load</td><td><span class="lock">LOCKED</span></td></tr>
+<tr><td>Rotating hub (center)</td><td>18</td><td>Bore + boss root + stop/hook features</td><td><span class="lock">LOCKED</span></td></tr>
+<tr><td>Multi-plate friction pack</td><td>~10</td><td>6 interfaces keep clamp low enough to squeeze-release</td><td><span class="val">VALIDATE</span></td></tr>
+<tr><td>Clamp spring + retainer</td><td>~4</td><td>Belleville stack sets the hold; concentrator backs it off</td><td><span class="val">VALIDATE</span></td></tr>
+<tr><td>Running clearances</td><td>~3 total</td><td>Assembly + thermal</td><td><span class="lock">LOCKED</span></td></tr>
+<tr><td><b>Bracket internal width</b></td><td><b>~50</b></td><td>Up from 40 — the stack needs it</td><td><span class="val">VALIDATE</span></td></tr>
+<tr><td><b>Shaft (Ø14)</b></td><td><b>~70 long</b></td><td>Internal + 2 walls + thread/head</td><td><span class="lock">LOCKED</span></td></tr>
+</table>
+<div class="box"><b>The honest part:</b> the <i>widths</i> are reasoned; the exact <i>axial order and balance</i> — centering the hub, keeping the yoke symmetric, putting the clutch where the concentrator can reach it, and proving the whole thing slides together — is a CAD layout task. Do not freeze the order from this table; freeze it from the assembled model with an interference check.</div>
+
+<h2>3 · Part-by-part: function · material · dimensions · attachment</h2>
+<table>
+<tr><th>Part</th><th>Function</th><th>Material / process</th><th>Key dims</th><th>How it attaches</th></tr>
+<tr><td><b>Core / bracket</b></td><td>Holds shaft; reacts stop, hook pin, drawbar lock; extends up as brace</td><td>Steel — proto machined/weldment; production likely die-cast or MIM w/ hardened inserts at wear faces <span class="val">VALIDATE</span></td><td>Walls 3mm; internal ~50mm; brace extension ~280mm up; ribs to corners</td><td>Bolted/bonded to shell back; ribs distribute to edges &amp; wheel base</td></tr>
+<tr><td><b>Shaft / axle</b></td><td>Fixed pivot axis + structural through-bolt</td><td>Steel shoulder bolt, M10 thread end <span class="lock">LOCKED</span></td><td>Ø14 × ~70mm</td><td>Through both walls; M10 nut clamps walls metal-to-metal (separate from friction)</td></tr>
+<tr><td><b>Hub + spine boss</b></td><td>Rotates the spine 0–45°; carries stop lug &amp; hook</td><td>Steel, integral <span class="lock">LOCKED</span></td><td>Bore Ø14; body OD ~Ø22; stop arm to r≈20 (Ø44); boss = hollow octagon 47×34 bounding, flats 37/24, engages S1 45–50mm</td><td>Rides shaft on bushing; boss takes S1 (≤0.05mm/side fit) + 2× Ø5 cross-pins, 30mm spacing, double shear, steel ferrule in tube</td></tr>
+<tr><td><b>Friction pack</b></td><td>Light angle hold, finger-overcomeable</td><td>Alternating friction washers + steel plates <span class="val">VALIDATE</span></td><td>~6 interfaces, r-mean ~16mm, ~10mm axial; hold ~10 N·m / clamp ~300N <span class="val">VALIDATE</span></td><td>Annular on hub face; Belleville clamp spring; reaction washer keyed to bracket; opened by concentrator</td></tr>
+<tr><td><b>45° hard stop</b></td><td>Carries all tow/lift load at deploy</td><td>Hardened steel both faces <span class="val">VALIDATE</span></td><td>Lug at r≈20; load est ~90 N·m → ~4500N at lug <span class="val">VALIDATE</span></td><td>Lug integral to hub; stop face integral to bracket; both hardened, seats flush at 45°</td></tr>
+<tr><td><b>0° stow hook + pin</b></td><td>Bin-safe positive stow latch</td><td>Hardened steel hook + pin <span class="lock">LOCKED</span></td><td>Positive shoulder; closing ramp auto-engages; seat spring ~15N <span class="val">VALIDATE</span></td><td>Hook on hub (sprung); pin fixed in bracket; lifted by concentrator on release</td></tr>
+<tr><td><b>Concentrator + pivot rod</b></td><td>Turns a squeeze into friction-release + hook-lift</td><td>POM concentrator; SS rod; GF-nylon carrier <span class="lock">LOCKED</span></td><td>Rod Ø4.5; ratio ~10× (bell-crank 2.5× × concentrator 4×); ~30N/12mm → ~300N/5mm <span class="val">VALIDATE</span></td><td>Rod runs up spine in keyed carrier; concentrator bears on clamp + hook; trigger return spring; full-extension interlock (rod columns only when fully extended)</td></tr>
+<tr><td><b>Drawbar yoke + arm + ball</b></td><td>Tows next case at COM height</td><td>Steel arm/yoke; ball tip <span class="lock">LOCKED</span></td><td>Arm ~150mm (range 5–8″); two collars 7mm ea outboard; ball at COM</td><td>Yoke collars ride shaft (bushings), straddle hub; arm rigid to yoke</td></tr>
+<tr><td><b>Drawbar deploy lock</b></td><td>Locks arm rigid at horizontal</td><td>Steel hard stop + spring lock pin <span class="val">VALIDATE</span></td><td>~90° throw to horizontal; takes cornering side-load through yoke root</td><td>Hard stop integral to bracket; spring pin engages yoke at horizontal — <b>priority bench item: rigid, no long-term slop</b></td></tr>
+<tr><td><b>Bushings</b></td><td>Running surfaces; set fits</td><td>Steel or oil-impregnated bronze <span class="val">VALIDATE</span></td><td>Ø14 ID; wall + hub + collar seats</td><td>Pressed/seated on shaft seats; hub &amp; collars run on them</td></tr>
+</table>
+
+<h2>4 · How the latch shares the hub (angular)</h2>
+<p>The functions don't fight because they occupy different <i>angles</i> on the one hub, and different <i>arcs</i> of its travel:</p>
+<ul>
+<li><b>Upper arc (0–45°):</b> the spine boss sweeps here. Clear of everything below.</li>
+<li><b>At 45° (outer rim, r≈20):</b> the stop lug meets the bracket stop. The single hardest-loaded contact in the product.</li>
+<li><b>At 0° (one side of the hub):</b> the hook catches the fixed pin.</li>
+<li><b>Around the hub:</b> the friction annulus, always engaged, light.</li>
+<li><b>Below the hub (a fixed feature):</b> the concentrator sits where the trigger rod ends, bearing on both the clamp and the hook so one squeeze does both.</li>
+<li><b>Lower arc (separate rotating element):</b> the drawbar swings from straight-down (stowed) to horizontal (locked). It shares the shaft, never the hub's angular range, and never operates at the same time as the handle.</li>
+</ul>
+
+<h2>5 · Fits &amp; tolerances</h2>
+<table>
+<tr><th>Interface</th><th>Fit / tolerance</th><th>Why it matters</th><th>CTF?</th></tr>
+<tr><td>Boss → S1 octagon flats</td><td>Close ≤0.05mm/side</td><td>Flats carry the moment in bearing; slop here = a wobbly handle and fretting</td><td><b>Yes</b></td></tr>
+<tr><td>Hub / collars on shaft</td><td>Running, ~H7/g6 via bushing</td><td>Free rotation, no rattle</td><td>Yes</td></tr>
+<tr><td>Shaft in bracket walls</td><td>Location fit; bolt clamps walls</td><td>Wall stiffness is metal-to-metal, not through bushings</td><td>Yes</td></tr>
+<tr><td>45° stop seating</td><td>Flush contact, hardened</td><td>Even bearing = no peening; load path integrity</td><td><b>Yes</b></td></tr>
+<tr><td>Cross-pins Ø5</td><td>Interference in boss, ferrule in tube</td><td>Double-shear pin retention without crushing the aluminum tube</td><td>Yes</td></tr>
+<tr><td>Friction plates</td><td>Controlled flatness / parallelism</td><td>Even clamp = predictable, drift-free hold</td><td><b>Yes</b></td></tr>
+</table>
+<p>A full <b>GD&amp;T scheme with datums</b> is part of the hand-off (§8). The four bolded rows are <b>critical-to-function</b> — flag them for 100% inspection.</p>
+
+<h2>6 · What I must know to make it perfect the first time</h2>
+<p>You asked me straight, so here it is straight. Geometry I can lock today. But "perfect first time" on a load-bearing mechanism needs inputs I don't have yet. In rough order of leverage:</p>
+<div class="gate">
+<ol>
+<li><b>The design load spec — the #1 gap.</b> Rated case weight, and the test loads &amp; cycle counts: pull-fatigue cycles, lift-by-handle force, drop, lateral/abuse. Every structural number on this page (4500N stop, 300N clamp, ~50mm width, S1 factor of safety) sizes off this. Until we adopt a luggage test standard, those are estimates.</li>
+<li><b>Material grades/tempers + production process per part.</b> Which steel and hardness for shaft/hub/stop/hook; aluminum temper confirmed (6061-T6); and machined vs MIM vs die-cast vs stamped vs molded per part — because process drives achievable tolerance, radius, draft, and min wall.</li>
+<li><b>Friction tuning data.</b> Real μ of the chosen material, clamp-vs-hold curve, the squeeze-release force target, and drift/creep over cycles. Bench, not theory.</li>
+<li><b>User-force ergonomics.</b> Squeeze and thumb force a weak user can apply — sets the trigger ratio for <i>everyone</i>, not the average hand.</li>
+<li><b>Cycle-life targets</b> for each motion (pivot, stow, drawbar, slide) — sizes fatigue and wear.</li>
+<li><b>Tolerance/fit/GD&amp;T scheme + datums</b> — formalized.</li>
+<li><b>Assembly sequence &amp; tool access</b> — prove the axial stack actually goes together and the bolt can be torqued.</li>
+<li><b>Environmental</b> — cold-hold temperature range, corrosion → finishes/plating on steel parts.</li>
+<li><b>Spring rates</b> — friction clamp, hook seat, trigger return, drawbar lock pin, slide detent.</li>
+<li><b>Shell &amp; wheel-base interface</b> — how the core bolts/bonds to the OEM base and how load reaches the wheels (rib runs).</li>
+<li><b>Finishes, fasteners, compliance</b> — anodize spec, thread-lock/torque, any airline or child-restraint standards if claimed.</li>
+</ol>
+</div>
+<p>Items 1–3 are the gates. The contract engineer's first job isn't to draw — it's to <b>set the load spec</b>, because that turns every red VALIDATE number above into a real green one.</p>
+
+<h2>7 · CAD / Zoo strategy</h2>
+<h3>Structure it parametric</h3>
+<ul>
+<li><b>Parent datum = the steel core.</b> Everything references it. Build a parameter table — COM height 280, shaft Ø14, internal 50, each octagon section — so a change propagates instead of breaking ten parts.</li>
+<li><b>Sub-assemblies:</b> pivot/hub, friction, drawbar, spine cascade, slide. Assemble into one master and run the interference check on the crowded axial stack — that check is the whole point.</li>
+</ul>
+<h3>Zoo.dev (KCL) per your learned workflow</h3>
+<ul>
+<li>Drive Zookeeper <b>one step at a time with visual confirmation</b>; raw KCL fails silently (lowercase <code>pi</code> not <code>PI</code>, sketch-on-face instability). Use absolute angular positions for any tooth/feature copies — don't mirror.</li>
+<li><b>Modeling order:</b> (1) shaft — simplest, gets you going. (2) the core/bracket — hardest, it's the datum, go slow. (3) hub + boss. (4) octagon sections — parametric repeat, Zoo's strength. (5) drawbar yoke + arm + ball. (6) friction washers. (7) slide + T-top. Then assemble + interference-check.</li>
+</ul>
+
+<h2>8 · Manufacturer hand-off package</h2>
+<p>What a shop needs to quote and build without guessing:</p>
+<ol>
+<li><b>Dimensioned 2D drawings, GD&amp;T, per part</b> — datums, tolerances, fits, surface finish, hardness, material callout.</li>
+<li><b>3D models (STEP)</b> — every part + the assembly.</li>
+<li><b>BOM</b> — part, material, process, qty, finish, fasteners, suppliers.</li>
+<li><b>Assembly drawing + sequence</b> — exploded view, order, torques, adhesives, fixtures.</li>
+<li><b>Material &amp; finish specs</b> — grades, tempers, plating/anodize, friction material.</li>
+<li><b>The design-load / test spec</b> (§6.1) — so DFM and any tooling are sized to real duty.</li>
+<li><b>Tolerance stack-up analysis</b> — prove the ~50mm axial stack assembles across tolerances.</li>
+<li><b>DFM review per part</b> with the shop — process, tooling, draft, radii, gates.</li>
+<li><b>Critical-to-function list</b> — the four bolded fits in §5, flagged for inspection.</li>
+<li><b>Prototype → tooling plan:</b> Build 1 functional (machined) → Build 2 anodized demo → soft tooling → production. Maps onto your funding tranches.</li>
+</ol>
+
+<div class="box"><b>One-line summary for the engineer:</b> the geometry is ready to model; the loads are not yet specified. Set the load spec first, then this pack becomes a buildable, inspectable, tooled part set — with the 45° stop, the boss fit, the friction clamp, and the drawbar deploy-lock as the four things to prove on the bench before tooling.</div>
+
+</div>
+</body>
+</html>

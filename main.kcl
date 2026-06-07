@@ -1,0 +1,101 @@
+// ============================================================
+//  Zoo Design Studio — Parametric Animal Enclosure
+//  Language: KCL (KittyCAD Language)  •  Open in Zoo Design Studio
+//  Edit the parameters below; the model rebuilds automatically.
+// ============================================================
+
+@settings(defaultLengthUnit = mm)
+
+// ---------------- Parameters (edit these) ----------------
+enclLength = 4000   // overall enclosure length (X)
+enclWidth  = 3000   // overall enclosure width  (Y)
+
+floorThick = 100    // ground slab thickness
+wallThick  = 200    // perimeter wall thickness
+wallHeight = 1200   // perimeter wall height
+
+shelterW   = 1400   // shelter width  (along X)
+shelterD   = 1000   // shelter depth  (along Y)
+shelterH   = 1100   // shelter height
+shelterWall = 120   // shelter wall thickness
+
+troughW    = 900    // feeding trough length
+troughD    = 350    // feeding trough width
+troughH    = 250    // feeding trough height
+troughWall = 60     // feeding trough wall thickness
+
+// ---------------- Floor slab ----------------
+floor = startSketchOn(XY)
+  |> startProfile(at = [0, 0])
+  |> xLine(length = enclLength)
+  |> yLine(length = enclWidth)
+  |> xLine(length = -enclLength)
+  |> close()
+  |> extrude(length = floorThick)
+
+// ---------------- Perimeter wall (outer shell minus inner void) ----------------
+outerWall = startSketchOn(XY)
+  |> startProfile(at = [0, 0])
+  |> xLine(length = enclLength)
+  |> yLine(length = enclWidth)
+  |> xLine(length = -enclLength)
+  |> close()
+  |> extrude(length = wallHeight)
+
+innerVoid = startSketchOn(XY)
+  |> startProfile(at = [wallThick, wallThick])
+  |> xLine(length = enclLength - 2 * wallThick)
+  |> yLine(length = enclWidth - 2 * wallThick)
+  |> xLine(length = -(enclLength - 2 * wallThick))
+  |> close()
+  |> extrude(length = wallHeight)
+
+walls = subtract([outerWall], tools = [innerVoid])
+  |> translate(z = floorThick)
+
+// ---------------- Shelter (open-front hut in a back corner) ----------------
+shelterX = enclLength - wallThick - shelterW - 400
+shelterY = enclWidth - wallThick - shelterD - 400
+
+shelterOuter = startSketchOn(XY)
+  |> startProfile(at = [shelterX, shelterY])
+  |> xLine(length = shelterW)
+  |> yLine(length = shelterD)
+  |> xLine(length = -shelterW)
+  |> close()
+  |> extrude(length = shelterH)
+
+shelterInner = startSketchOn(XY)
+  |> startProfile(at = [shelterX + shelterWall, shelterY + shelterWall])
+  |> xLine(length = shelterW - 2 * shelterWall)
+  |> yLine(length = shelterD - 2 * shelterWall)
+  |> xLine(length = -(shelterW - 2 * shelterWall))
+  |> close()
+  |> extrude(length = shelterH)
+
+shelter = subtract([shelterOuter], tools = [shelterInner])
+  |> translate(z = floorThick)
+
+// ---------------- Feeding trough (hollow box near the entrance) ----------------
+troughX = wallThick + 500
+troughY = wallThick + 500
+
+troughOuter = startSketchOn(XY)
+  |> startProfile(at = [troughX, troughY])
+  |> xLine(length = troughW)
+  |> yLine(length = troughD)
+  |> xLine(length = -troughW)
+  |> close()
+  |> extrude(length = troughH)
+
+troughInner = startSketchOn(XY)
+  |> startProfile(at = [troughX + troughWall, troughY + troughWall])
+  |> xLine(length = troughW - 2 * troughWall)
+  |> yLine(length = troughD - 2 * troughWall)
+  |> xLine(length = -(troughW - 2 * troughWall))
+  |> close()
+  |> extrude(length = troughH - troughWall)
+  |> translate(z = troughWall)
+
+trough = subtract([troughOuter], tools = [troughInner])
+  |> translate(z = floorThick)

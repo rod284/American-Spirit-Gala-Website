@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Bracket Pocket, Dimensioned</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 24px; }
+  h1 { font-size: 21px; color: #1F4E79; margin-bottom: 2px; }
+  .sub { font-size: 13px; color: #666; margin-bottom: 16px; }
+  .wrap { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
+  .panel { background: white; border-radius: 12px; padding: 16px; border: 1px solid #dcdce0; }
+  .ttl { font-size: 12px; font-weight: bold; color:#1F4E79; text-align: center; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .04em; }
+  svg { display: block; margin: 0 auto; }
+  .lbl { font-size: 9.5px; fill: #1a1a2e; }
+  .ctr { font-size: 8px; fill: #888; }
+  .dim { font-size: 9px; fill: #c0392b; font-weight: bold; }
+  .grn { font-size: 9px; fill: #1a7a4a; font-weight: bold; }
+  .blu { font-size: 9px; fill: #2e6fb0; font-weight: bold; }
+  .steel { font-size: 9px; fill: #6a4a8a; font-weight: bold; }
+  .note { background:#fff8e8; border:1px solid #f0d878; border-radius:8px; padding:12px 14px; font-size:12px; line-height:1.55; color:#5a4a00; margin-top:16px; max-width:900px; }
+  .dimline { stroke:#c0392b; stroke-width:0.7; }
+</style>
+</head>
+<body>
+
+<h1>Bracket Pocket &amp; Pawl Mount — Dimensioned</h1>
+<p class="sub">The mating half the pawl lands against, and how it sits in the core. Geometry locked; loads + process flagged.</p>
+
+<div class="wrap">
+
+  <!-- VIEW A: end view -->
+  <div class="panel">
+    <div class="ttl">A · end view (along shaft)</div>
+    <svg width="370" height="340" viewBox="0 0 370 340" xmlns="http://www.w3.org/2000/svg">
+      <!-- hub + shaft -->
+      <circle cx="170" cy="150" r="33" fill="#8f99a3" stroke="#5b6878"/>
+      <circle cx="170" cy="150" r="21" fill="#cfd6de" stroke="#5b6878"/>
+      <text x="170" y="153" class="ctr" text-anchor="middle">shaft Ø14</text>
+      <!-- lug at 45 (lower-right) -->
+      <g transform="rotate(45 170 150)">
+        <rect x="158" y="150" width="24" height="42" fill="#6f7a86" stroke="#3a4250"/>
+      </g>
+      <text x="232" y="206" class="lbl">lug @45°</text>
+      <!-- contact radius callout -->
+      <line x1="170" y1="150" x2="216" y2="196" stroke="#888" stroke-width="0.6" stroke-dasharray="3,2"/>
+      <text x="196" y="180" class="dim">r=20</text>
+      <!-- fixed wall (leading/open side) -->
+      <g transform="rotate(45 170 150)">
+        <rect x="186" y="150" width="12" height="46" fill="#b9a8d0" stroke="#6a4a8a"/>
+      </g>
+      <text x="250" y="232" class="steel">fixed wall</text>
+      <text x="250" y="244" class="ctr">(open load)</text>
+      <!-- pawl pin (trailing/fold-back side) -->
+      <circle cx="120" cy="222" r="7" fill="#cfd6de" stroke="#3a4250"/>
+      <circle cx="120" cy="222" r="2.5" fill="#3a4250"/>
+      <text x="78" y="222" class="blu">pawl pin</text>
+      <!-- pawl nose to lug -->
+      <path d="M126 218 L150 196 L160 204 L136 226 Z" fill="#2e6fb0" stroke="#1a3a5a"/>
+      <!-- backstop -->
+      <rect x="108" y="232" width="18" height="12" fill="#9a8" stroke="#5a6"/>
+      <text x="84" y="256" class="ctr">backstop</text>
+      <!-- rod/wedge clearance -->
+      <path d="M150 250 L170 250 L170 300 L150 300 Z" fill="none" stroke="#c0392b" stroke-dasharray="4,3"/>
+      <text x="178" y="290" class="dim">rod/wedge clearance</text>
+      <!-- 45 angle mark -->
+      <path d="M210 150 A 40 40 0 0 1 198 178" fill="none" stroke="#888" stroke-width="0.6"/>
+      <text x="214" y="168" class="ctr">45°</text>
+    </svg>
+  </div>
+
+  <!-- VIEW B: axial section -->
+  <div class="panel">
+    <div class="ttl">B · axial section (across shaft)</div>
+    <svg width="380" height="340" viewBox="0 0 380 340" xmlns="http://www.w3.org/2000/svg">
+      <!-- side walls -->
+      <rect x="40" y="60" width="12" height="220" fill="#b9a8d0" stroke="#6a4a8a"/>
+      <rect x="316" y="60" width="12" height="220" fill="#b9a8d0" stroke="#6a4a8a"/>
+      <text x="34" y="300" class="steel">wall 3</text>
+      <text x="300" y="300" class="steel">wall 3</text>
+      <!-- floor -->
+      <rect x="40" y="262" width="288" height="18" fill="#d8cfe6" stroke="#6a4a8a"/>
+      <text x="184" y="275" class="ctr" text-anchor="middle">structural floor (load → shell)</text>
+      <!-- shaft -->
+      <rect x="40" y="222" width="288" height="34" fill="#cfd6de" stroke="#5b6878"/>
+      <text x="58" y="243" class="ctr">shaft Ø14 (axle / through-bolt)</text>
+      <!-- lug central -->
+      <rect x="164" y="150" width="40" height="74" fill="#6f7a86" stroke="#3a4250"/>
+      <text x="184" y="190" class="lbl" text-anchor="middle" fill="#fff">lug 10</text>
+      <!-- pawl central -->
+      <rect x="166" y="120" width="36" height="34" fill="#2e6fb0" stroke="#1a3a5a"/>
+      <text x="184" y="140" class="lbl" text-anchor="middle" fill="#fff">pawl 10</text>
+      <!-- ears -->
+      <rect x="146" y="110" width="20" height="50" fill="#7a8590" stroke="#3a4250"/>
+      <rect x="202" y="110" width="20" height="50" fill="#7a8590" stroke="#3a4250"/>
+      <text x="120" y="100" class="lbl">ear 5</text>
+      <text x="226" y="100" class="lbl">ear 5</text>
+      <!-- pin double shear -->
+      <rect x="146" y="128" width="76" height="14" fill="#3a4250"/>
+      <text x="246" y="138" class="dim">Ø6 pin · double shear</text>
+      <!-- dims -->
+      <line x1="52" y1="320" x2="316" y2="320" class="dimline"/>
+      <text x="184" y="333" class="dim" text-anchor="middle">internal ~50</text>
+      <line x1="166" y1="170" x2="202" y2="170" class="dimline"/>
+      <text x="184" y="182" class="dim" text-anchor="middle">gap 10.5</text>
+    </svg>
+  </div>
+
+</div>
+
+<div class="note">
+<b>The bracket is a channel, not two walls.</b> The two 3mm side walls are tied by a <b>structural floor</b> on the load side; the fixed-wall boss and the pawl-ear roots both grow out of that floor, which feeds the joint loads through the ribs into the shell and the wheel base. The fixed wall takes the open load (5,500 N), the two ears take the fold-back load split as pin shear (≈2,750 N each), and both paths land in the floor.<br><br>
+<b>The interference check that has to happen in CAD.</b> The pawl mount is ~20.5 mm wide and sits central, the same axial band as the 18 mm hub — they clear only because the ears live <i>radially outboard</i> (r&gt;14) of the hub body. Whether the ears, the friction pack (annular on a hub face), and the inboard edges of the drawbar collars all clear is the one thing the assembly model must prove. Propose: friction on the hub face axially away from the lug; lug + pawl on the opposite band. Confirm in Zoo.
+</div>
+
+</body>
+</html>

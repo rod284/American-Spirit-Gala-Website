@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Bracket Part Spec</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f0f2f5; color: #1a1a2e; padding: 32px 20px; line-height: 1.55; }
+  .doc { max-width: 920px; margin: 0 auto; background: white; padding: 44px 52px; border-radius: 6px; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+  h1 { font-size: 25px; color: #1F4E79; margin-bottom: 2px; }
+  .meta { font-size: 12.5px; color: #888; font-family: Arial, sans-serif; margin-bottom: 4px; }
+  h2 { font-size: 17px; color: #1F4E79; margin: 26px 0 8px; border-bottom: 2px solid #1F4E79; padding-bottom: 4px; }
+  h3 { font-family:Arial;font-size:13px;color:#2c3e50;margin-top:12px; }
+  p, li { font-size: 13.5px; }
+  ul, ol { margin: 6px 0 6px 22px; }
+  li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: Arial, sans-serif; font-size: 11.5px; }
+  th { background: #1F4E79; color: white; padding: 7px 8px; text-align: left; }
+  td { padding: 6px 8px; border-bottom: 1px solid #e0e0e6; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fb; }
+  .tag { display:inline-block; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; padding: 1px 7px; border-radius: 3px; }
+  .tlock { background:#e6f4ea; color:#1a7a4a; }
+  .tval { background:#fbeae8; color:#c0392b; }
+  .box { background: #f7f9fb; border-left: 4px solid #1F4E79; padding: 12px 16px; margin: 12px 0; font-size: 13px; font-family: Arial, sans-serif; }
+  .gate { background: #fff8e8; border:1px solid #f0d878; border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+  .lede { font-size: 14px; color:#333; font-style: italic; margin-bottom: 8px; }
+  code { font-family: 'Courier New', monospace; font-size: 12px; background:#eef; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<h1>Bracket — Part Spec</h1>
+<p class="meta">Gravitcase · pivot core / pawl-mating half · Rev A · CAD-ready</p>
+<p class="lede">The structural heart of the product: it holds the shaft, forms the pocket, mounts the pawl, and carries every joint load to the shell. Geometry and fits are locked; the force-sized values and the production process are flagged for FEA + the manufacturer.</p>
+
+<div class="box"><span class="tag tlock">LOCKED</span> geometry/fit, ready to model. <span class="tag tval">VALIDATE</span> a force-sized value or process choice for FEA / the shop to confirm.</div>
+
+<h2>1 · The bracket as a channel</h2>
+<ul>
+<li>Two side walls <b>3 mm</b> steel, <b>~50 mm</b> internal, tied by a <b>structural floor</b> on the load side — not two loose walls. <span class="tag tlock">LOCKED</span></li>
+<li>Shaft bore <b>Ø14</b> through both walls; M10 nut clamps the walls metal-to-metal. <span class="tag tlock">LOCKED</span></li>
+<li>Extends up as the brace (~280 mm to the case top) carrying the slide guides; ribs radiate to the corners. <span class="tag tlock">LOCKED</span></li>
+<li>The pocket, fixed wall, ears, and backstop are all features grown out of the floor so their loads share one path. <span class="tag tlock">LOCKED</span></li>
+</ul>
+
+<h2>2 · Dimension tables</h2>
+
+<h3>Pocket (at the 45° lug position, lower-back of hub)</h3>
+<table>
+<tr><th>Feature</th><th>Value</th><th>Note</th></tr>
+<tr><td>Radial extent</td><td>floor ~r24, mouth ~r12</td><td>lug (tip r22) enters from hub side</td></tr>
+<tr><td>Axial width</td><td>~10.5 mm</td><td>lug 10 + 0.25/side clearance</td></tr>
+<tr><td>Clearance to lug</td><td>0.3 mm</td><td>seats positive, no bind</td></tr>
+</table>
+
+<h3>Fixed hard-stop wall (boss)</h3>
+<table>
+<tr><th>Feature</th><th>Value</th><th>Note</th></tr>
+<tr><td>Face</td><td>≥6 rad × 10 ax</td><td>seats lug leading face at 45.0°</td></tr>
+<tr><td>Backing</td><td>≥6 mm thick boss into floor</td><td>defines deploy angle; load → floor</td></tr>
+<tr><td>Material</td><td>hardened steel / insert</td><td><span class="tag tval">VALIDATE</span> hardness</td></tr>
+<tr><td>Reacts</td><td>5,500 N design / 15,000 N ult</td><td>open-side load</td></tr>
+</table>
+
+<h3>Pawl ears (clevis) + pivot pin</h3>
+<table>
+<tr><th>Feature</th><th>Value</th><th>Note</th></tr>
+<tr><td>Ear thickness</td><td>5 mm each</td><td><span class="tag tval">VALIDATE</span> — set by ultimate bearing</td></tr>
+<tr><td>Gap between ears</td><td>10.5 mm</td><td>pawl 10 + 0.25/side</td></tr>
+<tr><td>Ear pair, overall axial</td><td>20.5 mm</td><td>5 + 10.5 + 5</td></tr>
+<tr><td>Pin bore (ears)</td><td>Ø6 H7, edge dist ≥6 mm</td><td>pin retained: press one ear, snap-ring other</td></tr>
+<tr><td>Pin</td><td>Ø6 m6 hardened dowel, L≈20 mm</td><td>fixed in ears; pawl runs on it</td></tr>
+<tr><td>Ear root fillet</td><td>R≥2 mm into floor</td><td>stress relief</td></tr>
+</table>
+
+<h3>Backstop + rod/wedge clearance</h3>
+<table>
+<tr><th>Feature</th><th>Value</th><th>Note</th></tr>
+<tr><td>Backstop face</td><td>~3 × 10 mm</td><td>catches residual seating moment; sets engaged position</td></tr>
+<tr><td>Rod/wedge clearance</td><td>~Ø8–10 slot from spine side</td><td>6 mm wedge travel unobstructed</td></tr>
+</table>
+
+<h2>3 · Sizing checks (reaction side)</h2>
+<table>
+<tr><th>Check</th><th>Design (5,500 N)</th><th>Ultimate (15,000 N)</th><th>Verdict</th></tr>
+<tr><td>Ear pin-bearing (Ø6 × 5 mm)</td><td>~115 MPa</td><td>~500 MPa</td><td>OK in hardened/alloy steel; <span class="tag tval">VALIDATE</span> grade</td></tr>
+<tr><td>Ear tear-out (6 mm edge ×5 ×2)</td><td>~46 MPa</td><td>~125 MPa</td><td>Comfortable</td></tr>
+<tr><td>Fixed-wall boss</td><td colspan="2">local bending in a 6 mm boss backed by floor</td><td>Stout; FEA confirms</td></tr>
+<tr><td>Floor → shell</td><td colspan="2">5,500 N (15,000 ult) across the floor span + ribs</td><td>FEA + shell mount</td></tr>
+</table>
+
+<h2>4 · Load path</h2>
+<p>Open load: lug leading face → fixed-wall boss → floor → ribs → shell + wheel base. Fold-back load: lug trailing face → pawl nose → Ø6 pin (double shear) → two ears → floor → ribs → shell. Both converge on the floor, which is why the floor — not the side walls — is the part to size for stiffness.</p>
+
+<h2>5 · Integration &amp; the interference check</h2>
+<div class="gate">
+The pawl mount is <b>~20.5 mm</b> wide and sits in the central axial band — the same band as the <b>18 mm hub</b>. They clear <i>only</i> because the ears live <b>radially outboard (r&gt;14)</b> of the hub body. The assembly model must prove that the ears, the friction pack (annular on a hub face, ~10 mm), and the inboard edges of the drawbar collars (near the walls) all clear. Proposed resolution: put the friction pack on the hub face <b>axially away</b> from the lug; keep the lug + pawl on the opposite band. <b>This is the single most important thing to confirm in Zoo before committing the bracket.</b>
+</div>
+
+<h2>6 · Fits, retention, materials</h2>
+<ul>
+<li>Pin: fixed in ears (press one, snap-ring the other); pawl bore is the running fit. <span class="tag tlock">LOCKED</span></li>
+<li>Pocket/lug clearance 0.3 mm; ear gap 0.25 mm/side. <span class="tag tlock">LOCKED</span></li>
+<li><b>Production:</b> bracket die-cast or MIM with hardened steel inserts at the wall face, pocket, and ear bores; or fully machined steel for early builds. <span class="tag tval">VALIDATE</span> process.</li>
+<li><b>Prototype:</b> print the bracket block to check the pocket, ear gap, pin fit, and the rod/wedge clearance against the printed pawl — fit and motion only, not load.</li>
+</ul>
+
+<h2>7 · Zoo plan (bracket)</h2>
+<ul>
+<li>Model the bracket <b>channel + floor first as the parent datum</b> — everything else in the core references it. Drive internal width (50), wall (3), shaft bore (14), pocket/ear/pin dims from named parameters.</li>
+<li>Zookeeper one step at a time, confirm visually; lowercase <code>pi</code>; place the pocket and fixed wall at the absolute 45° position.</li>
+<li>Order: (1) channel + floor. (2) shaft bore + brace stub. (3) fixed-wall boss at 45°. (4) pawl ears + pin bores. (5) backstop + rod/wedge slot. (6) drop in the hub, lug, pawl, pin → assemble → <b>sweep 0→45° and run the interference check</b> from §5.</li>
+</ul>
+
+<div class="gate"><b>Where this leaves the joint:</b> both halves are now dimensioned — the pawl and the bracket pocket/wall/ears it lands in — with the loads landing in a Ø6 pin and a stout wall, both fed to the shell through one floor. Model the bracket as the parent datum, drop the pawl and hub in, and the only gate left before metal is that interference sweep plus the three open numbers (fold-back impact, steel grade, spring rate).</p>
+
+</div>
+</body>
+</html>

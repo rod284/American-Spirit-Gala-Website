@@ -1,0 +1,54 @@
+Gravitcase — Bracket Part Spec 
+ Bracket — Part Spec 
+ Gravitcase · pivot core / pawl-mating half · Rev A · CAD-ready 
+ The structural heart of the product: it holds the shaft, forms the pocket, mounts the pawl, and carries every joint load to the shell. Geometry and fits are locked; the force-sized values and the production process are flagged for FEA + the manufacturer. 
+ LOCKED geometry/fit, ready to model. VALIDATE a force-sized value or process choice for FEA / the shop to confirm. 
+ 1 · The bracket as a channel 
+ Two side walls 3 mm steel, ~50 mm internal, tied by a structural floor on the load side — not two loose walls. LOCKED 
+ Shaft bore Ø14 through both walls; M10 nut clamps the walls metal-to-metal. LOCKED 
+ Extends up as the brace (~280 mm to the case top) carrying the slide guides; ribs radiate to the corners. LOCKED 
+ The pocket, fixed wall, ears, and backstop are all features grown out of the floor so their loads share one path. LOCKED 
+ 2 · Dimension tables 
+ Pocket (at the 45° lug position, lower-back of hub) 
+ Feature Value Note 
+ Radial extent floor ~r24, mouth ~r12 lug (tip r22) enters from hub side 
+ Axial width ~10.5 mm lug 10 + 0.25/side clearance 
+ Clearance to lug 0.3 mm seats positive, no bind 
+ Fixed hard-stop wall (boss) 
+ Feature Value Note 
+ Face ≥6 rad × 10 ax seats lug leading face at 45.0° 
+ Backing ≥6 mm thick boss into floor defines deploy angle; load → floor 
+ Material hardened steel / insert VALIDATE hardness 
+ Reacts 5,500 N design / 15,000 N ult open-side load 
+ Pawl ears (clevis) + pivot pin 
+ Feature Value Note 
+ Ear thickness 5 mm each VALIDATE — set by ultimate bearing 
+ Gap between ears 10.5 mm pawl 10 + 0.25/side 
+ Ear pair, overall axial 20.5 mm 5 + 10.5 + 5 
+ Pin bore (ears) Ø6 H7, edge dist ≥6 mm pin retained: press one ear, snap-ring other 
+ Pin Ø6 m6 hardened dowel, L≈20 mm fixed in ears; pawl runs on it 
+ Ear root fillet R≥2 mm into floor stress relief 
+ Backstop + rod/wedge clearance 
+ Feature Value Note 
+ Backstop face ~3 × 10 mm catches residual seating moment; sets engaged position 
+ Rod/wedge clearance ~Ø8–10 slot from spine side 6 mm wedge travel unobstructed 
+ 3 · Sizing checks (reaction side) 
+ Check Design (5,500 N) Ultimate (15,000 N) Verdict 
+ Ear pin-bearing (Ø6 × 5 mm) ~115 MPa ~500 MPa OK in hardened/alloy steel; VALIDATE grade 
+ Ear tear-out (6 mm edge ×5 ×2) ~46 MPa ~125 MPa Comfortable 
+ Fixed-wall boss local bending in a 6 mm boss backed by floor Stout; FEA confirms 
+ Floor → shell 5,500 N (15,000 ult) across the floor span + ribs FEA + shell mount 
+ 4 · Load path 
+ Open load: lug leading face → fixed-wall boss → floor → ribs → shell + wheel base. Fold-back load: lug trailing face → pawl nose → Ø6 pin (double shear) → two ears → floor → ribs → shell. Both converge on the floor, which is why the floor — not the side walls — is the part to size for stiffness. 
+ 5 · Integration & the interference check 
+The pawl mount is ~20.5 mm wide and sits in the central axial band — the same band as the 18 mm hub . They clear only because the ears live radially outboard (r>14) of the hub body. The assembly model must prove that the ears, the friction pack (annular on a hub face, ~10 mm), and the inboard edges of the drawbar collars (near the walls) all clear. Proposed resolution: put the friction pack on the hub face axially away from the lug; keep the lug + pawl on the opposite band. This is the single most important thing to confirm in Zoo before committing the bracket. 
+ 6 · Fits, retention, materials 
+ Pin: fixed in ears (press one, snap-ring the other); pawl bore is the running fit. LOCKED 
+ Pocket/lug clearance 0.3 mm; ear gap 0.25 mm/side. LOCKED 
+ Production: bracket die-cast or MIM with hardened steel inserts at the wall face, pocket, and ear bores; or fully machined steel for early builds. VALIDATE process. 
+ Prototype: print the bracket block to check the pocket, ear gap, pin fit, and the rod/wedge clearance against the printed pawl — fit and motion only, not load. 
+ 7 · Zoo plan (bracket) 
+ Model the bracket channel + floor first as the parent datum — everything else in the core references it. Drive internal width (50), wall (3), shaft bore (14), pocket/ear/pin dims from named parameters. 
+ Zookeeper one step at a time, confirm visually; lowercase pi ; place the pocket and fixed wall at the absolute 45° position. 
+ Order: (1) channel + floor. (2) shaft bore + brace stub. (3) fixed-wall boss at 45°. (4) pawl ears + pin bores. (5) backstop + rod/wedge slot. (6) drop in the hub, lug, pawl, pin → assemble → sweep 0→45° and run the interference check from §5. 
+ Where this leaves the joint: both halves are now dimensioned — the pawl and the bracket pocket/wall/ears it lands in — with the loads landing in a Ø6 pin and a stout wall, both fed to the shell through one floor. Model the bracket as the parent datum, drop the pawl and hub in, and the only gate left before metal is that interference sweep plus the three open numbers (fold-back impact, steel grade, spring rate).

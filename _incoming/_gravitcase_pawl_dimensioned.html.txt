@@ -1,0 +1,33 @@
+Gravitcase — Pawl Trap, Dimensioned 
+ Pawl Trap — Dimensioned for CAD 
+ Sized to the load spec. Geometry locked; force-driven items flagged for bench + FEA. Authoritative numbers in the part spec. 
+ A · engaged at 45° 
+ HUB rim (rotates) 
+ lug 
+ 8 rad 
+ 6 circ 
+ (×10 axial) 
+ fixed wall 
+ hardened · open load 
+ nose 5×10 
+ Ø6 pin 
+ double shear 
+ pivot -->
+ contact normal → pivot pin 
+ backstop 
+ contact radius r = 20 mm (hub axis above) 
+ pocket clearance ≈ 0.3 mm · both lug faces + wall hardened/ground 
+ B · pawl part + push-to-lift 
+ nose 
+ ramp 35° 
+ (ratchets open) 
+ Ø6 
+ pivot bore Ø6 H7 
+ 14 (nose→pivot) 
+ width 10 
+ heel 
+ wedge ramp 33° 
+ PUSH 6 → 
+ lift 4 ↑ 
+ return spring 
+ The self-locking trick (View A). The fold-back reaction runs straight along the contact normal into the pivot pin — so the load is carried in pin shear , not as a moment trying to swing the pawl open, and a backstop catches any residual. The load can't cam it open; only the wedge can. The release (View B) is a separate, light path: the rod pushes the wedge under the heel, the 33° ramp lifts the nose 4 mm to clear the lug — and since you only stow when there's no fold-back load, the wedge fights only the return spring (~40 N), not the 5,500 N hold. Heavy path and release path are fully separated.

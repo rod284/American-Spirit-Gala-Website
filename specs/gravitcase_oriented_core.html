@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Oriented Joint Core</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 24px; }
+  h1 { font-size: 21px; color: #1F4E79; margin-bottom: 2px; }
+  .sub { font-size: 13px; color: #666; margin-bottom: 16px; }
+  .panel { background: white; border-radius: 12px; padding: 16px; border: 1px solid #dcdce0; display:inline-block; }
+  .ttl { font-size: 12px; font-weight: bold; color:#1F4E79; text-align: center; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .04em; }
+  svg { display: block; margin: 0 auto; }
+  .ax { font-size: 11px; font-weight:bold; }
+  .lbl { font-size: 9.5px; fill: #1a1a2e; }
+  .ctr { font-size: 8px; fill: #888; }
+  .red { font-size: 9.5px; fill: #c0392b; font-weight:bold; }
+  .grn { font-size: 9.5px; fill: #1a7a4a; font-weight:bold; }
+  .blu { font-size: 9.5px; fill: #2e6fb0; font-weight:bold; }
+  .fix { background:#fbeae8; border:1px solid #e8b0a8; border-radius:8px; padding:12px 14px; font-size:12.5px; line-height:1.55; color:#7a1a10; margin-top:16px; max-width:760px; }
+  .note { background:#fff8e8; border:1px solid #f0d878; border-radius:8px; padding:12px 14px; font-size:12px; line-height:1.55; color:#5a4a00; margin-top:12px; max-width:760px; }
+</style>
+</head>
+<body>
+
+<h1>Joint Core — Oriented to the Datum</h1>
+<p class="sub">Looking down the +X (shaft) axis at the Y–Z plane. Every part shown angled the way it actually points.</p>
+
+<div class="panel">
+  <svg width="470" height="440" viewBox="0 0 470 440" xmlns="http://www.w3.org/2000/svg">
+    <!-- datum axes -->
+    <line x1="200" y1="220" x2="200" y2="70" stroke="#1F4E79" stroke-width="1.4" marker-end="url(#aZ)"/>
+    <text x="206" y="74" class="ax" fill="#1F4E79">+Z up</text>
+    <line x1="200" y1="220" x2="380" y2="220" stroke="#1F4E79" stroke-width="1.4" marker-end="url(#aY)"/>
+    <text x="330" y="238" class="ax" fill="#1F4E79">+Y back / user</text>
+    <circle cx="200" cy="220" r="9" fill="none" stroke="#1F4E79" stroke-width="1.2"/>
+    <circle cx="200" cy="220" r="2" fill="#1F4E79"/>
+    <text x="178" y="246" class="ctr" fill="#1F4E79">+X shaft (out of page)</text>
+    <text x="60" y="224" class="ctr">−Y front / packing</text>
+
+    <!-- recess up the back -->
+    <rect x="184" y="74" width="32" height="120" fill="#eef2f7" stroke="#cdd5df" stroke-dasharray="3,2"/>
+    <text x="150" y="110" class="ctr">recess</text>
+
+    <!-- hub -->
+    <circle cx="200" cy="220" r="30" fill="#8f99a3" stroke="#5b6878"/>
+
+    <!-- handle 0 (stowed) -->
+    <line x1="200" y1="220" x2="200" y2="96" stroke="#bcc6d2" stroke-width="9" stroke-dasharray="6,4" stroke-linecap="round"/>
+    <text x="206" y="150" class="ctr">0° stowed (+Z)</text>
+    <!-- handle 45 deployed -->
+    <line x1="200" y1="220" x2="292" y2="128" stroke="#9aa6b4" stroke-width="11" stroke-linecap="round"/>
+    <text x="296" y="120" class="blu">45° deployed</text>
+
+    <!-- stop lug down -->
+    <rect x="192" y="250" width="16" height="34" fill="#6f7a86" stroke="#3a4250"/>
+    <text x="120" y="270" class="lbl">stop lug (−Z)</text>
+    <!-- pocket: wall (down-front, left) + abutment (down-back, right) -->
+    <rect x="168" y="278" width="14" height="34" fill="#b9a8d0" stroke="#6a4a8a"/>
+    <text x="96" y="300" class="red">fixed wall</text>
+    <text x="96" y="312" class="ctr">open stop (−Y face)</text>
+    <rect x="218" y="278" width="14" height="34" fill="#9a8" stroke="#5a6"/>
+    <text x="238" y="300" class="grn">fixed abutment</text>
+    <text x="238" y="312" class="ctr">fold-back (+Y)</text>
+    <!-- pawl on hub, fold-back side of lug -->
+    <path d="M208 250 L222 268 L214 278 L204 262 Z" fill="#2e6fb0" stroke="#1a3a5a"/>
+    <text x="238" y="262" class="blu">pawl (on hub)</text>
+
+    <!-- drawbar stow (down) -->
+    <line x1="200" y1="220" x2="200" y2="340" stroke="#c9b08a" stroke-width="7" stroke-dasharray="5,4" stroke-linecap="round"/>
+    <text x="120" y="356" class="ctr">drawbar stowed (−Z)</text>
+    <!-- drawbar deployed (+Y horizontal) -->
+    <line x1="200" y1="220" x2="350" y2="220" stroke="#9aa6b4" stroke-width="7" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="352" cy="220" r="6" fill="#8f99a3" stroke="#5b6878"/>
+    <text x="300" y="206" class="ctr">drawbar deployed (+Y, ball @COM)</text>
+    <!-- drawbar arc -->
+    <path d="M200 290 A 70 70 0 0 0 270 220" fill="none" stroke="#c9b08a" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- friction note -->
+    <text x="40" y="410" class="ctr">friction pack: disc on the +X hub face — axis = shaft (X), not shown in this Y–Z view</text>
+
+    <defs>
+      <marker id="aZ" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0,6 L4,0 L8,6 Z" fill="#1F4E79"/></marker>
+      <marker id="aY" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1F4E79"/></marker>
+    </defs>
+  </svg>
+</div>
+
+<div class="fix">
+<b>The change I found by looking closely: the pawl moves from the bracket to the hub.</b> The trigger rod lives <i>in the spine</i> — it rides with the moving handle. A pawl bolted to the fixed bracket would force that push to cross the moving/fixed boundary, which a push-only rod can't do cleanly. Mounting the pawl <b>on the hub</b> fixes it two ways: the trigger (also on the hub) lifts the pawl directly, and you hold the squeeze through the whole stow swing so it stays clear — and the fold-back load is <i>already in the hub</i> (it comes from the handle), so handing it to a fixed bracket abutment is the natural path, not an extra transfer. So: hub carries the moment; the hub <b>stop lug</b> meets the fixed <b>wall</b> for the open load; the hub <b>pawl</b> catches the fixed <b>abutment</b> for the fold-back. Both stops are hub-feature-into-fixed-bracket-feature. This supersedes the "pawl on the bracket" arrangement in the two prior pawl/bracket sheets.
+</div>
+
+<div class="note">
+<b>Orientation check, each part:</b> shaft along X (side-to-side) ✓ · handle/boss radial in the Y–Z plane, 0°=+Z, 45° toward +Y ✓ · stop lug points −Z into the floor at deploy ✓ · pawl on hub, fold-back (+Y) side of the lug ✓ · friction disc on the +X hub face, axis = shaft ✓ · drawbar on the same shaft, lower arc, −Z stowed → +Y deployed at COM ✓.<br><br>
+<b>Interference to resolve in the model:</b> at deploy the lug + pawl sit at −Z, and that's also where the drawbar stows (−Z, folded to the lower-back channel). They share the −Z region — clearance comes from radius and the drawbar lying flat against the back panel, but the assembly sweep must confirm it.
+</div>
+
+</body>
+</html>

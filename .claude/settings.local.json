@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pip --version)",
+      "Bash(python -c \"import cadquery; print\\('cadquery', cadquery.__version__\\)\")",
+      "Bash(python3 -m pip install cadquery)",
+      "Bash(mkdir -p scripts models renders specs)",
+      "Bash(rm -f scripts_smoke.step scripts_smoke.stl render_smoke.png)",
+      "Read(//c/c/Users/rodde/.claude/**)",
+      "Bash(python3 scripts/build_core.py)",
+      "Bash(python3 render_vtk.py)",
+      "Bash(python3 build_core.py)",
+      "Bash(python3 check_interference.py)"
+    ]
+  }
+}

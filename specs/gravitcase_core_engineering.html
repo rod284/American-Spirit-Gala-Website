@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Core Engineering</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 24px; }
+  h1 { font-size: 21px; color: #1F4E79; margin-bottom: 2px; }
+  .sub { font-size: 13px; color: #666; margin-bottom: 16px; }
+  .wrap { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
+  .panel { background: white; border-radius: 12px; padding: 16px; border: 1px solid #dcdce0; }
+  .ttl { font-size: 12px; font-weight: bold; color: #1F4E79; text-align: center; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .04em; }
+  svg { display: block; margin: 0 auto; }
+  .lbl { font-size: 9px; fill: #1a1a2e; }
+  .ctr { font-size: 7.5px; fill: #888; }
+  .dim { font-size: 8.5px; fill: #c0392b; font-weight: bold; }
+  .grn { font-size: 8.5px; fill: #1a7a4a; font-weight: bold; }
+  .blu { font-size: 8.5px; fill: #2e6fb0; font-weight: bold; }
+  .steel { font-size: 8.5px; fill: #6a4a8a; font-weight: bold; }
+  .note { background:#fff8e8; border:1px solid #f0d878; border-radius:8px; padding:12px 14px; font-size:12px; line-height:1.55; color:#5a4a00; margin-top:16px; max-width:880px; }
+</style>
+</head>
+<body>
+
+<h1>Gravitcase — The Crowded Core</h1>
+<p class="sub">Everything on the COM-height shaft. Geometry/layout lockable; force-driven sizing pending the load spec + FEA.</p>
+
+<div class="wrap">
+
+  <!-- AXIAL STACK -->
+  <div class="panel">
+    <div class="ttl">Axial stack-up (along the shaft)</div>
+    <svg width="460" height="300" viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- shaft -->
+      <rect x="30" y="135" width="400" height="20" fill="#cfd6de" stroke="#5b6878"/>
+      <text x="230" y="128" class="dim" text-anchor="middle">Ø14 shaft / M10 through-bolt</text>
+      <!-- bolt head + nut -->
+      <rect x="18" y="125" width="12" height="40" fill="#8a8a8a"/>
+      <rect x="430" y="128" width="10" height="34" fill="#8a8a8a"/>
+
+      <!-- left wall -->
+      <rect x="56" y="95" width="8" height="100" fill="#b9a8d0" stroke="#6a4a8a"/>
+      <!-- left bushing -->
+      <rect x="66" y="120" width="6" height="50" fill="#d8cfe6" stroke="#6a4a8a"/>
+      <!-- left drawbar collar -->
+      <rect x="74" y="108" width="20" height="74" rx="3" fill="#9aa6b4" stroke="#5b6878"/>
+      <text x="84" y="210" class="lbl" text-anchor="middle">collar</text>
+      <text x="84" y="221" class="ctr" text-anchor="middle">7</text>
+      <!-- hub center -->
+      <rect x="180" y="95" width="60" height="100" rx="4" fill="#8f99a3" stroke="#5b6878"/>
+      <text x="210" y="90" class="blu" text-anchor="middle">hub 18</text>
+      <!-- clutch pack -->
+      <rect x="240" y="105" width="34" height="80" fill="#e0d2b0" stroke="#b08020"/>
+      <text x="257" y="210" class="lbl" text-anchor="middle">friction</text>
+      <text x="257" y="221" class="ctr" text-anchor="middle">~10</text>
+      <!-- clamp spring -->
+      <path d="M274 120 l12 0 l-12 8 l12 8 l-12 8 l12 8" stroke="#c0392b" stroke-width="1.5" fill="none"/>
+      <text x="292" y="210" class="dim" text-anchor="middle">spring</text>
+      <!-- right drawbar collar -->
+      <rect x="366" y="108" width="20" height="74" rx="3" fill="#9aa6b4" stroke="#5b6878"/>
+      <text x="376" y="210" class="lbl" text-anchor="middle">collar</text>
+      <text x="376" y="221" class="ctr" text-anchor="middle">7</text>
+      <!-- right bushing -->
+      <rect x="388" y="120" width="6" height="50" fill="#d8cfe6" stroke="#6a4a8a"/>
+      <!-- right wall -->
+      <rect x="396" y="95" width="8" height="100" fill="#b9a8d0" stroke="#6a4a8a"/>
+      <text x="60" y="250" class="steel">3mm steel walls</text>
+
+      <!-- internal width bracket -->
+      <line x1="64" y1="270" x2="396" y2="270" stroke="#c0392b" stroke-width="1"/>
+      <text x="230" y="284" class="dim" text-anchor="middle">internal ~50mm (was 40) · collars give the yoke a wide base</text>
+    </svg>
+  </div>
+
+  <!-- ANGULAR LAYOUT -->
+  <div class="panel">
+    <div class="ttl">Hub zone (end view)</div>
+    <svg width="320" height="300" viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- friction annulus -->
+      <circle cx="160" cy="150" r="58" fill="#f3ecd8" stroke="#b08020" stroke-dasharray="3,2"/>
+      <text x="160" y="150" class="ctr" text-anchor="middle">friction</text>
+      <!-- hub -->
+      <circle cx="160" cy="150" r="30" fill="#8f99a3" stroke="#5b6878"/>
+      <circle cx="160" cy="150" r="8" fill="#cfd6de" stroke="#5b6878"/>
+      <text x="160" y="153" class="ctr" text-anchor="middle">shaft</text>
+
+      <!-- spine boss up (0°) + 45 arc -->
+      <rect x="150" y="70" width="20" height="42" rx="3" fill="#dde8f2" stroke="#8aa0bc"/>
+      <text x="180" y="78" class="lbl">spine 0°</text>
+      <path d="M160 92 A 68 68 0 0 1 208 110" fill="none" stroke="#2e6fb0" stroke-width="1.4"/>
+      <text x="212" y="100" class="blu">→45°</text>
+
+      <!-- 45° stop lug + bracket stop -->
+      <rect x="205" y="180" width="16" height="10" rx="2" fill="#5b6878"/>
+      <text x="228" y="188" class="dim">45° stop</text>
+      <!-- 0° hook + pin -->
+      <path d="M132 178 q-8 6 0 14" stroke="#1a7a4a" stroke-width="3" fill="none"/>
+      <circle cx="126" cy="192" r="4" fill="#3a4250"/>
+      <text x="86" y="200" class="grn">0° hook+pin</text>
+      <!-- concentrator -->
+      <rect x="150" y="208" width="20" height="10" rx="2" fill="#2e6fb0"/>
+      <text x="160" y="232" class="blu" text-anchor="middle">concentrator (trigger)</text>
+
+      <!-- drawbar lower arc -->
+      <line x1="160" y1="150" x2="160" y2="240" stroke="#9aa6b4" stroke-width="5"/>
+      <line x1="160" y1="150" x2="250" y2="150" stroke="#9aa6b4" stroke-width="5" stroke-dasharray="4,3"/>
+      <text x="250" y="265" class="lbl" text-anchor="middle">drawbar: down ↔ horizontal</text>
+    </svg>
+  </div>
+
+</div>
+
+<div class="note">
+  <b>How the latch system shares the hub.</b> Everything keys off one rotating hub on the fixed shaft. The <b>spine boss</b> swings the <b>upper arc, 0°→45°</b>; the <b>45° stop lug</b> at the outer rim takes the tow/lift load into a hardened bracket face; the <b>0° hook</b> on the hub grabs a fixed bracket pin for bin-safe stow; an annular <b>friction pack</b> holds the angle lightly; and the <b>concentrator</b>, fed by the trigger rod up the spine, backs the friction off and lifts the hook in one motion. The <b>drawbar</b> rides the <i>same shaft</i> on the <b>lower arc</b> — its yoke collars sit outboard near the walls (a wide base to resist cornering load) and straddle the hub. They never operate at once: handle up = lead case; drawbar out = towed case. The whole thing is one steel core that also extends up as the brace carrying the slide guides.
+</div>
+
+</body>
+</html>

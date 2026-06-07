@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Pawl Trap Part Spec</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f0f2f5; color: #1a1a2e; padding: 32px 20px; line-height: 1.55; }
+  .doc { max-width: 920px; margin: 0 auto; background: white; padding: 44px 52px; border-radius: 6px; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+  h1 { font-size: 25px; color: #1F4E79; margin-bottom: 2px; }
+  .meta { font-size: 12.5px; color: #888; font-family: Arial, sans-serif; margin-bottom: 4px; }
+  h2 { font-size: 17px; color: #1F4E79; margin: 26px 0 8px; border-bottom: 2px solid #1F4E79; padding-bottom: 4px; }
+  p, li { font-size: 13.5px; }
+  ul, ol { margin: 6px 0 6px 22px; }
+  li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: Arial, sans-serif; font-size: 11.5px; }
+  th { background: #1F4E79; color: white; padding: 7px 8px; text-align: left; }
+  td { padding: 6px 8px; border-bottom: 1px solid #e0e0e6; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fb; }
+  .tag { display:inline-block; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; padding: 1px 7px; border-radius: 3px; }
+  .tlock { background:#e6f4ea; color:#1a7a4a; }
+  .tval { background:#fbeae8; color:#c0392b; }
+  .box { background: #f7f9fb; border-left: 4px solid #1F4E79; padding: 12px 16px; margin: 12px 0; font-size: 13px; font-family: Arial, sans-serif; }
+  .gate { background: #fff8e8; border:1px solid #f0d878; border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+  .lede { font-size: 14px; color:#333; font-style: italic; margin-bottom: 8px; }
+  code { font-family: 'Courier New', monospace; font-size: 12px; background:#eef; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<h1>Pawl Trap — Part Spec</h1>
+<p class="meta">Gravitcase · 45° fold-back lock · Rev A · CAD-ready (Zoo) + print-ready (fit prototype)</p>
+<p class="lede">Every number to model the part. Geometry is locked; the force-driven items carry reasoned values flagged for FEA + bench. The print proves motion; metal proves load.</p>
+
+<div class="box"><span class="tag tlock">LOCKED</span> geometry, ready to model. <span class="tag tval">VALIDATE</span> a force-sized value resting on a stated assumption, for FEA/bench to confirm.</div>
+
+<h2>1 · Load basis</h2>
+<ul>
+<li>Sized conservatively to the <b>same moment as the open-side stop</b>: design <b>110 N·m</b> (snatch level), ultimate <b>300 N·m</b> (hard-yank abuse). The true fold-back impact is likely lower, but matching the stop keeps the joint symmetric and safe. <span class="tag tval">VALIDATE</span></li>
+<li>Contact effective radius <b>r = 20 mm</b> → design contact force <b>5,500 N</b>, ultimate <b>15,000 N</b>. <span class="tag tval">VALIDATE</span></li>
+<li>Release path is independent and light: the wedge fights only the return spring (~40 N), never the hold force. <span class="tag tlock">LOCKED</span></li>
+</ul>
+
+<h2>2 · Dimension tables (authoritative for CAD)</h2>
+<h3 style="font-family:Arial;font-size:13px;color:#2c3e50;margin-top:12px;">Hub lug (one lug, two working faces)</h3>
+<table>
+<tr><th>Feature</th><th>Value</th><th>Note</th></tr>
+<tr><td>Radial height</td><td>8 mm (root r14 → tip r22)</td><td>contact mid r≈20</td></tr>
+<tr><td>Axial width</td><td>10 mm</td><td>matches pawl width</td></tr>
+<tr><td>Circumferential length</td><td>6 mm</td><td>stout</td></tr>
+<tr><td>Leading face</td><td>radial plane</td><td>→ fixed wall (open load)</td></tr>
+<tr><td>Trailing face</td><td>radial plane</td><td>→ pawl nose (fold-back)</td></tr>
+<tr><td>Angular position</td><td>at 45.0° deploy</td><td>seats on fixed wall</td></tr>
+<tr><td>Faces</td><td>hardened, ground</td><td><span class="tag tval">VALIDATE</span> hardness</td></tr>
+</table>
+
+<h3 style="font-family:Arial;font-size:13px;color:#2c3e50;margin-top:12px;">Fixed hard-stop wall (bracket-integral)</h3>
+<table>
+<tr><th>Feature</th><th>Value</th><th>Note</th></tr>
+<tr><td>Contact face</td><td>≥ 6 mm rad × 10 mm ax</td><td>≥ lug face</td></tr>
+<tr><td>Position</td><td>seats lug at 45.0°</td><td>defines deploy angle</td></tr>
+<tr><td>Material</td><td>hardened steel / insert</td><td>shared with §1 of core pack</td></tr>
+</table>
+
+<h3 style="font-family:Arial;font-size:13px;color:#2c3e50;margin-top:12px;">Pawl</h3>
+<table>
+<tr><th>Feature</th><th>Value</th><th>Note</th></tr>
+<tr><td>Width (axial)</td><td>10 mm</td><td>fits crowded ~50 mm stack</td></tr>
+<tr><td>Nose blocking face</td><td>5 mm rad × 10 mm = 50 mm²</td><td>steep, near-radial</td></tr>
+<tr><td>Nose → pivot center</td><td>14 mm</td><td>short load path</td></tr>
+<tr><td>Entry ramp (0°-side)</td><td>35°</td><td>lug ratchets over on deploy</td></tr>
+<tr><td>Pivot bore</td><td>Ø6.0 H7</td><td>rides the pin</td></tr>
+<tr><td>Heel</td><td>~6 mm tab</td><td>wedge contact</td></tr>
+<tr><td>Nose lift to clear lug</td><td>4 mm</td><td>sets wedge travel</td></tr>
+<tr><td>Self-lock</td><td>contact normal aimed at pivot</td><td>load → pin shear, can't open</td></tr>
+<tr><td>Material (production)</td><td>hardened alloy steel ~45 HRC</td><td><span class="tag tval">VALIDATE</span> grade (e.g. 4140)</td></tr>
+</table>
+
+<h3 style="font-family:Arial;font-size:13px;color:#2c3e50;margin-top:12px;">Pivot pin · wedge · return spring</h3>
+<table>
+<tr><th>Part</th><th>Value</th><th>Note</th></tr>
+<tr><td>Pivot pin</td><td>Ø6.0 m6 hardened dowel, L≈16 mm, double shear</td><td>between two bracket ears; snap-ring or press retained</td></tr>
+<tr><td>Wedge</td><td>ramp 33° → 4 mm lift / 6 mm push</td><td>on the pivot-rod terminus / concentrator</td></tr>
+<tr><td>Return spring</td><td>torsion on pivot pin, ~40 N seat at nose</td><td><span class="tag tval">VALIDATE</span> rate; music wire</td></tr>
+</table>
+
+<h2>3 · Sizing checks</h2>
+<table>
+<tr><th>Check</th><th>Design (5,500 N)</th><th>Ultimate (15,000 N)</th><th>Verdict</th></tr>
+<tr><td>Pin double shear (Ø6, 2×28.3 mm²)</td><td>~97 MPa</td><td>~265 MPa</td><td>Ample vs hardened-steel shear yield (~660 MPa)</td></tr>
+<tr><td>Nose contact (50 mm²)</td><td>~110 MPa</td><td>~300 MPa</td><td>Well under hardened bearing limit</td></tr>
+<tr><td>Release force (vs ~40 N spring)</td><td colspan="2">rod push ~60 N · trigger delivers ~300 N</td><td>Ample margin</td></tr>
+</table>
+<p>All three are comfortable, which is the point of aiming the load into the pin: the part isn't stress-limited at the design load, so the remaining work is fatigue and the abuse case — FEA territory.</p>
+
+<h2>4 · Self-locking geometry</h2>
+<ul>
+<li>The trailing-face contact normal is aimed at the pivot-pin center → the fold-back load passes <b>straight into the pin as shear</b>, with negligible moment to rotate the pawl.</li>
+<li>A <b>backstop face</b> on the bracket catches any residual seating moment, so the pawl cannot be cammed open by load — no matter how hard the hit.</li>
+<li>The <b>only</b> way out is the wedge lifting the heel, which acts from the opposite side and fights only the spring.</li>
+</ul>
+
+<h2>5 · Choreography</h2>
+<ol>
+<li><b>Deploy:</b> squeeze (stow hook releases, friction backs off, pawl held up by the wedge) → swing to 45° → release squeeze → pawl drops behind the lug, lug seats on the fixed wall. Fail-safe backup: the 35° ramp lets the lug ratchet the pawl even if you don't hold the trigger.</li>
+<li><b>Tow:</b> hard stop blocks opening; pawl blocks fold-back. A rock-hit loads the pin in shear — held.</li>
+<li><b>Stow:</b> squeeze → wedge lifts the pawl out → swing down → stow hook re-engages at 0°.</li>
+</ol>
+
+<h2>6 · Materials — production vs prototype</h2>
+<ul>
+<li><b>Production:</b> lug + fixed wall + pawl in hardened alloy steel; Ø6 hardened dowel; spring steel. <span class="tag tval">VALIDATE</span> grades.</li>
+<li><b>Prototype (3D print):</b> print the pawl, lug, pocket, wedge in tough plastic (PETG / nylon / resin) to prove <i>fit and motion</i> only. Orient so layer lines run <b>across</b> the nose load, not along it — a printed nose with layer lines parallel to the shear plane will delaminate. The print will not survive the 5,500 N hold; that's expected and not its job.</li>
+</ul>
+
+<h2>7 · Zoo (KittyCAD KCL) plan</h2>
+<ul>
+<li>Parametric off the hub: drive lug radius (20), widths (10), nose face (5), pivot Ø (6), ramp angles (35/33) from named parameters so a tweak propagates.</li>
+<li>Zookeeper <b>one step at a time, confirm visually</b>; lowercase <code>pi</code>; absolute angular positions for the lug at 45° (don't mirror).</li>
+<li>Order: (1) pivot pin. (2) pawl body — nose, ramp, bore, heel. (3) hub lug as a feature on the existing hub. (4) fixed wall + backstop on the bracket. (5) wedge on the rod. (6) assemble at 45°, then sweep the hub 0→45° and check the lug clears the ramp and seats — that motion check is the whole point.</li>
+</ul>
+
+<h2>8 · Print-prototype plan</h2>
+<table>
+<tr><th>Proves</th><th>Does NOT prove</th></tr>
+<tr><td>Lug enters &amp; seats; pawl ratchets over and drops behind; wedge lifts the nose 4 mm and clears; trigger choreography feels right; nothing binds in the crowded stack</td><td>Load hold — the 5,500 N / 15,000 N path needs hardened metal + the bench tests in the load spec</td></tr>
+</table>
+
+<div class="gate"><b>Where this leaves you:</b> the pawl is fully dimensioned and self-locking by geometry, the loads land in a Ø6 pin with comfortable margin, and the release is a light push the trigger already commands. Model it in Zoo off these numbers, print it to confirm the motion, then cut the load-bearing faces in hardened steel for the bench. The three open numbers — fold-back impact magnitude, steel grade/hardness, and spring rate — are the only things between this and a tooled part.</div>
+
+</div>
+</body>
+</html>

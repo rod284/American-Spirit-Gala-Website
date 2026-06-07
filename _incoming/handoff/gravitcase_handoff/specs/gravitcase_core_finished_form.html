@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Core, Finished Form</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #eef1f5; color: #1a1a2e; padding: 24px; }
+  h1 { font-size: 21px; color: #1F4E79; margin-bottom: 2px; }
+  .sub { font-size: 13px; color: #666; margin-bottom: 16px; }
+  .stage { background: linear-gradient(160deg,#fbfcfe,#e7ebf1); border-radius: 14px; padding: 10px; border: 1px solid #dcdce0; display:inline-block; }
+  svg { display:block; }
+  .cap { font-size: 9px; fill:#5b6878; font-weight:bold; }
+  .ledg { display:flex; gap:18px; flex-wrap:wrap; margin-top:14px; font-size:12px; }
+  .ledg span { display:flex; align-items:center; gap:6px; }
+  .sw { width:16px; height:12px; border-radius:3px; border:1px solid #999; display:inline-block; }
+  .note { background:#fff8e8; border:1px solid #f0d878; border-radius:8px; padding:11px 14px; font-size:12px; line-height:1.55; color:#5a4a00; margin-top:14px; max-width:820px; }
+</style>
+</head>
+<body>
+
+<h1>Pivot Core — Finished Form</h1>
+<p class="sub">Illustrative 3/4 view of the made part. Orientation per the datum: shaft side-to-side, boss up, pocket down.</p>
+
+<div class="stage">
+<svg width="760" height="600" viewBox="0 0 760 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="steelFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e4e8ee"/><stop offset="0.5" stop-color="#b9c0c9"/><stop offset="1" stop-color="#878f99"/>
+    </linearGradient>
+    <linearGradient id="steelSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7f8893"/><stop offset="1" stop-color="#5d646e"/>
+    </linearGradient>
+    <linearGradient id="steelTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1f4f8"/><stop offset="1" stop-color="#cdd3db"/>
+    </linearGradient>
+    <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef1f5"/><stop offset="0.35" stop-color="#c4cad2"/><stop offset="0.6" stop-color="#9aa1ab"/><stop offset="1" stop-color="#6c737d"/>
+    </linearGradient>
+    <radialGradient id="hubEnd" cx="0.4" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#dfe4ea"/><stop offset="0.7" stop-color="#9fa7b1"/><stop offset="1" stop-color="#6f7782"/>
+    </radialGradient>
+    <linearGradient id="hubBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d3d9e0"/><stop offset="0.5" stop-color="#aab1bb"/><stop offset="1" stop-color="#7c838d"/>
+    </linearGradient>
+    <linearGradient id="anod" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a5a6e"/><stop offset="0.5" stop-color="#33414f"/><stop offset="1" stop-color="#222c36"/>
+    </linearGradient>
+    <linearGradient id="anodTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5f7186"/><stop offset="1" stop-color="#3a4753"/>
+    </linearGradient>
+    <linearGradient id="hard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8d8a8"/><stop offset="1" stop-color="#b9923f"/>
+    </linearGradient>
+    <radialGradient id="bolt" cx="0.4" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#cfd5dd"/><stop offset="1" stop-color="#5f666f"/>
+    </radialGradient>
+    <linearGradient id="bronze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8b27a"/><stop offset="1" stop-color="#9c6f3a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="380" cy="520" rx="250" ry="26" fill="#000" opacity="0.10"/>
+
+  <!-- BRACE extension up the back -->
+  <polygon points="318,250 442,250 410,90 350,90" fill="url(#steelTop)" stroke="#8a929c" stroke-width="1"/>
+  <polygon points="442,250 458,262 426,102 410,90" fill="url(#steelSide)" stroke="#6b727b" stroke-width="0.8"/>
+  <circle cx="380" cy="120" r="6" fill="#6f7782"/><circle cx="380" cy="170" r="6" fill="#6f7782"/>
+  <text x="468" y="150" class="cap">brace → carries slide guides + ribs to corners</text>
+
+  <!-- FAR wall (back) -->
+  <polygon points="250,300 270,288 510,288 490,300" fill="url(#steelTop)" stroke="#8a929c"/>
+  <!-- FLOOR slab -->
+  <polygon points="250,432 270,420 510,420 490,432" fill="url(#steelTop)" stroke="#8a929c"/>
+  <polygon points="250,432 490,432 490,452 250,452" fill="url(#steelFront)" stroke="#8a929c"/>
+
+  <!-- LEFT wall -->
+  <rect x="246" y="300" width="40" height="138" rx="7" fill="url(#steelFront)" stroke="#8a929c"/>
+  <polygon points="286,300 306,288 306,420 286,432" fill="url(#steelSide)" stroke="#6b727b"/>
+  <!-- mounting tab L -->
+  <rect x="214" y="346" width="34" height="40" rx="6" fill="url(#steelFront)" stroke="#8a929c"/>
+  <circle cx="231" cy="366" r="6" fill="#6c737d"/>
+  <!-- RIGHT wall -->
+  <rect x="474" y="300" width="40" height="138" rx="7" fill="url(#steelFront)" stroke="#8a929c"/>
+  <polygon points="514,300 534,288 534,420 514,432" fill="url(#steelSide)" stroke="#6b727b"/>
+  <rect x="512" y="346" width="34" height="40" rx="6" fill="url(#steelFront)" stroke="#8a929c"/>
+  <circle cx="529" cy="366" r="6" fill="#6c737d"/>
+  <text x="556" y="372" class="cap">shell mount tabs</text>
+
+  <!-- SHAFT through walls -->
+  <rect x="196" y="350" width="368" height="30" rx="15" fill="url(#shaft)" stroke="#6b727b"/>
+  <!-- bolt head left -->
+  <polygon points="176,348 196,340 210,350 210,380 196,390 176,382" fill="url(#bolt)" stroke="#5f666f"/>
+  <!-- nut right -->
+  <polygon points="552,350 566,344 584,352 584,378 566,386 552,380" fill="url(#bolt)" stroke="#5f666f"/>
+  <text x="120" y="345" class="cap">M10 head</text>
+
+  <!-- drawbar collars on shaft -->
+  <ellipse cx="312" cy="365" rx="9" ry="18" fill="url(#hubBody)" stroke="#6b727b"/>
+  <ellipse cx="448" cy="365" rx="9" ry="18" fill="url(#hubBody)" stroke="#6b727b"/>
+  <!-- drawbar arm folded down (stowed) -->
+  <polygon points="306,378 318,378 330,470 312,478" fill="url(#steelFront)" stroke="#6b727b"/>
+  <circle cx="322" cy="486" r="13" fill="url(#hubEnd)" stroke="#5f666f"/>
+  <text x="300" y="512" class="cap">drawbar (stowed) + ball</text>
+
+  <!-- friction disc stack on right hub face -->
+  <g>
+    <ellipse cx="404" cy="365" rx="6" ry="40" fill="url(#bronze)" stroke="#8a6a36"/>
+    <ellipse cx="410" cy="365" rx="6" ry="40" fill="#c9cdd3" stroke="#8a929c"/>
+    <ellipse cx="416" cy="365" rx="6" ry="40" fill="url(#bronze)" stroke="#8a6a36"/>
+    <ellipse cx="422" cy="365" rx="6" ry="40" fill="#c9cdd3" stroke="#8a929c"/>
+  </g>
+  <text x="430" y="430" class="cap">friction pack (disc on hub face)</text>
+
+  <!-- HUB barrel -->
+  <rect x="350" y="322" width="48" height="86" rx="6" fill="url(#hubBody)" stroke="#6b727b"/>
+  <ellipse cx="350" cy="365" rx="9" ry="43" fill="url(#hubEnd)" stroke="#5f666f"/>
+  <ellipse cx="350" cy="365" rx="4" ry="20" fill="#5f666f"/>
+
+  <!-- spine boss (octagon) up from hub -->
+  <polygon points="356,322 392,322 400,300 392,250 356,250 348,300" fill="url(#hubBody)" stroke="#6b727b"/>
+  <polygon points="392,322 404,314 412,244 400,250" fill="url(#steelSide)" stroke="#6b727b"/>
+  <!-- anodized spine stub in boss -->
+  <polygon points="360,256 388,256 394,210 354,210" fill="url(#anod)" stroke="#222c36"/>
+  <polygon points="388,256 398,250 404,204 394,210" fill="url(#anodTop)" stroke="#222c36"/>
+  <text x="412" y="222" class="cap">anodized aluminum spine (S1)</text>
+
+  <!-- stop lug down into pocket -->
+  <polygon points="362,408 386,408 384,432 364,432" fill="url(#hard)" stroke="#9a7a2e"/>
+  <!-- fixed wall + abutment in floor pocket -->
+  <rect x="344" y="424" width="14" height="22" rx="2" fill="url(#hard)" stroke="#9a7a2e"/>
+  <rect x="390" y="424" width="14" height="22" rx="2" fill="url(#hard)" stroke="#9a7a2e"/>
+  <text x="150" y="470" class="cap">hardened: lug · wall · abutment · pawl nose</text>
+
+  <!-- pawl on hub (fold-back side) + pin end -->
+  <polygon points="392,396 410,402 408,420 390,414" fill="#46566a" stroke="#2a3642"/>
+  <circle cx="396" cy="402" r="5" fill="url(#bolt)" stroke="#3a4250"/>
+  <text x="416" y="404" class="cap">pawl (on hub) · Ø6 pin</text>
+
+</svg>
+</div>
+
+<div class="ledg">
+  <span><span class="sw" style="background:linear-gradient(#c4cad2,#878f99)"></span> steel core / hub</span>
+  <span><span class="sw" style="background:linear-gradient(#4a5a6e,#222c36)"></span> anodized aluminum spine</span>
+  <span><span class="sw" style="background:linear-gradient(#e8d8a8,#b9923f)"></span> hardened wear faces</span>
+  <span><span class="sw" style="background:linear-gradient(#d8b27a,#9c6f3a)"></span> bronze bushings / friction</span>
+</div>
+
+<div class="note">
+This is the form, shaded to read as the real object — the steel channel with its mount tabs and the brace rising behind, the shaft on its bolt, the barrel hub with the octagon boss and an anodized spine section seated in it, the hardened lug dropping into the floor pocket between wall and abutment, the hub-mounted pawl with its pin, the friction discs stacked on the hub face, and the drawbar folded down with its ball. It's an illustration of fit and proportion — the dimensioned sheets and the master definition stay the build authority, and the true solid comes out of the Zoo model where the interference sweep is run.
+</div>
+
+</body>
+</html>

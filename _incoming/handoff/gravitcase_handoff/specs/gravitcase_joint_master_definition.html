@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Joint Core Master Definition</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f0f2f5; color: #1a1a2e; padding: 32px 20px; line-height: 1.55; }
+  .doc { max-width: 960px; margin: 0 auto; background: white; padding: 44px 52px; border-radius: 6px; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+  h1 { font-size: 25px; color: #1F4E79; margin-bottom: 2px; }
+  .meta { font-size: 12.5px; color: #888; font-family: Arial, sans-serif; margin-bottom: 4px; }
+  h2 { font-size: 17px; color: #1F4E79; margin: 26px 0 8px; border-bottom: 2px solid #1F4E79; padding-bottom: 4px; }
+  p, li { font-size: 13.5px; }
+  ul, ol { margin: 6px 0 6px 22px; }
+  li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: Arial, sans-serif; font-size: 11px; }
+  th { background: #1F4E79; color: white; padding: 6px 7px; text-align: left; }
+  td { padding: 5px 7px; border-bottom: 1px solid #e0e0e6; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fb; }
+  .tag { display:inline-block; font-family: Arial, sans-serif; font-size: 9.5px; font-weight: bold; padding: 1px 6px; border-radius: 3px; }
+  .tlock { background:#e6f4ea; color:#1a7a4a; }
+  .tval { background:#fbeae8; color:#c0392b; }
+  .box { background: #f7f9fb; border-left: 4px solid #1F4E79; padding: 12px 16px; margin: 12px 0; font-size: 13px; font-family: Arial, sans-serif; }
+  .gate { background: #fff8e8; border:1px solid #f0d878; border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+  .fix { background:#fbeae8; border:1px solid #e8b0a8; border-radius:6px; padding:12px 16px; font-size:13px; margin:12px 0; }
+  .lede { font-size: 14px; color:#333; font-style: italic; margin-bottom: 8px; }
+  code { font-family: 'Courier New', monospace; font-size: 12px; background:#eef; padding: 0 3px; }
+  .ax { font-family:'Courier New',monospace; font-weight:bold; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<h1>Joint Core — Master Definition</h1>
+<p class="meta">Gravitcase · COM-height pivot + 45° trap · Rev A · the single source of truth for CAD</p>
+<p class="lede">Every part anchored to one coordinate frame with position, orientation, and size — so the model is built, not interpreted. Geometry, orientation, and fits are locked; force-driven values and production process are flagged.</p>
+
+<h2>1 · Datum coordinate system</h2>
+<div class="box">
+<b>Origin O</b> = shaft-axis center = case mid-width, height <b>280 mm</b> (COM), at the pivot's fore-aft inset.<br>
+<span class="ax">+X</span> = along the shaft, side-to-side (the 14″ width). The shaft axis <i>is</i> the X axis.<br>
+<span class="ax">+Y</span> = fore-aft; <b>+Y points toward the case back / the user</b> — the deploy direction. −Y = toward the front / packing.<br>
+<span class="ax">+Z</span> = vertical up. −Z = down toward the wheel base.<br>
+<b>Deploy angle θ</b> = measured in the Y–Z plane from <span class="ax">+Z</span> toward <span class="ax">+Y</span>. θ = 0° stowed (handle along +Z, in the recess); θ = 45° deployed.<br>
+<b>Rule:</b> a feature fixed on the hub at hub-angle φ sits at world angle (θ + φ). The stop lug is at φ = 135°, so at θ = 45° it points −Z (down). All rotations are about +X.
+</div>
+
+<h2>2 · The pawl-on-hub correction</h2>
+<div class="fix">
+Detailing the actuation exposed it: the trigger rod rides <b>in the spine</b>, i.e. on the moving hub. A pawl on the fixed bracket would make the push-only rod jump the moving/fixed boundary — it can't. <b>The pawl is therefore on the hub</b>, lifted directly by the trigger, held clear through the stow swing because it travels with the handle. The fold-back load is already in the hub, so handing it to a fixed bracket <b>abutment</b> is the natural path. Both stops are now "hub feature → fixed bracket feature": <b>stop lug → fixed wall</b> (open), <b>hub pawl → fixed abutment</b> (fold-back). This supersedes the pawl-on-bracket arrangement in the earlier pawl/bracket sheets.
+</div>
+
+<h2>3 · Master part table</h2>
+<table>
+<tr><th>Part</th><th>Position (datum)</th><th>Orientation / axis</th><th>Key dims</th><th>✓ points</th></tr>
+<tr><td><b>Shaft / axle</b></td><td>centered at O, X −35…+35</td><td>axis = +X</td><td>Ø14 × ~70; M10 thread +X end</td><td>side-to-side</td></tr>
+<tr><td><b>Bracket walls</b></td><td>inner faces X = ±25</td><td>planes ⟂ X</td><td>3 mm thick (outer ±28); internal 50</td><td>flank the stack</td></tr>
+<tr><td><b>Bracket floor</b></td><td>−Z side, below shaft</td><td>spans X, faces +Z</td><td>≥4–5 mm <span class="tag tval">VALIDATE</span>; ties walls; carries loads to shell</td><td>under the pocket</td></tr>
+<tr><td><b>Hub</b></td><td>centered at O, X −9…+9</td><td>rotates about X by θ</td><td>OD Ø22, bore Ø14, width 18</td><td>concentric</td></tr>
+<tr><td><b>Spine boss</b></td><td>on hub, radial</td><td>points at angle θ in Y–Z (⟂ X)</td><td>hollow octagon 47×34 bound; engages S1 45–50</td><td>0°=+Z, 45°→+Y</td></tr>
+<tr><td><b>Stop lug</b></td><td>hub rim, φ=135°</td><td>radial; −Z at θ=45°</td><td>r14→22 (8), width 10 (X ±5), 6 circ; faces hardened</td><td>down into floor</td></tr>
+<tr><td><b>Pawl</b> (on hub)</td><td>hub, fold-back (+Y) side of lug</td><td>pivots on hub pin ∥ X; nose moves radially</td><td>width 10, nose 5×10, nose→pivot 14, ramp 35°</td><td>nose toward abutment</td></tr>
+<tr><td><b>Pawl pin</b></td><td>on hub, at pawl</td><td>axis ∥ X</td><td>Ø6 hardened; pawl runs on it; load via solid hub seat, not the pin</td><td>parallel to shaft</td></tr>
+<tr><td><b>Fixed wall</b></td><td>bracket floor, −Y side of pocket</td><td>radial face, normal ≈ circumferential</td><td>≥6 rad × 10 ax, ≥6 boss; hardened</td><td>seats lug at 45.0°</td></tr>
+<tr><td><b>Fixed abutment</b></td><td>bracket floor, +Y side of pocket</td><td>face the pawl catches</td><td>≥5 rad × 10 ax; hardened</td><td>blocks fold-back</td></tr>
+<tr><td><b>Friction pack</b></td><td>+X hub face</td><td><b>disc, axis = X</b> (clamped along X)</td><td>r12–18, ~10 wide, 6 interfaces; Belleville clamp; reaction washer keyed to bracket</td><td>face clutch, not radial</td></tr>
+<tr><td><b>Stow hook + pin</b></td><td>hook on hub; pin in bracket, +Z side</td><td>engages at θ=0°</td><td>positive shoulder; seat spring ~15 N <span class="tag tval">VALIDATE</span></td><td>catches at stow</td></tr>
+<tr><td><b>Drawbar yoke</b></td><td>collars on shaft X ≈ ±22 (7 ea)</td><td>rotates about X, independent of hub</td><td>arm 150 radial; ball at tip</td><td>−Z stow → +Y deploy</td></tr>
+<tr><td><b>Drawbar ball</b></td><td>arm tip</td><td>deployed at Z=280 (COM)</td><td>seats in next case's rail socket</td><td>+Y, at COM height</td></tr>
+<tr><td><b>Trigger rod</b></td><td>in spine, along boss axis</td><td>pushes along spine, angle θ</td><td>Ø4.5; pushes concentrator</td><td>radial, with handle</td></tr>
+<tr><td><b>Concentrator</b></td><td>on hub at boss root</td><td>redirects push: friction (axial), hook, pawl wedge</td><td>POM; ratio ~10× <span class="tag tval">VALIDATE</span></td><td>all paths on hub</td></tr>
+</table>
+
+<h2>4 · Angular map</h2>
+<table>
+<tr><th>Feature</th><th>at θ = 0° (stowed)</th><th>at θ = 45° (deployed)</th></tr>
+<tr><td>Spine boss / handle</td><td>+Z (up, in recess)</td><td>45° toward +Y (up-back, to user)</td></tr>
+<tr><td>Stop lug (φ=135°)</td><td>135° (down-back)</td><td>180° = −Z (down, in pocket on the wall)</td></tr>
+<tr><td>Pawl</td><td>rides with lug, just +Y of it</td><td>caught on the fixed abutment</td></tr>
+<tr><td>Drawbar (independent)</td><td>−Z folded in lower channel</td><td>(deployed only on a towed case) +Y horizontal</td></tr>
+</table>
+
+<h2>5 · Named parameters (drive the model from these)</h2>
+<table>
+<tr><th>Param</th><th>Value</th><th>Param</th><th>Value</th></tr>
+<tr><td>COM_HEIGHT</td><td>280 mm</td><td>SHAFT_DIA</td><td>14</td></tr>
+<tr><td>BRKT_INTERNAL</td><td>50</td><td>WALL_T</td><td>3</td></tr>
+<tr><td>HUB_OD / HUB_W</td><td>22 / 18</td><td>LUG_R / LUG_W</td><td>20 / 10</td></tr>
+<tr><td>LUG_PHI</td><td>135°</td><td>DEPLOY_ANGLE</td><td>45°</td></tr>
+<tr><td>PAWL_W / NOSE</td><td>10 / 5</td><td>NOSE_TO_PIVOT</td><td>14</td></tr>
+<tr><td>PAWL_PIN_DIA</td><td>6</td><td>RAMP / WEDGE</td><td>35° / 33°</td></tr>
+<tr><td>DRAWBAR_LEN</td><td>150</td><td>COLLAR_X</td><td>±22</td></tr>
+</table>
+
+<h2>6 · Build order (deterministic)</h2>
+<ol>
+<li><b>Datum</b>: planes X/Y/Z at O; the θ rotation axis = +X.</li>
+<li><b>Shaft</b> along X. <span class="tag tlock">LOCKED</span></li>
+<li><b>Bracket</b>: walls at ±25, floor on −Z, shaft bore, brace stub up +Z. Parent datum for the rest.</li>
+<li><b>Fixed wall</b> at the −Y pocket face; <b>fixed abutment</b> at the +Y pocket face — both absolute, at θ=45° geometry. Don't mirror.</li>
+<li><b>Hub</b> at O; <b>spine boss</b> radial at θ; <b>stop lug</b> at φ=135°.</li>
+<li><b>Pawl + pin</b> on the hub, fold-back side; <b>friction disc</b> on the +X hub face.</li>
+<li><b>Drawbar</b> collars at ±22, arm on the lower arc.</li>
+<li><b>Assemble</b>; set θ=45°; <b>sweep 0→45°</b> and run the interference checks (§7).</li>
+</ol>
+
+<h2>7 · Sizing &amp; interference</h2>
+<p><b>Loads</b> (from the load spec): design <b>5,500 N</b> at the r=20 contact (110 N·m snatch), ultimate <b>15,000 N</b> (300 N·m yank). Pin Ø6 double-shear ~97 / 265 MPa; nose &amp; seat bearing comfortable; release fights only the ~40 N return spring. All <span class="tag tval">VALIDATE</span> at FEA + bench.</p>
+<div class="gate">
+<b>Two interference checks the sweep must clear:</b><br>
+1. <b>−Z crowding:</b> the stop lug + pawl sit at −Z at deploy, where the drawbar also stows. Clearance comes from radius and the drawbar lying flat to the back panel — confirm.<br>
+2. <b>Central axial band:</b> the pawl + lug (central, X ±5) share the band with the hub (X ±9) and the friction disc (+X face). They clear by <i>radius</i> (pawl/lug outboard) and by putting the friction on the +X face away from the lug — confirm no clash with the inboard drawbar-collar edges.
+</div>
+
+<div class="gate"><b>State of the joint:</b> fully defined and oriented — origin, axes, every part's position/orientation/size, the parameter set, and the build order. Hand this to Zoo and it builds deterministically. The only things still open are the two interference sweeps (CAD), and the three force-driven numbers (fold-back impact, steel grade, spring rate) for the bench.</p>
+
+</div>
+</body>
+</html>

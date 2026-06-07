@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravitcase — Load Specification</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f0f2f5; color: #1a1a2e; padding: 32px 20px; line-height: 1.55; }
+  .doc { max-width: 920px; margin: 0 auto; background: white; padding: 44px 52px; border-radius: 6px; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+  h1 { font-size: 25px; color: #1F4E79; margin-bottom: 2px; }
+  .meta { font-size: 12.5px; color: #888; font-family: Arial, sans-serif; margin-bottom: 4px; }
+  h2 { font-size: 17px; color: #1F4E79; margin: 28px 0 8px; border-bottom: 2px solid #1F4E79; padding-bottom: 4px; }
+  p, li { font-size: 13.5px; }
+  ul, ol { margin: 6px 0 6px 22px; }
+  li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-family: Arial, sans-serif; font-size: 11.5px; }
+  th { background: #1F4E79; color: white; padding: 7px 8px; text-align: left; }
+  td { padding: 6px 8px; border-bottom: 1px solid #e0e0e6; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9fb; }
+  .tag { display:inline-block; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; padding: 1px 7px; border-radius: 3px; }
+  .tlock { background:#e6f4ea; color:#1a7a4a; }
+  .tval { background:#fbeae8; color:#c0392b; }
+  .box { background: #f7f9fb; border-left: 4px solid #1F4E79; padding: 12px 16px; margin: 12px 0; font-size: 13px; font-family: Arial, sans-serif; }
+  .gate { background: #fff8e8; border:1px solid #f0d878; border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+  .lede { font-size: 14px; color:#333; font-style: italic; margin-bottom: 8px; }
+  .big { font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<h1>Load Specification</h1>
+<p class="meta">Gravitcase · 22″ case (560×356×229mm) · pivot core · Rev A · the design basis everything sizes from</p>
+<p class="lede">The gate. Adopted from real luggage test standards, set by three product decisions, and worked into the design numbers the contract engineer and FEA need. Loads and standards are locked; the derived moments are grounded estimates for FEA + bench to confirm.</p>
+
+<div class="box">
+<span class="tag tlock">LOCKED</span> = a decided input — a rated weight, an adopted standard, a test parameter. <span class="tag tval">VALIDATE</span> = a derived number (moment, force) resting on a stated assumption that FEA, a measurement, or a bench test must confirm.
+</div>
+
+<h2>1 · Scope &amp; decisions</h2>
+<ul>
+<li><b>Applies to:</b> the 22″ case only (this core is not yet common across the size line). <span class="tag tlock">LOCKED</span></li>
+<li><b>Rated contained weight: 25 kg</b> — the industry body-test load. <span class="tag tlock">LOCKED</span></li>
+<li><b>Design contained weight: 32 kg</b> — modest overload to the airline single-bag ceiling. <span class="tag tlock">LOCKED</span></li>
+<li><b>Rated top-deck / handle load: 7 kg</b> — the load the durability standard already assumes hangs on the handle. <span class="tag tlock">LOCKED</span></li>
+<li><b>Combined design lifted mass: 39 kg (≈383 N)</b> — case at design max + top load, what the handle carries in a lift. <span class="tag tval">VALIDATE</span></li>
+</ul>
+<p>Rating a carry-on this high over-builds it for its class — deliberate, so the core carries forward to a checked-size common part later without a redesign.</p>
+
+<h2>2 · Adopted basis (real standards)</h2>
+<table>
+<tr><th>Source</th><th>What it gives us</th></tr>
+<tr><td>Airline limits (IATA / carriers)</td><td>23 kg economy, 32 kg single-bag max, ~45 kg refusal — sets the rated/design/ceiling tiers</td></tr>
+<tr><td>SATRA TM248</td><td>Handle fatigue: loaded case lifted &amp; set down up to <b>10,000 cycles</b></td></tr>
+<tr><td>SATRA TM243</td><td>Handle <b>snatch</b> test: loaded case lifted, dropped a set distance, fall arrested by handle — the dynamic peak</td></tr>
+<tr><td>SATRA TM242</td><td>Corner impact <b>drop</b> onto all 8 corners</td></tr>
+<tr><td>Industry mileage rig</td><td><b>25 kg + 7 kg on handle, 45°, 4 km/h, 32 km</b> bumpy treadmill; 300 snatch cycles; 750 stair cycles</td></tr>
+<tr><td>Drop rig</td><td><b>90 cm</b> drop, 25 kg, onto faces/edges/corners</td></tr>
+<tr><td>QB/T 2155-2018</td><td>Travel-case manufacturing baseline most factories build to</td></tr>
+</table>
+
+<h2>3 · Load cases &amp; derived core loads</h2>
+<p>Assumptions for the derivations: pivot-to-CG horizontal (depth) offset ≈ <b>0.115 m</b>; snatch dynamic factor ≈ <b>2.5×</b>; 45° stop lug radius ≈ <b>0.020 m</b>; extended-spine grip height above pivot at 45° ≈ <b>0.74 m</b>. All three assumptions are <span class="tag tval">VALIDATE</span> — measure the offset on a real loaded case, get the dynamic factor off the instrumented snatch rig.</p>
+<table>
+<tr><th>#</th><th>Case</th><th>Load</th><th>Pivot moment</th><th>45° stop force</th><th>Sizes / governs</th></tr>
+<tr><td>A</td><td>Static lift by handle</td><td>383 N @ 0.115 m</td><td>~44 N·m</td><td>~2,200 N</td><td>Baseline static</td></tr>
+<tr><td>B</td><td><b>Snatch</b> (arrested drop)</td><td>~960 N @ 0.115 m</td><td><b>~110 N·m</b></td><td><b>~5,500 N</b></td><td><b>Rated strength + fatigue</b></td></tr>
+<tr><td>C</td><td>Tow / roll (fatigue)</td><td>~15 N steady, ~100 N peak</td><td>low</td><td>low</td><td>Fatigue (10k cyc / 32 km); friction hold &amp; bearings</td></tr>
+<tr><td>D</td><td>Drop, 90 cm</td><td>~344 J corner impact</td><td>—</td><td>—</td><td>Shell, corners, stow latch</td></tr>
+<tr><td>E</td><td>Train tow (2 trailing)</td><td>~45 N steady, ~200 N peak + side-load</td><td>low</td><td>low</td><td>Drawbar + deploy-lock rigidity</td></tr>
+<tr><td>F</td><td><b>Hard yank, stuck case</b> (abuse)</td><td>~400 N @ 0.74 m</td><td><b>~300 N·m</b></td><td><b>~14,800 N</b></td><td><b>Ultimate strength</b></td></tr>
+</table>
+<div class="box"><b>Which case governs — the honest split.</b> Two different cases set two different targets. <b>Case B (snatch, ~110 N·m)</b> sizes the part for <i>rated</i> life: no yield, full 10,000-cycle fatigue, structural factor of safety ~1.5–2 on yield. <b>Case F (hard yank, ~300 N·m)</b> sizes the <i>ultimate</i>: the stop and hub must survive a furious tug on a jammed case without a sudden, injurious break — permanent deformation may be acceptable there, sudden fracture is not. FEA confirms which one drives each feature; the yank case is ~2.7× the snatch and almost certainly governs ultimate strength of the 45° stop.</div>
+
+<h2>4 · Core design targets (what these numbers size)</h2>
+<ul>
+<li><b>45° hard stop + hub stop arm:</b> design to ~110 N·m (snatch) with FoS, survive ~300 N·m (yank) without fracture. Hardened faces, even seating. <span class="tag tval">VALIDATE</span></li>
+<li><b>Hub, boss, S1 root, cross-pins:</b> transmit the same moment; the ≤0.05 mm boss fit keeps it in bearing, not slop. <span class="tag tval">VALIDATE</span></li>
+<li><b>Friction pack:</b> holds the <i>angle</i> only — a few N·m to stop drift and flop; the stop carries deploy load. Light enough to squeeze-release with a weak hand. <span class="tag tval">VALIDATE</span></li>
+<li><b>Stow hook + structure:</b> survive the 90 cm drop with the handle stowed. <span class="tag tval">VALIDATE</span></li>
+<li><b>Drawbar + deploy lock:</b> ~200 N pull + a comparable cornering side-load; the concern is rigidity / no long-term slop, not raw strength. <span class="tag tval">VALIDATE</span></li>
+<li><b>Bearings / bushings &amp; spine:</b> 10,000 lift + 32 km roll fatigue without play. <span class="tag tval">VALIDATE</span></li>
+</ul>
+
+<h2>5 · Validation plan (bench, mapped to the standards)</h2>
+<table>
+<tr><th>Test</th><th>Parameters</th><th>Pass</th></tr>
+<tr><td>Handle fatigue (TM248)</td><td>32 kg loaded, lift &amp; set down, 10,000 cycles</td><td>No crack, no loosening, no measurable play</td></tr>
+<tr><td>Snatch (TM243)</td><td>32 kg, arrested drop, 300 cycles — instrument the peak force</td><td>No yield; capture the real dynamic factor</td></tr>
+<tr><td>Mileage</td><td>25 kg + 7 kg on deck, upright, 4 km/h, 32 km bumpy</td><td>Wheels/bearings/spine intact, no play</td></tr>
+<tr><td>Stair</td><td>32 kg, stepped cylinder, 750 cycles</td><td>Stop + latch intact</td></tr>
+<tr><td>Drop (TM242)</td><td>32 kg, 90 cm, all 8 corners ×2</td><td>No structural failure; stow latch holds</td></tr>
+<tr><td>Yank (abuse)</td><td>Jammed case, hard horizontal pull to ~400 N</td><td>No sudden/injurious fracture of stop or hub</td></tr>
+<tr><td>Drawbar cycling</td><td>Deploy/stow ×5,000; tow 2 trailing cases over bumps</td><td>Lock stays rigid, no developing slop</td></tr>
+<tr><td>Squeeze-release</td><td>Trigger force across user range incl. weak hands</td><td>Releases reliably; no drift when set</td></tr>
+</table>
+
+<h2>6 · Margins adopted</h2>
+<ul>
+<li>Rated → design: ×1.28 (25 → 32 kg) — your modest overload, "nothing too heavy."</li>
+<li>Snatch dynamic: ×2.5 assumed (confirm on the rig).</li>
+<li>Structural: FoS ~1.5–2 on yield at the snatch load; survive the yank without fracture.</li>
+<li>Top load: +7 kg, additive to the lifted mass.</li>
+</ul>
+
+<h2>7 · Open items for the engineer</h2>
+<ol>
+<li>Measure the real pivot-to-CG depth offset on a loaded case (replaces the 0.115 m assumption).</li>
+<li>Get the true snatch dynamic factor from the instrumented TM243 rig (replaces 2.5×).</li>
+<li>Friction material μ + clamp-vs-hold curve + drift over cycles (bench).</li>
+<li>Material grades/tempers + hardness for shaft, hub, stop, hook; process per part.</li>
+<li>Confirm the yank abuse force with a human-factors max-pull figure.</li>
+</ol>
+
+<div class="gate"><b>Bottom line:</b> rated 25 kg, designed to 32 kg + 7 kg on top, validated against real SATRA/industry tests. The snatch case (~110 N·m) sizes the part for life; the hard-yank case (~300 N·m) sizes it against breaking. Every red number on the core pack now has a parent here — the engineer's job is to run FEA against these cases and tune the three assumptions on the bench.</div>
+
+</div>
+</body>
+</html>

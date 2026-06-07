@@ -1,0 +1,27 @@
+Gravitcase — Bracket Pocket, Dimensioned 
+ Bracket Pocket & Pawl Mount — Dimensioned 
+ The mating half the pawl lands against, and how it sits in the core. Geometry locked; loads + process flagged. 
+ A · end view (along shaft) 
+ shaft Ø14 
+ lug @45° 
+ r=20 
+ fixed wall 
+ (open load) 
+ pawl pin 
+ backstop 
+ rod/wedge clearance 
+ 45° 
+ B · axial section (across shaft) 
+ wall 3 
+ wall 3 
+ structural floor (load → shell) 
+ shaft Ø14 (axle / through-bolt) 
+ lug 10 
+ pawl 10 
+ ear 5 
+ ear 5 
+ Ø6 pin · double shear 
+ internal ~50 
+ gap 10.5 
+ The bracket is a channel, not two walls. The two 3mm side walls are tied by a structural floor on the load side; the fixed-wall boss and the pawl-ear roots both grow out of that floor, which feeds the joint loads through the ribs into the shell and the wheel base. The fixed wall takes the open load (5,500 N), the two ears take the fold-back load split as pin shear (≈2,750 N each), and both paths land in the floor. 
+ The interference check that has to happen in CAD. The pawl mount is ~20.5 mm wide and sits central, the same axial band as the 18 mm hub — they clear only because the ears live radially outboard (r>14) of the hub body. Whether the ears, the friction pack (annular on a hub face), and the inboard edges of the drawbar collars all clear is the one thing the assembly model must prove. Propose: friction on the hub face axially away from the lug; lug + pawl on the opposite band. Confirm in Zoo.

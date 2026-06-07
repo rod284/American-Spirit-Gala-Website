@@ -1,0 +1,61 @@
+Gravitcase — Joint Core Master Definition 
+ Joint Core — Master Definition 
+ Gravitcase · COM-height pivot + 45° trap · Rev A · the single source of truth for CAD 
+ Every part anchored to one coordinate frame with position, orientation, and size — so the model is built, not interpreted. Geometry, orientation, and fits are locked; force-driven values and production process are flagged. 
+ 1 · Datum coordinate system 
+ Origin O = shaft-axis center = case mid-width, height 280 mm (COM), at the pivot's fore-aft inset. 
+ +X = along the shaft, side-to-side (the 14″ width). The shaft axis is the X axis. 
+ +Y = fore-aft; +Y points toward the case back / the user — the deploy direction. −Y = toward the front / packing. 
+ +Z = vertical up. −Z = down toward the wheel base. 
+ Deploy angle θ = measured in the Y–Z plane from +Z toward +Y . θ = 0° stowed (handle along +Z, in the recess); θ = 45° deployed. 
+ Rule: a feature fixed on the hub at hub-angle φ sits at world angle (θ + φ). The stop lug is at φ = 135°, so at θ = 45° it points −Z (down). All rotations are about +X.
+ 2 · The pawl-on-hub correction 
+Detailing the actuation exposed it: the trigger rod rides in the spine , i.e. on the moving hub. A pawl on the fixed bracket would make the push-only rod jump the moving/fixed boundary — it can't. The pawl is therefore on the hub , lifted directly by the trigger, held clear through the stow swing because it travels with the handle. The fold-back load is already in the hub, so handing it to a fixed bracket abutment is the natural path. Both stops are now "hub feature → fixed bracket feature": stop lug → fixed wall (open), hub pawl → fixed abutment (fold-back). This supersedes the pawl-on-bracket arrangement in the earlier pawl/bracket sheets.
+ 3 · Master part table 
+ Part Position (datum) Orientation / axis Key dims ✓ points 
+ Shaft / axle centered at O, X −35…+35 axis = +X Ø14 × ~70; M10 thread +X end side-to-side 
+ Bracket walls inner faces X = ±25 planes ⟂ X 3 mm thick (outer ±28); internal 50 flank the stack 
+ Bracket floor −Z side, below shaft spans X, faces +Z ≥4–5 mm VALIDATE ; ties walls; carries loads to shell under the pocket 
+ Hub centered at O, X −9…+9 rotates about X by θ OD Ø22, bore Ø14, width 18 concentric 
+ Spine boss on hub, radial points at angle θ in Y–Z (⟂ X) hollow octagon 47×34 bound; engages S1 45–50 0°=+Z, 45°→+Y 
+ Stop lug hub rim, φ=135° radial; −Z at θ=45° r14→22 (8), width 10 (X ±5), 6 circ; faces hardened down into floor 
+ Pawl (on hub) hub, fold-back (+Y) side of lug pivots on hub pin ∥ X; nose moves radially width 10, nose 5×10, nose→pivot 14, ramp 35° nose toward abutment 
+ Pawl pin on hub, at pawl axis ∥ X Ø6 hardened; pawl runs on it; load via solid hub seat, not the pin parallel to shaft 
+ Fixed wall bracket floor, −Y side of pocket radial face, normal ≈ circumferential ≥6 rad × 10 ax, ≥6 boss; hardened seats lug at 45.0° 
+ Fixed abutment bracket floor, +Y side of pocket face the pawl catches ≥5 rad × 10 ax; hardened blocks fold-back 
+ Friction pack +X hub face disc, axis = X (clamped along X) r12–18, ~10 wide, 6 interfaces; Belleville clamp; reaction washer keyed to bracket face clutch, not radial 
+ Stow hook + pin hook on hub; pin in bracket, +Z side engages at θ=0° positive shoulder; seat spring ~15 N VALIDATE catches at stow 
+ Drawbar yoke collars on shaft X ≈ ±22 (7 ea) rotates about X, independent of hub arm 150 radial; ball at tip −Z stow → +Y deploy 
+ Drawbar ball arm tip deployed at Z=280 (COM) seats in next case's rail socket +Y, at COM height 
+ Trigger rod in spine, along boss axis pushes along spine, angle θ Ø4.5; pushes concentrator radial, with handle 
+ Concentrator on hub at boss root redirects push: friction (axial), hook, pawl wedge POM; ratio ~10× VALIDATE all paths on hub 
+ 4 · Angular map 
+ Feature at θ = 0° (stowed) at θ = 45° (deployed) 
+ Spine boss / handle +Z (up, in recess) 45° toward +Y (up-back, to user) 
+ Stop lug (φ=135°) 135° (down-back) 180° = −Z (down, in pocket on the wall) 
+ Pawl rides with lug, just +Y of it caught on the fixed abutment 
+ Drawbar (independent) −Z folded in lower channel (deployed only on a towed case) +Y horizontal 
+ 5 · Named parameters (drive the model from these) 
+ Param Value Param Value 
+ COM_HEIGHT 280 mm SHAFT_DIA 14 
+ BRKT_INTERNAL 50 WALL_T 3 
+ HUB_OD / HUB_W 22 / 18 LUG_R / LUG_W 20 / 10 
+ LUG_PHI 135° DEPLOY_ANGLE 45° 
+ PAWL_W / NOSE 10 / 5 NOSE_TO_PIVOT 14 
+ PAWL_PIN_DIA 6 RAMP / WEDGE 35° / 33° 
+ DRAWBAR_LEN 150 COLLAR_X ±22 
+ 6 · Build order (deterministic) 
+ Datum : planes X/Y/Z at O; the θ rotation axis = +X. 
+ Shaft along X. LOCKED 
+ Bracket : walls at ±25, floor on −Z, shaft bore, brace stub up +Z. Parent datum for the rest. 
+ Fixed wall at the −Y pocket face; fixed abutment at the +Y pocket face — both absolute, at θ=45° geometry. Don't mirror. 
+ Hub at O; spine boss radial at θ; stop lug at φ=135°. 
+ Pawl + pin on the hub, fold-back side; friction disc on the +X hub face. 
+ Drawbar collars at ±22, arm on the lower arc. 
+ Assemble ; set θ=45°; sweep 0→45° and run the interference checks (§7). 
+ 7 · Sizing & interference 
+ Loads (from the load spec): design 5,500 N at the r=20 contact (110 N·m snatch), ultimate 15,000 N (300 N·m yank). Pin Ø6 double-shear ~97 / 265 MPa; nose & seat bearing comfortable; release fights only the ~40 N return spring. All VALIDATE at FEA + bench. 
+ Two interference checks the sweep must clear: 
+1. −Z crowding: the stop lug + pawl sit at −Z at deploy, where the drawbar also stows. Clearance comes from radius and the drawbar lying flat to the back panel — confirm. 
+2. Central axial band: the pawl + lug (central, X ±5) share the band with the hub (X ±9) and the friction disc (+X face). They clear by radius (pawl/lug outboard) and by putting the friction on the +X face away from the lug — confirm no clash with the inboard drawbar-collar edges.
+ State of the joint: fully defined and oriented — origin, axes, every part's position/orientation/size, the parameter set, and the build order. Hand this to Zoo and it builds deterministically. The only things still open are the two interference sweeps (CAD), and the three force-driven numbers (fold-back impact, steel grade, spring rate) for the bench.
