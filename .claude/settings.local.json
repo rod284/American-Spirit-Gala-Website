@@ -37,7 +37,12 @@
       "Bash(git -C \"C:\\\\Users\\\\rodde\\\\.claude\\\\Greavitcase through Claude\\\\.claude\\\\worktrees\\\\jovial-wozniak-0305d9\" log --oneline -5)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(powershell -Command ' *)"
+      "Bash(powershell -Command ' *)",
+      "Bash(grep -E \"\\\\.\\(json|md|txt|html|csv\\)$\")",
+      "Bash(grep -E \"\\\\.\\(md|txt|csv|json\\)$\")",
+      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
+      "Skill(deep-research)",
+      "Skill(deep-research:*)"
     ]
   }
 }
