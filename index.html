@@ -185,15 +185,19 @@
         <section id="committee">
             <h2>Patriots in Action - Our Cabinet of Eagles</h2>
             <div class="committee-list">
-                <div class="committee-item">Michael Franks - Chairman | 480-352-4824 | mpfranx@hotmail.com</div>
-                <div class="committee-item">Jeff Little - Corporate Sponsors | 480-686-2992 | jeff.little@assuredfacilityservices.com</div>
-                <div class="committee-item">Dolf May - Auction Lead | 602-616-2159 | dmay@troon.com</div>
-                <div class="committee-item">Mike Yarnall - Run of House, MC | 602-576-0492 | yarnallmike@gmail.com</div>
-                <div class="committee-item">Neil Wilson - Tickets, Entertainment | 602-320-0147 | hawkeye1986@msn.com</div>
-                <div class="committee-item">Rod Dennis - Theme & Marketing Lead | 480-695-0733 | rod@roddennis.com</div>
-                <div class="committee-item">Brad Cross - Sommelier | 480-869-0604 | bdcross10@yahoo.com</div>
+                <div class="committee-item">Michael Franks - Chairman | <a href="tel:4803524824" title="Call">📞 480-352-4824</a> | <a href="mailto:mpfranx@hotmail.com" title="Email">✉️ mpfranx@hotmail.com</a></div>
+                <div class="committee-item">Jeff Little - Corporate Sponsors | <a href="tel:4806862992" title="Call">📞 480-686-2992</a> | <a href="mailto:jeff.little@assuredfacilityservices.com" title="Email">✉️ jeff.little@assuredfacilityservices.com</a></div>
+                <div class="committee-item">Dolf May - Auction Lead | <a href="tel:6026162159" title="Call">📞 602-616-2159</a> | <a href="mailto:dmay@troon.com" title="Email">✉️ dmay@troon.com</a></div>
+                <div class="committee-item">Mike Yarnall - Run of House, MC | <a href="tel:6025760492" title="Call">📞 602-576-0492</a> | <a href="mailto:yarnallmike@gmail.com" title="Email">✉️ yarnallmike@gmail.com</a></div>
+                <div class="committee-item">Neil Wilson - Tickets, Entertainment | <a href="tel:6023200147" title="Call">📞 602-320-0147</a> | <a href="mailto:hawkeye1986@msn.com" title="Email">✉️ hawkeye1986@msn.com</a></div>
+                <div class="committee-item">Rod Dennis - Theme & Marketing Lead | <a href="tel:4806950733" title="Call">📞 480-695-0733</a> | <a href="mailto:rod@roddennis.com" title="Email">✉️ rod@roddennis.com</a></div>
+                <div class="committee-item">Brad Cross - Sommelier | <a href="tel:4808690604" title="Call">📞 480-869-0604</a> | <a href="mailto:bdcross10@yahoo.com" title="Email">✉️ bdcross10@yahoo.com</a></div>
                 <div class="committee-item">For more committee info, visit our admin section</div>
             </div>
+            <style>
+                .committee-item a { color: #1e3a8a; text-decoration: none; margin: 0 0.3rem; }
+                .committee-item a:hover { color: #b91c1c; }
+            </style>
         </section>
 
         <!-- MEMBERSHIP SECTION -->
@@ -213,6 +217,13 @@
                 <p style="margin-top: 0.8rem;"><strong>EIN:</strong> 46-2941531</p>
                 <p style="margin-top: 0.8rem;"><strong>Mission:</strong> Neighbors Helping Neighbors works to strengthen Arizona's families and communities through collaborative giving and mutual support.</p>
                 <p style="margin-top: 0.8rem;"><strong>Tax Deductibility:</strong> Contributions made to NHN are fully tax-deductible to the extent permitted by law.</p>
+            </div>
+
+            <h3 style="margin-top: 1.5rem;">IRS Approval Letter</h3>
+            <div class="npo-section">
+                <p style="margin-bottom: 1rem;">View our official 501(c)(3) determination letter from the IRS:</p>
+                <a href="#" id="irsLetterLink" class="btn" style="display: inline-block; background: #1e3a8a;">Download IRS Letter</a>
+                <p style="font-size: 0.85rem; color: #666; margin-top: 0.8rem;">Letter on file - Determination of Tax-Exempt Status</p>
             </div>
         </section>
 
@@ -770,6 +781,11 @@
             <h2>Raise the Flag: Admin Control</h2>
             <p style="text-align: center; margin-bottom: 1.5rem;">Event tracking and admin tools below.</p>
 
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <button onclick="exportDataToCSV()" class="btn" style="background: #1e3a8a; margin-right: 1rem;">📥 Export Data to CSV</button>
+                <button onclick="downloadDataBackup()" class="btn" style="background: #b91c1c;">💾 Backup Data (JSON)</button>
+            </div>
+
             <h3>Live Tracking Dashboard</h3>
             <div class="dashboard">
                 <div class="dashboard-stat"><strong>Tickets Sold:</strong> <span id="ticketCount">0</span> of 200</div>
@@ -1229,6 +1245,61 @@
         document.getElementById('passwordInput').addEventListener('keypress', e => {
             if(e.key === 'Enter') checkPassword();
         });
+
+        // Export data to CSV
+        function exportDataToCSV() {
+            const ticketTotal = tracking.tickets.reduce((sum, t) => sum + t.amount, 0);
+            const sponsorTotal = tracking.sponsorships.reduce((sum, s) => sum + s.amount, 0);
+            const moneyTotal = tracking.moneyDonations.reduce((sum, m) => sum + m.amount, 0);
+            const auctionTotal = tracking.auctionItems.reduce((sum, a) => sum + a.salePrice, 0);
+            const wineTotal = tracking.wines.reduce((sum, w) => sum + w.value, 0);
+            const raffleTotal = tracking.raffles.reduce((sum, r) => sum + r.amount, 0);
+            const expenseTotal = tracking.expenses.reduce((sum, e) => sum + e.amount, 0);
+            const revenue = ticketTotal + sponsorTotal + moneyTotal + auctionTotal + wineTotal + raffleTotal;
+            const profit = revenue - expenseTotal;
+
+            let csv = 'American Spirit Gala - Event Tracking Report\n';
+            csv += `Generated: ${new Date().toLocaleDateString()}\n\n`;
+            csv += 'SUMMARY\n';
+            csv += `Total Tickets Sold (qty),${tracking.tickets.reduce((sum, t) => sum + t.qty, 0)}\n`;
+            csv += `Tickets Revenue,${ticketTotal}\n`;
+            csv += `Sponsorships Count,${tracking.sponsorships.length}\n`;
+            csv += `Sponsorship Revenue,${sponsorTotal}\n`;
+            csv += `Money Donations Count,${tracking.moneyDonations.length}\n`;
+            csv += `Money Donations Total,${moneyTotal}\n`;
+            csv += `Auction Items,${tracking.auctionItems.length}\n`;
+            csv += `Auction Revenue,${auctionTotal}\n`;
+            csv += `Wine Donations,${tracking.wines.length}\n`;
+            csv += `Wine Value,${wineTotal}\n`;
+            csv += `Raffle Tickets,${tracking.raffles.reduce((sum, r) => sum + r.qty, 0)}\n`;
+            csv += `Raffle Revenue,${raffleTotal}\n`;
+            csv += `Total Revenue,${revenue}\n`;
+            csv += `Total Expenses,${expenseTotal}\n`;
+            csv += `NET PROFIT,${profit}\n`;
+
+            const blob = new Blob([csv], {type: 'text/csv'});
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `NHN-Gala-Data-${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            alert('Data exported successfully!');
+        }
+
+        // Download JSON backup
+        function downloadDataBackup() {
+            const backup = {
+                exportDate: new Date().toISOString(),
+                data: tracking
+            };
+            const blob = new Blob([JSON.stringify(backup, null, 2)], {type: 'application/json'});
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `NHN-Gala-Backup-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            alert('Backup downloaded successfully!');
+        }
 
         loadTracking();
     </script>
