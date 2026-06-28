@@ -669,7 +669,12 @@
             <div class="dashboard">
                 <div class="dashboard-stat"><strong>Tickets Sold:</strong> <span id="ticketCount">0</span> of 200</div>
                 <div class="dashboard-stat"><strong>Sponsorships Secured:</strong> <span id="sponsorCount">0</span> commitments</div>
-                <div class="dashboard-stat"><strong>Revenue to Date:</strong> $<span id="revenueTotal">0</span> of $150,000 goal (<span id="revenuePercent">0</span>%)</div>
+                <div class="dashboard-stat"><strong>Auction Items Donated:</strong> <span id="auctionCount">0</span> items</div>
+                <div class="dashboard-stat"><strong>Wine Donations:</strong> <span id="wineCount">0</span> bottles</div>
+                <div class="dashboard-stat"><strong>Raffle Tickets Sold:</strong> <span id="raffleCount">0</span> tickets</div>
+                <div class="dashboard-stat"><strong style="color: #b91c1c;">Total Revenue:</strong> $<span id="revenueTotal">0</span> of $150,000 goal (<span id="revenuePercent">0</span>%)</div>
+                <div class="dashboard-stat"><strong style="color: #d32f2f;">Total Expenses:</strong> $<span id="expenseTotal">0</span></div>
+                <div class="dashboard-stat"><strong style="color: #1e3a8a; font-size: 1.1rem;">Net Profit:</strong> $<span id="netProfit">0</span></div>
                 <div style="width: 100%; background: #e5e7eb; height: 15px; border-radius: 10px; margin-top: 1rem; overflow: hidden;">
                     <div id="progressBar" style="background: linear-gradient(90deg, #b91c1c 0%, #1e3a8a 100%); height: 100%; width: 0%;"></div>
                 </div>
@@ -718,6 +723,81 @@
                     </div>
                 </div>
                 <button onclick="addSponsorship()" class="btn" style="background: #b91c1c;">Add Sponsorship</button>
+            </div>
+
+            <h3>Add Auction Item</h3>
+            <div style="background: white; padding: 1.5rem; border: 2px solid #1e3a8a; border-radius: 8px; margin-bottom: 1.5rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label style="font-weight: bold;">Item Name</label>
+                        <input type="text" id="auctionItem" placeholder="Item description" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Est. Value ($)</label>
+                        <input type="number" id="auctionEstValue" placeholder="0" step="0.01" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Sale Price ($)</label>
+                        <input type="number" id="auctionSalePrice" placeholder="0" step="0.01" style="padding: 0.6rem;">
+                    </div>
+                </div>
+                <button onclick="addAuctionItem()" class="btn" style="background: #fbbf24; color: #333;">Add Auction Item</button>
+            </div>
+
+            <h3>Add Wine Donation</h3>
+            <div style="background: white; padding: 1.5rem; border: 2px solid #1e3a8a; border-radius: 8px; margin-bottom: 1.5rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label style="font-weight: bold;">Wine Name</label>
+                        <input type="text" id="wineName" placeholder="Wine description" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Donor Name</label>
+                        <input type="text" id="wineDonor" placeholder="Donor name" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Est. Value ($)</label>
+                        <input type="number" id="wineValue" placeholder="0" step="0.01" style="padding: 0.6rem;">
+                    </div>
+                </div>
+                <button onclick="addWineDonation()" class="btn" style="background: #b91c1c;">Add Wine</button>
+            </div>
+
+            <h3>Add Raffle Sales</h3>
+            <div style="background: white; padding: 1.5rem; border: 2px solid #1e3a8a; border-radius: 8px; margin-bottom: 1.5rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label style="font-weight: bold;">Raffle Type</label>
+                        <select id="raffleType" style="padding: 0.6rem;">
+                            <option>50/50 Raffle</option>
+                            <option>TBD Raffle</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Quantity</label>
+                        <input type="number" id="raffleQty" placeholder="0" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Amount ($)</label>
+                        <input type="number" id="raffleAmount" placeholder="0" step="0.01" style="padding: 0.6rem;">
+                    </div>
+                </div>
+                <button onclick="addRaffleSale()" class="btn">Add Raffle Sale</button>
+            </div>
+
+            <h3>Add Expense</h3>
+            <div style="background: white; padding: 1.5rem; border: 2px solid #1e3a8a; border-radius: 8px; margin-bottom: 1.5rem;">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label style="font-weight: bold;">Description</label>
+                        <input type="text" id="expenseDesc" placeholder="What is this expense for?" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Amount ($)</label>
+                        <input type="number" id="expenseAmount" placeholder="0" step="0.01" style="padding: 0.6rem;">
+                    </div>
+                </div>
+                <button onclick="addExpense()" class="btn" style="background: #d32f2f;">Add Expense</button>
             </div>
 
             <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #666;">
@@ -822,7 +902,7 @@
         });
 
         // Back page tracking
-        let tracking = {tickets: [], sponsorships: []};
+        let tracking = {tickets: [], sponsorships: [], auctionItems: [], wines: [], raffles: [], expenses: []};
 
         function loadTracking() {
             const saved = localStorage.getItem('nhnTracking');
@@ -860,21 +940,82 @@
             }
         }
 
+        function addAuctionItem() {
+            const item = document.getElementById('auctionItem').value;
+            const estValue = parseFloat(document.getElementById('auctionEstValue').value) || 0;
+            const salePrice = parseFloat(document.getElementById('auctionSalePrice').value) || 0;
+            if(item && salePrice) {
+                tracking.auctionItems.push({item, estValue, salePrice});
+                document.getElementById('auctionItem').value = '';
+                document.getElementById('auctionEstValue').value = '';
+                document.getElementById('auctionSalePrice').value = '';
+                saveTracking();
+            }
+        }
+
+        function addWineDonation() {
+            const name = document.getElementById('wineName').value;
+            const donor = document.getElementById('wineDonor').value;
+            const value = parseFloat(document.getElementById('wineValue').value) || 0;
+            if(name && value) {
+                tracking.wines.push({name, donor, value});
+                document.getElementById('wineName').value = '';
+                document.getElementById('wineDonor').value = '';
+                document.getElementById('wineValue').value = '';
+                saveTracking();
+            }
+        }
+
+        function addRaffleSale() {
+            const type = document.getElementById('raffleType').value;
+            const qty = parseInt(document.getElementById('raffleQty').value) || 0;
+            const amount = parseFloat(document.getElementById('raffleAmount').value) || 0;
+            if(qty && amount) {
+                tracking.raffles.push({type, qty, amount});
+                document.getElementById('raffleQty').value = '';
+                document.getElementById('raffleAmount').value = '';
+                saveTracking();
+            }
+        }
+
+        function addExpense() {
+            const desc = document.getElementById('expenseDesc').value;
+            const amount = parseFloat(document.getElementById('expenseAmount').value) || 0;
+            if(desc && amount) {
+                tracking.expenses.push({desc, amount});
+                document.getElementById('expenseDesc').value = '';
+                document.getElementById('expenseAmount').value = '';
+                saveTracking();
+            }
+        }
+
         function updateDashboard() {
             const ticketTotal = tracking.tickets.reduce((sum, t) => sum + t.amount, 0);
             const sponsorTotal = tracking.sponsorships.reduce((sum, s) => sum + s.amount, 0);
-            const revenue = ticketTotal + sponsorTotal;
+            const auctionTotal = tracking.auctionItems.reduce((sum, a) => sum + a.salePrice, 0);
+            const wineTotal = tracking.wines.reduce((sum, w) => sum + w.value, 0);
+            const raffleTotal = tracking.raffles.reduce((sum, r) => sum + r.amount, 0);
+            const expenseTotal = tracking.expenses.reduce((sum, e) => sum + e.amount, 0);
+
+            const revenue = ticketTotal + sponsorTotal + auctionTotal + wineTotal + raffleTotal;
+            const netProfit = revenue - expenseTotal;
             const percent = Math.round((revenue / 150000) * 100);
+
             document.getElementById('ticketCount').textContent = tracking.tickets.reduce((sum, t) => sum + t.qty, 0);
             document.getElementById('sponsorCount').textContent = tracking.sponsorships.length;
+            document.getElementById('auctionCount').textContent = tracking.auctionItems.length;
+            document.getElementById('wineCount').textContent = tracking.wines.length;
+            document.getElementById('raffleCount').textContent = tracking.raffles.reduce((sum, r) => sum + r.qty, 0);
             document.getElementById('revenueTotal').textContent = revenue.toLocaleString('en-US', {maximumFractionDigits: 0});
             document.getElementById('revenuePercent').textContent = Math.min(percent, 100);
+            document.getElementById('expenseTotal').textContent = expenseTotal.toLocaleString('en-US', {maximumFractionDigits: 0});
+            document.getElementById('netProfit').textContent = netProfit.toLocaleString('en-US', {maximumFractionDigits: 0});
             document.getElementById('progressBar').style.width = Math.min(percent, 100) + '%';
         }
 
         function clearAllData() {
             if(confirm('Clear all tracking data?')) {
-                tracking = {tickets: [], sponsorships: []};
+                tracking = {tickets: [], sponsorships: [], auctionItems: [], wines: [], raffles: [], expenses: []};
                 localStorage.removeItem('nhnTracking');
                 updateDashboard();
             }
