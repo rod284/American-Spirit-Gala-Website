@@ -174,9 +174,10 @@
         <!-- DONATION SECTION -->
         <section id="donate">
             <h2>Share Your Patriotic Treasure</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem;">Donate auction items and support our cause! Submit items to be featured in our Live and Silent Auctions.</p>
-            <div style="text-align: center;">
-                <button class="btn" onclick="scrollToFormAccordion('donation')">DONATE AN ITEM</button>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Support our cause! Donate money or auction items to make a real difference.</p>
+            <div style="text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn" onclick="scrollToFormAccordion('donation-money')">DONATE MONEY</button>
+                <button class="btn" onclick="scrollToFormAccordion('donation-item')">DONATE AN ITEM</button>
             </div>
         </section>
 
@@ -443,10 +444,114 @@
                     </div>
                 </div>
 
-                <!-- Donation Form -->
-                <div class="accordion-item" id="form-donation">
+                <!-- Donate Money Form -->
+                <div class="accordion-item" id="form-donation-money">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>Donate an Auction Item</span>
+                        <span>Donate Money</span>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <form onsubmit="submitForm(event, 'Money Donation', 'rod@roddennis.com')">
+                            <div class="form-group">
+                                <label>Your Name *</label>
+                                <input type="text" placeholder="Full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" placeholder="Your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone *</label>
+                                <input type="tel" placeholder="Your phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Donation Amount ($) *</label>
+                                <input type="number" placeholder="Amount" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Referred by (Club Member) *</label>
+                                <select name="donation-money-referral" required>
+                                    <option>Select club member</option>
+                                    <option>Aaron Stein</option>
+                                    <option>Alan Bleiweiss</option>
+                                    <option>Allen Arroyo</option>
+                                    <option>Alton Kuperman</option>
+                                    <option>Aubrey Strickstein</option>
+                                    <option>Brad Cross</option>
+                                    <option>Brendan Cassin</option>
+                                    <option>Brian Marcy</option>
+                                    <option>Brian Welsh</option>
+                                    <option>Chad C Voithofer</option>
+                                    <option>Chris Harris</option>
+                                    <option>Coleman Caldwell</option>
+                                    <option>Dale Politi</option>
+                                    <option>Dan Zeidler</option>
+                                    <option>Darren Tosetto</option>
+                                    <option>David DeLay</option>
+                                    <option>David Moen</option>
+                                    <option>Dean Greer</option>
+                                    <option>Dolf May</option>
+                                    <option>Eric Maschhaupt</option>
+                                    <option>Frank Culver</option>
+                                    <option>Gary Vlk</option>
+                                    <option>Glen Martin</option>
+                                    <option>Gordon Samuel</option>
+                                    <option>Greg Rogers</option>
+                                    <option>James D MacKellar</option>
+                                    <option>James Igbinovia</option>
+                                    <option>Jeff Little</option>
+                                    <option>Jeff Spiller</option>
+                                    <option>Jim Kilroy</option>
+                                    <option>Jim Palmer</option>
+                                    <option>Joel DeConcini</option>
+                                    <option>Jon Mirmelli</option>
+                                    <option>Josh Berger</option>
+                                    <option>Kenneth O'Connor</option>
+                                    <option>Kevin Flynn</option>
+                                    <option>Larry Hewitt</option>
+                                    <option>Linc Altdoerffer</option>
+                                    <option>Michael Franks</option>
+                                    <option>Michael Horner</option>
+                                    <option>Michael Seabolt</option>
+                                    <option>Mike Ciardullo</option>
+                                    <option>Mike McMahon</option>
+                                    <option>Mike Wills</option>
+                                    <option>Mike Yarnall</option>
+                                    <option>Neil Wilson</option>
+                                    <option>Nick Calamia</option>
+                                    <option>Patrick Lamore</option>
+                                    <option>Paul Spokas</option>
+                                    <option>Pete Gorman</option>
+                                    <option>Phil Gordon</option>
+                                    <option>Robert Lamore</option>
+                                    <option>Rod Dennis</option>
+                                    <option>Scott Beilke</option>
+                                    <option>Scott Vogel</option>
+                                    <option>Steven Denny</option>
+                                    <option>Steven M Rees</option>
+                                    <option>Ted Smith</option>
+                                    <option>Troy Freeman</option>
+                                    <option>Ty Segaline</option>
+                                    <option>Valentine Rhodes</option>
+                                    <option>Waide Stockhill</option>
+                                    <option>Zachary Madrigal</option>
+                                    <option value="other">Other (Please specify)</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="donation-money-referral-other" style="display: none;">
+                                <label>Please enter the member's name</label>
+                                <input type="text" placeholder="Member name">
+                            </div>
+                            <button type="submit" class="btn btn-block">Donate Money</button>
+                            <div class="confirmation"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Donation Item Form -->
+                <div class="accordion-item" id="form-donation-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Donate Auction Item</span>
                         <span class="accordion-toggle">+</span>
                     </div>
                     <div class="accordion-content">
@@ -669,6 +774,7 @@
             <div class="dashboard">
                 <div class="dashboard-stat"><strong>Tickets Sold:</strong> <span id="ticketCount">0</span> of 200</div>
                 <div class="dashboard-stat"><strong>Sponsorships Secured:</strong> <span id="sponsorCount">0</span> commitments</div>
+                <div class="dashboard-stat"><strong>Money Donations:</strong> <span id="moneyCount">0</span> donors</div>
                 <div class="dashboard-stat"><strong>Auction Items Donated:</strong> <span id="auctionCount">0</span> items</div>
                 <div class="dashboard-stat"><strong>Wine Donations:</strong> <span id="wineCount">0</span> bottles</div>
                 <div class="dashboard-stat"><strong>Raffle Tickets Sold:</strong> <span id="raffleCount">0</span> tickets</div>
@@ -737,6 +843,28 @@
                     </select>
                 </div>
                 <button onclick="addSponsorship()" class="btn" style="background: #b91c1c;">Add Sponsorship</button>
+            </div>
+
+            <h3>Add Money Donation</h3>
+            <div style="background: white; padding: 1.5rem; border: 2px solid #1e3a8a; border-radius: 8px; margin-bottom: 1.5rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label style="font-weight: bold;">Donor Name</label>
+                        <input type="text" id="moneyDonorName" placeholder="Donor name" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Amount ($)</label>
+                        <input type="number" id="moneyDonationAmount" placeholder="0" step="0.01" style="padding: 0.6rem;">
+                    </div>
+                    <div>
+                        <label style="font-weight: bold;">Referred by (Club Member)</label>
+                        <select id="adminMoneyReferral" style="padding: 0.6rem;">
+                            <option>Select club member</option>
+                            <option>Aaron Stein</option><option>Alan Bleiweiss</option><option>Allen Arroyo</option><option>Alton Kuperman</option><option>Aubrey Strickstein</option><option>Brad Cross</option><option>Brendan Cassin</option><option>Brian Marcy</option><option>Brian Welsh</option><option>Chad C Voithofer</option><option>Chris Harris</option><option>Coleman Caldwell</option><option>Dale Politi</option><option>Dan Zeidler</option><option>Darren Tosetto</option><option>David DeLay</option><option>David Moen</option><option>Dean Greer</option><option>Dolf May</option><option>Eric Maschhaupt</option><option>Frank Culver</option><option>Gary Vlk</option><option>Glen Martin</option><option>Gordon Samuel</option><option>Greg Rogers</option><option>James D MacKellar</option><option>James Igbinovia</option><option>Jeff Little</option><option>Jeff Spiller</option><option>Jim Kilroy</option><option>Jim Palmer</option><option>Joel DeConcini</option><option>Jon Mirmelli</option><option>Josh Berger</option><option>Kenneth O'Connor</option><option>Kevin Flynn</option><option>Larry Hewitt</option><option>Linc Altdoerffer</option><option>Michael Franks</option><option>Michael Horner</option><option>Michael Seabolt</option><option>Mike Ciardullo</option><option>Mike McMahon</option><option>Mike Wills</option><option>Mike Yarnall</option><option>Neil Wilson</option><option>Nick Calamia</option><option>Patrick Lamore</option><option>Paul Spokas</option><option>Pete Gorman</option><option>Phil Gordon</option><option>Robert Lamore</option><option>Rod Dennis</option><option>Scott Beilke</option><option>Scott Vogel</option><option>Steven Denny</option><option>Steven M Rees</option><option>Ted Smith</option><option>Troy Freeman</option><option>Ty Segaline</option><option>Valentine Rhodes</option><option>Waide Stockhill</option><option>Zachary Madrigal</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="addMoneyDonation()" class="btn" style="background: #1e3a8a;">Add Money Donation</button>
             </div>
 
             <h3>Add Auction Item</h3>
@@ -937,7 +1065,7 @@
         });
 
         // Back page tracking
-        let tracking = {tickets: [], sponsorships: [], auctionItems: [], wines: [], raffles: [], expenses: []};
+        let tracking = {tickets: [], sponsorships: [], moneyDonations: [], auctionItems: [], wines: [], raffles: [], expenses: []};
 
         function loadTracking() {
             const saved = localStorage.getItem('nhnTracking');
@@ -971,6 +1099,19 @@
                 tracking.sponsorships.push({name, tier, amount});
                 document.getElementById('sponsorName').value = '';
                 document.getElementById('sponsorAmount').value = '';
+                saveTracking();
+            }
+        }
+
+        function addMoneyDonation() {
+            const donor = document.getElementById('moneyDonorName').value;
+            const amount = parseFloat(document.getElementById('moneyDonationAmount').value) || 0;
+            const referral = document.getElementById('adminMoneyReferral').value;
+            if(donor && amount) {
+                tracking.moneyDonations.push({donor, amount, referral});
+                document.getElementById('moneyDonorName').value = '';
+                document.getElementById('moneyDonationAmount').value = '';
+                document.getElementById('adminMoneyReferral').value = 'Select club member';
                 saveTracking();
             }
         }
@@ -1027,17 +1168,19 @@
         function updateDashboard() {
             const ticketTotal = tracking.tickets.reduce((sum, t) => sum + t.amount, 0);
             const sponsorTotal = tracking.sponsorships.reduce((sum, s) => sum + s.amount, 0);
+            const moneyDonationTotal = tracking.moneyDonations.reduce((sum, m) => sum + m.amount, 0);
             const auctionTotal = tracking.auctionItems.reduce((sum, a) => sum + a.salePrice, 0);
             const wineTotal = tracking.wines.reduce((sum, w) => sum + w.value, 0);
             const raffleTotal = tracking.raffles.reduce((sum, r) => sum + r.amount, 0);
             const expenseTotal = tracking.expenses.reduce((sum, e) => sum + e.amount, 0);
 
-            const revenue = ticketTotal + sponsorTotal + auctionTotal + wineTotal + raffleTotal;
+            const revenue = ticketTotal + sponsorTotal + moneyDonationTotal + auctionTotal + wineTotal + raffleTotal;
             const netProfit = revenue - expenseTotal;
             const percent = Math.round((revenue / 150000) * 100);
 
             document.getElementById('ticketCount').textContent = tracking.tickets.reduce((sum, t) => sum + t.qty, 0);
             document.getElementById('sponsorCount').textContent = tracking.sponsorships.length;
+            document.getElementById('moneyCount').textContent = tracking.moneyDonations.length;
             document.getElementById('auctionCount').textContent = tracking.auctionItems.length;
             document.getElementById('wineCount').textContent = tracking.wines.length;
             document.getElementById('raffleCount').textContent = tracking.raffles.reduce((sum, r) => sum + r.qty, 0);
@@ -1050,11 +1193,20 @@
 
         function clearAllData() {
             if(confirm('Clear all tracking data?')) {
-                tracking = {tickets: [], sponsorships: [], auctionItems: [], wines: [], raffles: [], expenses: []};
+                tracking = {tickets: [], sponsorships: [], moneyDonations: [], auctionItems: [], wines: [], raffles: [], expenses: []};
                 localStorage.removeItem('nhnTracking');
                 updateDashboard();
             }
         }
+
+        // Handle "Other" referral field for money donations
+        document.addEventListener('change', e => {
+            if(e.target.name === 'donation-money-referral') {
+                const otherField = document.getElementById('donation-money-referral-other');
+                if(e.target.value === 'other') otherField.style.display = 'block';
+                else otherField.style.display = 'none';
+            }
+        });
 
         // Password protection
         let backPageUnlocked = false;
