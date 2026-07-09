@@ -1,0 +1,345 @@
+===============================================================
+ADMIN PANEL - QUICK START GUIDE
+All Hands on Deck Event Coordinator Dashboard
+===============================================================
+
+🎯 WHAT IS IT?
+A hidden control panel where you update REAL numbers that
+automatically appear on your live website. NO FAKE DATA!
+
+===============================================================
+⚡ 60-SECOND STARTUP
+===============================================================
+
+1. Go to: https://allhandsondecknhn.netlify.app/#admin-panel
+
+2. You'll see a form with fields:
+   ├─ Tickets Sold (0-160)
+   ├─ Sponsorship Tiers Committed
+   ├─ Sponsorship Revenue ($)
+   ├─ Tickets Revenue ($)
+   ├─ Live Auction Revenue ($)
+   ├─ Silent Auction Revenue ($)
+   ├─ 50/50 Raffle Revenue ($)
+   └─ Paddle Raise Revenue ($)
+
+3. Enter your ACTUAL numbers from spreadsheet
+
+4. Click: "💾 Save & Update Live Site"
+
+5. Website updates automatically!
+
+That's it! Website now shows real numbers.
+
+===============================================================
+🔗 ACCESS METHODS
+===============================================================
+
+METHOD 1 - Bookmark the Admin Panel
+→ Go to: https://allhandsondecknhn.netlify.app/#admin-panel
+→ Press Ctrl+D to bookmark
+→ Name it: "AHOD Admin Dashboard"
+→ Click bookmark daily
+
+METHOD 2 - From Website Footer
+→ Go to website
+→ Scroll to bottom
+→ Click "Admin Panel" link in Accessibility section
+
+METHOD 3 - Browser Console
+→ Press F12 (Developer Tools)
+→ Click "Console" tab
+→ Type: toggleAdminPanel()
+→ Press Enter
+
+===============================================================
+📊 WHERE TO GET YOUR NUMBERS
+===============================================================
+
+TICKETS SOLD
+→ Source: Attendee_Tracking.csv or Donorbox dashboard
+→ Field: Count of registered attendees
+→ Example: 127
+
+SPONSORSHIPS COMMITTED
+→ Source: Sponsorship tracking
+→ Field: How many sponsorship tiers sold (not dollars)
+→ Example: 13 (Captain's Helm, Band Sponsor, etc.)
+
+SPONSORSHIP REVENUE
+→ Source: Sponsorship spreadsheet
+→ Field: Total dollars from all sponsors
+→ Example: $25,375 (all tiers added together)
+
+TICKET REVENUE
+→ Math: Tickets Sold × $50
+→ Example: 127 × $50 = $6,350
+
+AUCTION/RAFFLE REVENUE
+→ Source: Auction items sold, raffle tickets sold
+→ Example: Live auction: $3,200, Silent: $1,500
+
+===============================================================
+✅ DAILY ROUTINE (Takes 2 minutes!)
+===============================================================
+
+TIME: 3:00 PM Daily
+
+STEP 1: Get Numbers
+├─ Open tracking spreadsheet
+└─ Find: Tickets sold, sponsors, revenue
+
+STEP 2: Open Admin Panel
+├─ Go to: https://allhandsondecknhn.netlify.app/#admin-panel
+└─ Wait for form to load
+
+STEP 3: Enter Numbers
+├─ Type tickets sold
+├─ Type sponsor count
+├─ Type revenue amounts
+└─ Review Live Preview
+
+STEP 4: Save
+├─ Click "💾 Save & Update Live Site"
+├─ See confirmation popup
+└─ Website updates automatically!
+
+STEP 5: Verify
+├─ Go to website homepage
+├─ See updated counters:
+│   Tickets: 127 / 160
+│   Sponsors: 13 tiers
+│   Revenue: $31.7K
+└─ Done!
+
+TIME: 3:02 PM ✓ Complete!
+
+===============================================================
+👥 WHO UPDATES WHAT
+===============================================================
+
+MICHAEL FRANKS (Event Chair)
+├─ Tickets Sold
+├─ Total Revenue
+└─ Schedule: Daily 3 PM
+
+DOLF MAY (Sponsorship Chair)
+├─ Sponsorship Tiers
+├─ Sponsorship Revenue
+└─ Schedule: Weekly on Friday
+
+BRENDAN CASSIN (Treasurer)
+├─ All revenue fields
+├─ Reconciliation
+└─ Schedule: Weekly on Thursday
+
+ROD DENNIS (Director)
+├─ Oversees all updates
+├─ Creates backups
+└─ Schedule: Daily review
+
+RECOMMENDATION: One person per device
+(Data saves on that specific computer)
+
+===============================================================
+📋 REAL EXAMPLE
+===============================================================
+
+TODAY'S TRACKING SPREADSHEET SHOWS:
+├─ 127 tickets sold
+├─ 13 sponsorship tiers
+├─ $25,375 sponsorship revenue
+├─ $6,350 ticket revenue ($50 × 127)
+├─ $2,100 live auction sold
+├─ $1,800 silent auction sold
+├─ $900 raffle proceeds
+└─ $500 paddle raise donations
+
+ADMIN PANEL ENTRY:
+├─ Tickets Sold: 127
+├─ Sponsorship Tiers: 13
+├─ Sponsorship Revenue: 25375
+├─ Tickets Revenue: 6350
+├─ Live Auction: 2100
+├─ Silent Auction: 1800
+├─ Raffle: 900
+└─ Paddle Raise: 500
+
+TOTAL: $37,825 (system calculates automatically)
+
+LIVE PREVIEW SHOWS:
+├─ Tickets: 127 / 160 (79.4%)
+├─ Sponsors: 13 tiers
+└─ Revenue: $37.8K of $45K goal
+
+CLICK SAVE ➜ WEBSITE UPDATES INSTANTLY!
+
+===============================================================
+🔒 DATA STORAGE & BACKUP
+===============================================================
+
+WHERE IS DATA STORED?
+→ Browser's local storage
+→ Safe & secure
+→ Data persists even after closing browser
+
+BACKUP PROCEDURE (Monthly):
+1. Open Admin Panel
+2. Screenshot all fields
+3. Save screenshot to: Backups folder
+4. OR manually enter numbers into Excel
+
+RESTORE FROM BACKUP:
+1. Open Admin Panel
+2. Type in backup numbers
+3. Click Save
+4. Data restored!
+
+IMPORTANT:
+⚠️  Use SAME computer for updates
+⚠️  Each device stores its own copy
+⚠️  If using different computer, re-enter numbers
+✓ Monthly backups recommended
+
+===============================================================
+❓ TROUBLESHOOTING
+===============================================================
+
+PROBLEM: Can't find Admin Panel
+SOLUTION:
+→ Scroll to very bottom of website
+→ Look for blue "Admin Panel" link
+→ Or type in URL: https://allhandsondecknhn.netlify.app/#admin-panel
+
+PROBLEM: Changes aren't showing
+SOLUTION:
+→ Make sure you clicked "Save & Update Live Site"
+→ Refresh website (Ctrl+R)
+→ Check you saved on same computer you're viewing from
+
+PROBLEM: Panel won't open
+SOLUTION:
+→ Clear browser cache (Ctrl+Shift+Del)
+→ Try different browser
+→ Check JavaScript is enabled (usually is)
+
+PROBLEM: Lost data / Changed computers
+SOLUTION:
+→ Data is per-device
+→ Re-enter numbers on new computer
+→ Keep backup spreadsheet as master copy
+
+NEED HELP?
+→ Email: rod@roddennis.com
+→ Phone: 480-695-0733
+
+===============================================================
+📱 MOBILE & DESKTOP
+===============================================================
+
+WORKS ON:
+✓ Desktop browsers (Chrome, Firefox, Edge, Safari)
+✓ Mobile browsers (iPhone, Android)
+✓ Tablets
+
+OPTIMIZED FOR:
+✓ Desktop: Full form, easy editing
+✓ Mobile: Touch-friendly, auto-scroll
+
+RECOMMENDED WORKFLOW:
+├─ Update from: Desktop or laptop
+├─ View from: Any device
+└─ Share with: Same device users
+
+===============================================================
+🎯 WEEKLY TEAM MEETING
+===============================================================
+
+FRIDAY 4:00 PM Zoom Call Agenda:
+
+4:00 - MICHAEL (Tickets)
+      "We sold 5 more tickets: 127 → 132"
+      Updates Admin Panel
+
+4:10 - DOLF (Sponsors)
+      "Got 2 new sponsors: 13 → 15, +$3,500"
+      Updates Admin Panel
+
+4:20 - BRENDAN (Revenue)
+      "Total revenue now: $31.7K → $35.2K"
+      Updates Admin Panel
+
+4:25 - ROD (Director)
+      "Website updated automatically"
+      "Send update email to team"
+
+4:30 - Team sees email with new numbers
+       Everyone checks website
+       Celebrate progress! 🎉
+
+===============================================================
+📊 SAMPLE UPDATE EMAIL TO TEAM
+===============================================================
+
+SUBJECT: All Hands on Deck - Weekly Update
+
+Hi Team!
+
+Great progress this week! Here are the updated numbers:
+
+TICKETS: 132 / 160 (82.5%)
+├─ Sold this week: 5 new
+├─ Remaining: 28
+└─ On pace for: Sell-out ✓
+
+SPONSORSHIPS: 15 tiers ($37,925 total!)
+├─ Committed this week: 2 new
+├─ Target: 13 tiers
+└─ Status: 115% of goal! ✓
+
+REVENUE: $37.9K / $45K goal (84%)
+├─ Tickets: $6,600
+├─ Sponsorships: $28,425
+├─ Auctions/Raffle: $2,900
+└─ Status: On track ✓
+
+VIEW LIVE: https://allhandsondecknhn.netlify.app/
+
+Next steps:
+• Push for final 28 tickets
+• Recruit auction items
+• Confirm dietary restrictions by Nov 1
+
+Questions? Contact Rod Dennis
+
+Thanks for all your hard work!
+- Michael
+
+===============================================================
+🏁 YOU'RE READY!
+===============================================================
+
+NEXT STEPS:
+1. ✓ Bookmark Admin Panel
+2. ✓ Share link with team
+3. ✓ Start daily updates
+4. ✓ Watch website numbers update!
+5. ✓ Celebrate progress!
+
+Admin Panel Link:
+https://allhandsondecknhn.netlify.app/#admin-panel
+
+Full Guide:
+ADMIN_PANEL_GUIDE.md (in your folder)
+
+Questions?
+rod@roddennis.com | 480-695-0733
+
+===============================================================
+STATUS: ✓ READY TO USE
+Created: June 10, 2026
+Event Date: November 12, 2026
+Days Until Event: 155
+
+Let's make this the best event ever! 🎉⛵
+===============================================================

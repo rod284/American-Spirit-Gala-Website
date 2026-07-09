@@ -1,0 +1,258 @@
+===============================================================
+ALL HANDS ON DECK - QUICK REFERENCE CARD
+November 12, 2026 • Backyard Desert Ridge
+===============================================================
+
+TICKET COUNTER (Update Daily)
+┌─────────────────────────────┐
+│ Tickets Sold: 127 / 160     │
+│ Remaining: 33 (21%)         │
+│ Goal: 160                   │
+└─────────────────────────────┘
+
+SPONSORSHIP COUNTER (Update Weekly)
+┌─────────────────────────────┐
+│ Revenue: $31,725 / $45,000  │
+│ Progress: 70%               │
+│ Sponsors Signed: 13 tiers   │
+└─────────────────────────────┘
+
+LIMITED AVAILABILITY
+⚠️  Bar Captain: 2 of 3 remaining
+⚠️  Captain's Helm: 1 remaining
+🪑 Table Reservation: NEW - $1,200/table (8 seats + logo)
+
+===============================================================
+DAILY CHECKLIST
+===============================================================
+
+□ Check new ticket purchases (from Donorbox)
+□ Update spreadsheet "Tickets Sold" count
+□ Update "Remaining" count (160 - sold)
+□ Check for new sponsorship inquiries
+□ Follow up on pending payments
+□ Review new attendee dietary restrictions
+□ Add new attendees to table assignments
+□ Confirm any missing contact information
+
+WEEKLY TASKS (Every Monday)
+□ Send status email to committee
+□ Review financial summary
+□ Verify all sponsor logos received
+□ Check pending sponsorship follow-ups
+□ Celebrate milestones with team
+
+===============================================================
+KEY CONTACTS
+===============================================================
+
+EVENT CHAIR
+Michael Franks (Centene)
+📧 mpfranx@hotmail.com
+📱 480-352-4824
+
+SPONSORSHIP CHAIR
+Dolf May (Troon Golf)
+📧 dmay@troon.com
+📱 602-616-2159
+
+TREASURER
+Brendan Cassin (MidFirst Bank)
+📧 brendan.cassin@midfirst.com
+
+EXECUTIVE DIRECTOR
+Rod Dennis (Gravitcase)
+📧 rod@roddennis.com
+📱 480-695-0733
+
+===============================================================
+REVENUE BREAKDOWN
+===============================================================
+
+INCOME SOURCES:
+✓ Ticket Sales: 127 × $50 = $6,350
+✓ Sponsorships: 13 tiers = $25,375
+⊘ Live Auction: (0% complete)
+⊘ Silent Auction: (0% complete)
+⊘ 50/50 Raffle: (0% complete)
+⊘ Paddle Raise: (0% complete)
+
+TOTAL TO DATE: $31,725
+GOAL: $45,000
+REMAINING NEEDED: $13,275
+
+MAJOR EXPENSES:
+- Venue: $5,000
+- Catering: $3,200
+- Entertainment: $2,500
+- AV/Lights: $2,000
+- Staffing: $1,500
+
+TARGET NET PROFIT: $25,800
+85% TO CHARITY: $21,930
+
+===============================================================
+SPONSORSHIP TIERS (Current Availability)
+===============================================================
+
+🪑 TABLE RESERVATION - $1,200 (NEW!)
+   ├─ 8 Seats + Company Logo on Table Card
+   ├─ Logo in Program & Website
+   └─ Availability: Unlimited
+
+⚓ CAPTAIN'S HELM - $5,000 ⚠️ Only 1 remaining
+   ├─ Title Sponsor Recognition
+   ├─ Logo on all materials
+   ├─ 8 VIP Tickets + Reserved Table
+   └─ Speaking Opportunity
+
+🎸 BAND SPONSOR - $3,000
+   ├─ "Entertainment Presented by..."
+   ├─ Logo at Stage
+   └─ 6 VIP Tickets
+
+🍽️ CAPTAIN'S FEAST - $2,500
+   ├─ Buffet Sponsor Recognition
+   ├─ Logo at Food Station
+   └─ 4 VIP Tickets
+
+🍷 BAR CAPTAIN - $2,000 ⚠️ 2 of 3 remaining
+   ├─ Bar Sponsor Recognition
+   ├─ Logo at Bar
+   └─ 5 VIP Tickets
+
+⛵ WELCOME PACKAGE - $1,500
+   ├─ Welcome Sponsor Recognition
+   ├─ Logo on Materials
+   └─ 3 VIP Tickets
+
+🎩 HAT & GEAR - $1,000+
+   ├─ Logo on Branded Hats & Lanyards
+   ├─ 4 VIP Tickets
+   └─ Plus production costs
+
+💎 CREW CHIEF - $750
+💰 FIRST MATE - $250
+🧑‍⚓ DECKHAND - $125
+
+===============================================================
+IMPORTANT DATES
+===============================================================
+
+📅 November 1, 2026 - FINAL DEADLINES:
+   □ Dietary restrictions due
+   □ Auction item donations due
+   □ Late sponsorship submissions
+
+📅 November 5, 2026 - 1 WEEK BEFORE:
+   □ Final headcount confirmed
+   □ All payments received
+   □ Table assignments final
+   □ Nametags printed
+
+📅 November 12, 2026 - EVENT DAY:
+   5:30 PM Doors Open
+   6:00 PM Dinner Begins
+   6:45 PM Live Auction
+   7:15 PM Silent Auction Closes
+   7:45 PM Entertainment & Raffle
+   10:00 PM Event Concludes
+
+===============================================================
+TROUBLESHOOTING
+===============================================================
+
+ISSUE: Pending sponsor payment
+→ Call/email sponsor within 24 hours
+→ Offer payment plan if needed
+→ Escalate to Rod Dennis if unresponsive
+
+ISSUE: Missing ticket information
+→ Send email asking for dietary/contact updates
+→ Call if no response within 3 days
+→ Don't assign tables until confirmed
+
+ISSUE: Sponsorship commitment unclear
+→ Send written sponsorship agreement
+→ Confirm via email before processing
+→ Flag for Michael Franks to follow up
+
+ISSUE: Attendance numbers unclear
+→ Check Donorbox dashboard for actual sales
+→ Email attendees to confirm attendance
+→ Update spreadsheet with confirmed numbers
+
+ISSUE: Revenue behind schedule
+→ Email all sponsors for status updates
+→ Push auction item recruitment
+→ Contact no-shows to recover deposits
+
+===============================================================
+SPREADSHEET TABS & ORGANIZATION
+===============================================================
+
+Tab 1: SUMMARY
+   - Key metrics at a glance
+   - Capacity/revenue/expense overview
+   - Status dashboard
+
+Tab 2: TICKETS
+   - Individual attendee records (127 rows)
+   - Columns: Name, Email, Phone, Company, Dietary, Table, Notes
+   - Update after each Donorbox sale
+
+Tab 3: SPONSORSHIPS
+   - Sponsor details & commitment info
+   - Payment status & logo submissions
+   - Seats reserved per sponsor
+
+Tab 4: TABLES
+   - Table assignments (20 tables)
+   - Sponsor/company per table
+   - Seating capacity & status
+
+Tab 5: REVENUE
+   - Financial tracking by category
+   - Expenses vs. budget
+   - Net profit calculations
+
+===============================================================
+HOW TO ACCESS TRACKING
+===============================================================
+
+OPTION 1: Google Sheets (Recommended)
+→ Share link: [Will be provided by Michael Franks]
+→ Updates in real-time
+→ Accessible from any device
+→ Mobile-friendly
+
+OPTION 2: Excel File
+→ Location: Attendee_Tracking.csv
+→ Download from: [Link to folder]
+→ Email updates to: rod@roddennis.com
+
+OPTION 3: Live Website Counter
+→ Visit: https://allhandsondecknhn.netlify.app/
+→ See ticket counter in Sponsorship section
+→ Refreshes daily
+
+===============================================================
+QUICK UPDATES VIA EMAIL
+===============================================================
+
+SEND TO: rod@roddennis.com
+FORMAT: [ITEM SOLD] - [DETAILS]
+
+Examples:
+- [TICKET] - T128: John Smith, john@email.com
+- [SPONSOR] - Captain's Feast: Sample Corp, $2,500
+- [TABLE] - Table 5: Sample Inc, 8 seats reserved
+- [NOTE] - Michael Franks dietary: gluten-free
+
+===============================================================
+
+PRINTED: June 10, 2026
+NEXT REVIEW: Daily
+QUESTIONS? Email rod@roddennis.com or call 480-695-0733
+
+===============================================================

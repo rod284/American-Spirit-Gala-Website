@@ -1,0 +1,330 @@
+===============================================================
+🎟️ TICKET TRACKING - QUICK REFERENCE CARD
+Print this & Keep at Your Desk
+===============================================================
+
+⏰ DAILY ROUTINE (3:00 PM)
+Time Required: 5 minutes
+
+STEP 1: CHECK DONORBOX
+├─ Go to: https://donorbox.org/nhn-2026-gala-tickets
+├─ Find: Total donations or quantity
+└─ Write down: The number
+
+STEP 2: CALCULATE TICKETS
+├─ Formula: Total Revenue ÷ $50
+│  Example: $6,350 ÷ $50 = 127 tickets
+└─ OR look for: "Quantity Purchased" field
+
+STEP 3: OPEN ADMIN PANEL
+└─ https://allhandsondecknhn.netlify.app/#admin-panel
+
+STEP 4: UPDATE FIELD
+├─ Section: "🎟️ Ticket Sales"
+├─ Field: "Tickets Sold (0-160):"
+└─ Enter: [Your number from Donorbox]
+
+STEP 5: SAVE
+└─ Click: "💾 Save & Update Live Site"
+
+STEP 6: VERIFY
+├─ See: ✅ Confirmation popup
+├─ Check: Website shows correct number
+└─ Update: Tracking spreadsheet
+
+DONE! Website automatically updated.
+Time: 5 minutes. Every day. Same time.
+
+===============================================================
+📊 QUICK REFERENCE NUMBERS
+===============================================================
+
+Total Capacity: 160 seats
+Price per Ticket: $50
+Goal: Sell all 160
+
+Revenue Table:
+5 tickets   = $250
+10 tickets  = $500
+25 tickets  = $1,250
+50 tickets  = $2,500
+75 tickets  = $3,750
+100 tickets = $5,000
+127 tickets = $6,350
+150 tickets = $7,500
+160 tickets = $8,000 (SOLD OUT)
+
+===============================================================
+🎯 MILESTONES
+===============================================================
+
+□ 25 tickets (16%)    - First Milestone
+□ 50 tickets (31%)    - Quarter Full
+□ 100 tickets (63%)   - Two-Thirds Full
+□ 150 tickets (94%)   - Nearly Sold Out
+□ 160 tickets (100%)  - SOLD OUT!
+
+When you hit each:
+├─ Email team alert
+├─ Post on social media
+├─ Celebrate the win!
+└─ Intensify next promotion
+
+===============================================================
+⚠️ URGENCY LEVELS
+===============================================================
+
+Remaining | Status        | Action
+----------|---------------|----------------------
+150+      | Plenty        | Normal promotion
+100-149   | Good pace     | Normal promotion
+50-99     | Good progress | Gentle push
+33-49     | Getting close | Push harder
+20-32     | Limited       | LAST CHANCE alerts
+10-19     | Almost full   | URGENT - Hard push
+1-9       | Nearly sold   | EMERGENCY mode
+0         | SOLD OUT      | Full stop sales
+
+===============================================================
+📞 KEY CONTACTS
+===============================================================
+
+MICHAEL FRANKS (Update tickets)
+📧 mpfranx@hotmail.com
+📱 480-352-4824
+
+ROD DENNIS (If Michael unavailable)
+📧 rod@roddennis.com
+📱 480-695-0733
+
+DONORBOX Support
+🌐 https://donorbox.org/help
+
+===============================================================
+✅ DAILY CHECKLIST
+===============================================================
+
+3:00 PM Daily:
+
+[ ] Open Donorbox dashboard
+[ ] Note ticket count
+[ ] Go to Admin Panel
+[ ] Update "Tickets Sold" field
+[ ] Click Save
+[ ] See confirmation
+[ ] Check website is correct
+[ ] Update spreadsheet
+[ ] Done!
+
+Time: 5 minutes
+
+===============================================================
+📊 ADMIN PANEL LOCATION
+===============================================================
+
+URL: https://allhandsondecknhn.netlify.app/#admin-panel
+
+Section: "🎟️ TICKET SALES"
+Field: "Tickets Sold (0-160):"
+
+System automatically:
+├─ Calculates: Remaining seats
+├─ Calculates: Capacity percentage
+├─ Updates: Website display
+└─ Saves: Your data
+
+No page refresh needed.
+Website updates instantly.
+
+===============================================================
+🌐 DONORBOX LOCATION
+===============================================================
+
+Campaign URL:
+https://donorbox.org/nhn-2026-gala-tickets
+
+What to look for:
+├─ Total Donations
+│  Divide by $50 for ticket count
+│  Example: $6,350 ÷ $50 = 127 tickets
+├─ OR Total Raised
+│  Same calculation
+└─ OR Quantity field
+   (if setup that way)
+
+===============================================================
+📈 WEBSITE DISPLAY
+===============================================================
+
+When you update to 50 tickets, website shows:
+
+🎟️ Event Capacity
+
+50 of 160 tickets sold
+Only 110 seats remaining
+31% capacity
+
+When you update to 150 tickets, website shows:
+
+🎟️ Event Capacity
+
+150 of 160 tickets sold
+Only 10 seats remaining
+94% capacity
+
+⚠️ ALMOST SOLD OUT - LAST CHANCE!
+
+When you update to 160 tickets, website shows:
+
+🎟️ Event Capacity
+
+160 of 160 tickets sold
+SOLD OUT!
+100% capacity
+
+===============================================================
+📋 TRACKING SPREADSHEET
+===============================================================
+
+Create in Google Sheets with columns:
+
+A: Date (6/10/2026)
+B: Day (Mon, Tue, etc)
+C: Tickets Sold (number from Donorbox)
+D: Remaining (160 - sold)
+E: Capacity % (sold ÷ 160 × 100)
+F: Updated? (Y/N)
+G: Notes
+
+Example rows:
+6/10 | Mon | 0  | 160 | 0%  | Y | Starting
+6/11 | Tue | 5  | 155 | 3%  | Y | First sales!
+6/12 | Wed | 12 | 148 | 8%  | Y | Growing
+6/13 | Thu | 25 | 135 | 16% | Y | Good pace
+6/14 | Fri | 45 | 115 | 28% | Y | Accelerating
+
+Share with: Michael, Dolf, Brendan, Rod
+
+===============================================================
+🚨 TEAM ALERTS
+===============================================================
+
+Send email to team when you hit milestones:
+
+✅ First ticket: "First sale! 1/160"
+✅ 25 sold: "16% full - First milestone!"
+✅ 50 sold: "31% full - Picking up!"
+✅ 100 sold: "63% full - Halfway there!"
+✅ 150 sold: "94% full - Almost done!"
+✅ 160 sold: "SOLD OUT! All seats taken!"
+
+Include in email:
+├─ Current count
+├─ Percentage
+├─ Remaining
+└─ Celebration emoji! 🎉
+
+===============================================================
+💡 KEY RULES
+===============================================================
+
+RULE #1: REAL DATA ONLY
+✓ Check Donorbox
+✓ Use that number
+✗ Don't guess
+✗ Don't estimate
+
+RULE #2: UPDATE DAILY
+✓ Every day at 3 PM
+✓ Takes 5 minutes
+✗ Don't skip
+✗ Don't batch weekly
+
+RULE #3: VERIFY BEFORE & AFTER
+✓ Check Donorbox before
+✓ Check website after
+✓ Update spreadsheet
+✗ Don't assume
+
+===============================================================
+⏱️ TIME INVESTMENT
+===============================================================
+
+Daily: 5 minutes
+Weekly: 35 minutes (7 × 5)
+Monthly: 150 minutes (30 × 5)
+
+= Professional, transparent ticket tracking
+= Website always accurate
+= Team always informed
+= Genuine transparency
+
+===============================================================
+🎯 SUCCESS METRICS
+===============================================================
+
+Track monthly:
+
+Total Sold: _____ tickets
+Revenue: $_________ (sold × $50)
+Average per day: _____ tickets
+Milestones hit: _____
+On target: Yes / No
+
+Website accuracy: 100% (always current)
+Team communication: Daily/Weekly
+Data transparency: Full (real numbers only)
+
+===============================================================
+📞 SUPPORT & HELP
+===============================================================
+
+Question: Can't find Donorbox count?
+Answer: Look for "Total Donations" ÷ 50 = tickets
+
+Question: Can't access Admin Panel?
+Answer: https://allhandsondecknhn.netlify.app/#admin-panel
+Contact: rod@roddennis.com
+
+Question: Website not updating?
+Answer: Refresh browser, try again
+
+Question: Forgot to update?
+Answer: Update as soon as you remember
+Then: Email team with current count
+
+===============================================================
+📚 FULL DOCUMENTATION
+===============================================================
+
+For complete details, see:
+→ TICKET_TRACKING_SYSTEM.md (this folder)
+
+Quick overview here, full system there.
+
+===============================================================
+✨ REMEMBER
+===============================================================
+
+You're maintaining REAL numbers.
+No fake data. All transparent.
+Website visitors see TRUTH.
+Team knows exact status.
+Data integrity = trust.
+
+Do this every day.
+Takes 5 minutes.
+Makes a huge difference.
+
+===============================================================
+
+PRINTED: June 10, 2026
+UPDATED: [Daily]
+CONTACT: rod@roddennis.com | 480-695-0733
+
+Print this card. Keep at desk. Update daily.
+Every day. Same time. 5 minutes.
+
+Let's track tickets accurately!
+
+===============================================================

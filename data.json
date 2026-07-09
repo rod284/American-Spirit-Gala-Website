@@ -1,0 +1,52 @@
+{
+  "event": {
+    "name": "All Hands on Deck",
+    "date": "2026-11-12",
+    "lastUpdated": "2026-06-10"
+  },
+  "tickets": {
+    "sold": 0,
+    "total": 160,
+    "price": 50
+  },
+  "sponsorships": {
+    "tiers_committed": 0,
+    "revenue": 0,
+    "goal": 45000
+  },
+  "revenue": {
+    "tickets_total": 0,
+    "sponsorships_total": 0,
+    "live_auction": 0,
+    "silent_auction": 0,
+    "raffle_50_50": 0,
+    "paddle_raise": 0,
+    "total": 0
+  },
+  "expenses": {
+    "venue": 5000,
+    "catering": 3200,
+    "beverages": 1200,
+    "av_lighting": 2000,
+    "entertainment": 2500,
+    "signage_printing": 800,
+    "decorations": 500,
+    "staffing": 1500,
+    "insurance_permits": 1000,
+    "marketing": 800,
+    "miscellaneous": 700,
+    "total": 19200
+  },
+  "tables": {
+    "assigned": 0,
+    "reserved_sponsor": 0,
+    "available": 20,
+    "total": 20
+  },
+  "metrics": {
+    "website_visits": 0,
+    "social_followers": 0,
+    "email_subscribers": 0,
+    "completion_percentage": 0
+  }
+}

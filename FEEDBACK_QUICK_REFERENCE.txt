@@ -1,0 +1,429 @@
+===============================================================
+FEEDBACK & SUGGESTIONS MANAGEMENT - QUICK REFERENCE
+All Hands on Deck Event
+===============================================================
+
+🎯 WHAT IS IT?
+A new section on your website where visitors can submit:
+├─ Questions about the event
+├─ Suggestions for improvements
+├─ Feedback and comments
+├─ Sponsorship interests
+├─ Auction item donations
+├─ Volunteer offers
+└─ General inquiries
+
+===============================================================
+⚡ HOW IT WORKS
+===============================================================
+
+VISITOR FILLS FORM:
+├─ Name
+├─ Email
+├─ Category (dropdown with 8 options)
+├─ Message
+└─ Optional: Opt-in for email updates
+
+↓
+
+SYSTEM SENDS EMAIL:
+├─ TO: rod@roddennis.com
+├─ CC: Submitter's email (so they see it was sent)
+└─ Subject: "Feedback - [Category Name]"
+
+↓
+
+ROD REVIEWS & RESPONDS:
+├─ Within 24 hours ideally
+├─ Forwards to appropriate team member
+└─ Logs in feedback spreadsheet
+
+===============================================================
+📍 WHERE ON WEBSITE?
+===============================================================
+
+Location: Right before footer
+Scroll: All the way down to find it
+Label: "💬 Suggestions, Comments & Questions"
+
+Quick access:
+https://allhandsondecknhn.netlify.app/#suggestions
+
+===============================================================
+📋 FEEDBACK CATEGORIES
+===============================================================
+
+When someone clicks "Category" dropdown:
+
+1️⃣ 💡 Suggestion for Event
+   → Ideas to improve the event
+
+2️⃣ ❓ Question About Event
+   → General event questions
+
+3️⃣ ❓ How to Participate Question
+   → Questions about tickets, sponsorships, auctions
+
+4️⃣ 🤝 Interest in Sponsorship
+   → Companies interested in sponsoring
+   → RESPOND ASAP (within 2 hours if possible)
+
+5️⃣ 🎁 Auction Item Donation
+   → People wanting to donate auction items
+   → RESPOND WITHIN 4 HOURS
+
+6️⃣ 🙋 Volunteer Interest
+   → People wanting to help at the event
+
+7️⃣ 📝 Feedback/Comment
+   → General feedback or comments
+
+8️⃣ 💬 Other
+   → Anything else
+
+===============================================================
+⏰ DAILY ROUTINE
+===============================================================
+
+9:00 AM:
+├─ Check email: rod@roddennis.com
+├─ Read all overnight submissions
+├─ Flag sponsorship/auction items (PRIORITY)
+└─ Forward to team members
+
+Throughout Day:
+├─ Respond to submissions (<24 hours)
+├─ Forward to appropriate person
+├─ Log in feedback spreadsheet
+└─ Update tracking list
+
+3:00 PM:
+├─ Check any new submissions
+├─ Follow up on pending items
+└─ Note urgent matters
+
+===============================================================
+📊 RESPONSE TIME TARGETS
+===============================================================
+
+Sponsorship Inquiries     → 2 hours
+Auction Item Donations   → 4 hours
+General Questions        → 24 hours
+Suggestions             → 24 hours
+Feedback                → 24 hours
+
+(Goal: 100% responded within 24 hours)
+
+===============================================================
+✉️ EMAIL RESPONSE TEMPLATES
+===============================================================
+
+SPONSORSHIP INQUIRY:
+---
+Hi [Name],
+
+Thank you for your interest in sponsoring!
+
+We have levels from $125 to $5,000. Check out:
+https://allhandsondecknhn.netlify.app/#sponsorship
+
+Or contact Dolf May:
+📧 dmay@troon.com
+📱 602-616-2159
+
+Looking forward to partnering!
+Rod Dennis
+---
+
+AUCTION ITEM DONATION:
+---
+Hi [Name],
+
+Thanks for donating! We'd love to feature your item.
+
+Please send:
+├─ Item description
+├─ Estimated value
+├─ Pickup/delivery info
+└─ Any special instructions
+
+Call/email me:
+📧 rod@roddennis.com
+📱 480-695-0733
+
+Thank you for supporting!
+Rod Dennis
+---
+
+GENERAL QUESTION:
+---
+Hi [Name],
+
+Great question! Here's the answer to [topic]:
+
+[YOUR ANSWER]
+
+Let me know if you need anything else!
+
+Rod Dennis
+All Hands on Deck Team
+---
+
+SUGGESTION:
+---
+Hi [Name],
+
+Thanks for your suggestion about [topic]!
+
+We really appreciate your input. The team will
+consider this for future events.
+
+See you November 12!
+
+Rod Dennis
+---
+
+VOLUNTEER:
+---
+Hi [Name],
+
+Thanks for volunteering! We'd love your help.
+
+We need help with:
+├─ Registration/Check-in
+├─ Auction management
+├─ Setup/Cleanup
+└─ Event coordination
+
+Let me know your interest:
+📧 rod@roddennis.com
+📱 480-695-0733
+
+Thanks!
+Rod Dennis
+---
+
+===============================================================
+📊 TRACKING SPREADSHEET
+===============================================================
+
+Create Google Sheet with columns:
+
+A: Date
+B: Name
+C: Email
+D: Category
+E: Message (summary)
+F: Status (New/Reviewed/Responded/Closed)
+G: Assigned To (Michael/Dolf/Rod/Brendan)
+H: Response Date
+I: Notes
+J: Follow-up Needed?
+
+Share with: Michael, Dolf, Brendan, Rod
+
+Update daily as new feedback arrives.
+
+===============================================================
+👥 TEAM ASSIGNMENTS
+===============================================================
+
+MICHAEL FRANKS (Event Chair):
+├─ Ticket questions
+├─ Event logistics
+└─ General event suggestions
+
+DOLF MAY (Sponsorship Chair):
+├─ Sponsorship inquiries
+├─ Sponsorship questions
+└─ Sponsor benefit questions
+
+ROD DENNIS (Director):
+├─ Auction item donations (PRIORITY)
+├─ Volunteer inquiries
+├─ Overall oversight
+└─ Urgent matters
+
+BRENDAN CASSIN (Treasurer):
+└─ Payment/refund questions
+
+===============================================================
+🚨 ESCALATE TO ROD IMMEDIATELY
+===============================================================
+
+✅ Major sponsorship inquiry
+✅ High-value auction item donation
+✅ Security/safety concern
+✅ Accessibility need
+✅ Urgent issue
+✅ Complaint or negative feedback
+
+Contact: 480-695-0733 or rod@roddennis.com
+
+===============================================================
+📈 WEEKLY SUMMARY EMAIL
+===============================================================
+
+Send to team EVERY FRIDAY:
+
+SUBJECT: Weekly Feedback Summary
+
+Hi Team,
+
+VOLUME:
+├─ Total: [X] submissions
+├─ Per day: [X]
+└─ Trend: [up/down/stable]
+
+BY CATEGORY:
+├─ Questions: [X]
+├─ Suggestions: [X]
+├─ Sponsorships: [X]
+├─ Auction items: [X]
+├─ Volunteers: [X]
+└─ Other: [X]
+
+HIGHLIGHTS:
+✓ [Best suggestion]
+✓ [Notable inquiry]
+✓ [Important donation]
+
+ACTION ITEMS:
+├─ Michael: [X items]
+├─ Dolf: [X items]
+└─ Rod: [X items]
+
+Response rate: [X]%
+Avg response time: [X] hours
+
+Great work team!
+- Rod
+
+===============================================================
+📞 KEY CONTACTS
+===============================================================
+
+ROD DENNIS (Director)
+📧 rod@roddennis.com
+📱 480-695-0733
+
+MICHAEL FRANKS (Event Chair)
+📧 mpfranx@hotmail.com
+📱 480-352-4824
+
+DOLF MAY (Sponsorship)
+📧 dmay@troon.com
+📱 602-616-2159
+
+BRENDAN CASSIN (Treasurer)
+📧 brendan.cassin@midfirst.com
+
+===============================================================
+✅ SETUP CHECKLIST
+===============================================================
+
+Before promoting:
+[ ] Test form submission
+[ ] Verify emails arrive at rod@roddennis.com
+[ ] Check CC to submitter works
+[ ] Test all 8 categories
+[ ] Verify quick answer links work
+[ ] Create feedback tracking spreadsheet
+[ ] Brief team on process
+[ ] Create email response templates
+[ ] Share with committee
+[ ] Promote on social media
+
+===============================================================
+🎯 EXPECTED VOLUME
+===============================================================
+
+Typical weekly breakdown (assuming ~50 visitors):
+
+Questions        40%  (2-3 per week)
+Suggestions      25%  (1-2 per week)
+Sponsorship      15%  (1 per week)
+Auction items    10%  (1 per week)
+Volunteers       10%  (1 per week)
+
+BUSIEST TIMES:
+├─ After email newsletter
+├─ After social media posts
+├─ 2-3 weeks before event
+└─ Week before event
+
+===============================================================
+📊 MONTHLY METRICS
+===============================================================
+
+Track these:
+
+Total Feedback Submissions: [X]
+Response Rate: [X]% (Goal: 100%)
+Avg Response Time: [X] hours (Goal: <24)
+Sponsorship Inquiries: [X]
+Auction Items Donated: [X]
+Volunteers: [X]
+Suggestions Implemented: [X]
+
+===============================================================
+💡 PRO TIPS
+===============================================================
+
+DO:
+✓ Respond within 24 hours to ALL feedback
+✓ Thank people for their input
+✓ Forward to appropriate team member
+✓ Keep a spreadsheet log
+✓ Send weekly summaries
+✓ Celebrate wins (donations, sponsors, volunteers)
+
+DON'T:
+✗ Ignore feedback
+✗ Take criticism personally
+✗ Delay responses
+✗ Delete emails
+✗ Assume people know answers
+✗ Forget to CC submitter
+
+===============================================================
+🔗 DIRECT LINKS
+===============================================================
+
+Form on Website:
+https://allhandsondecknhn.netlify.app
+
+Sponsorship Section:
+https://allhandsondecknhn.netlify.app/#sponsorship
+
+Ticket Purchase:
+https://donorbox.org/nhn-2026-gala-tickets
+
+Event Details:
+https://allhandsondecknhn.netlify.app/#event
+
+===============================================================
+🎓 RESOURCES
+===============================================================
+
+Complete Guide:
+→ FEEDBACK_MANAGEMENT_GUIDE.md
+
+Response Templates:
+→ In FEEDBACK_MANAGEMENT_GUIDE.md
+
+Tracking Spreadsheet:
+→ Create new Google Sheet
+
+Support:
+→ rod@roddennis.com | 480-695-0733
+
+===============================================================
+STATUS: ✅ LIVE ON WEBSITE
+Created: June 10, 2026
+Form Location: Bottom of website (before footer)
+Response Handler: rod@roddennis.com
+
+Ready to receive feedback!
+
+===============================================================

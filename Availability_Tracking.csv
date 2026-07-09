@@ -1,0 +1,99 @@
+SPONSORSHIP TIER AVAILABILITY TRACKER
+All Hands on Deck - November 12, 2026
+Update this spreadsheet daily and sync with Admin Panel
+
+=== SPONSORSHIP TIER LIMITS ===
+Tier Name,Limit Type,Max Available,Currently Sold,Remaining,Available Status,Notes
+Captain's Helm,Limited,1,0,1,AVAILABLE,"Title Sponsor - Premium positioning"
+Band Sponsor,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Captain's Feast,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Bar Captain,Limited,3,0,3,AVAILABLE,"Can only have 3 bar sponsor logos"
+Silent Auction,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Welcome Package,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Table Reservation,Unlimited,Unlimited,0,Unlimited,AVAILABLE,"NEW tier - track separately"
+Hat & Gear,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Crew Chief,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+First Mate,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Photo Booth,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Raffle Prize,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+Deckhand,Unlimited,Unlimited,0,Unlimited,AVAILABLE,
+
+=== DAILY TRACKING ===
+Date,Captain's Helm Sold,Bar Captain Sold,Total Sponsors Sold,Tickets Sold,Total Capacity Remaining
+6/10/2026,0,0,0,0,160
+6/11/2026,0,0,0,0,160
+6/12/2026,0,0,0,0,160
+6/13/2026,0,0,0,0,160
+6/14/2026,0,0,0,0,160
+6/15/2026,0,0,0,0,160
+6/16/2026,0,0,0,0,160
+6/17/2026,0,0,0,0,160
+6/18/2026,0,0,0,0,160
+6/19/2026,0,0,0,0,160
+6/20/2026,0,0,0,0,160
+
+=== AVAILABILITY STATUS ===
+Status Code,Meaning,Action
+AVAILABLE,Slots still open,Display on website
+LIMITED,Only 1-3 remaining,Add warning banner
+SOLD OUT,No slots available,Remove from website
+WAITLIST,At capacity but accepting reserves,Show waitlist link
+
+=== FORMULA EXAMPLES (for Google Sheets) ===
+Remaining = Max Available - Currently Sold
+Example: Bar Captain = 3 - 1 = 2 remaining
+
+Status = IF(Remaining=0,"SOLD OUT",IF(Remaining<=2,"LIMITED","AVAILABLE"))
+Example: IF(2=0,"SOLD OUT",IF(2<=2,"LIMITED","AVAILABLE")) = "LIMITED"
+
+=== HOW TO UPDATE ===
+Daily:
+1. Check Donorbox for new sponsorships
+2. Update "Currently Sold" column
+3. Formulas auto-calculate "Remaining"
+4. Formulas auto-generate "Status"
+5. Copy status to Admin Panel
+6. Website updates automatically
+
+Weekly:
+1. Calculate totals
+2. Email team the status
+3. Update availability warnings
+
+=== WEBSITE DISPLAY ===
+If Status = "LIMITED":
+  Show: "Only X remaining - Secure your tier now!"
+  Color: Yellow/Orange warning
+
+If Status = "SOLD OUT":
+  Show: "SOLD OUT - Join waitlist"
+  Color: Red
+  Action: Remove from purchase options
+
+If Status = "AVAILABLE":
+  Show: "Available now"
+  Color: Green
+
+=== EXAMPLE SCENARIO ===
+Scenario: Captain's Helm sponsor sells
+1. Update spreadsheet: "Currently Sold" = 1
+2. Formula: Remaining = 1 - 1 = 0
+3. Status = "SOLD OUT"
+4. Update Admin Panel with: Captain's Helm = SOLD OUT
+5. Website shows: "Captain's Helm - SOLD OUT"
+
+Scenario: Bar Captain gets 1st sponsor
+1. Update spreadsheet: "Currently Sold" = 1
+2. Formula: Remaining = 3 - 1 = 2
+3. Status = "LIMITED"
+4. Update Admin Panel with: Bar Captain = 2 remaining
+5. Website shows: "Bar Captain (2 of 3 remaining) - LIMITED AVAILABILITY"
+
+=== REPORTING ===
+Use this data for weekly emails:
+
+"LIMITED AVAILABILITY ALERT:
+├─ Captain's Helm: SOLD OUT ❌
+├─ Bar Captain: 2 of 3 remaining ⚠️
+├─ Tickets: 33 of 160 remaining ⚠️
+└─ Available: All other tiers"
