@@ -102,26 +102,50 @@
             <h2>Saddle Up: Bring Your Posse</h2>
             <p style="text-align: center; margin-bottom: 1.5rem;">Rope in your companions and secure your place at the roundup.</p>
             <div class="tiers-container">
-                <div class="tier-card premium">
-                    <h4>2 Event Tickets</h4>
-                    <div class="tier-price">$120</div>
-                    <div style="background: #DAA520; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">BEST VALUE</div>
-                    <ul>
-                        <li>2 gala admissions</li>
-                        <li>Complimentary buffet</li>
-                        <li>One drink per ticket</li>
-                    </ul>
-                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY 2 TICKETS</button>
-                </div>
                 <div class="tier-card">
-                    <h4>Single Ticket</h4>
+                    <h4>Individual Ticket</h4>
                     <div class="tier-price">$75</div>
                     <ul>
                         <li>1 gala admission</li>
                         <li>Complimentary buffet</li>
                         <li>One drink</li>
                     </ul>
-                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY 1 TICKET</button>
+                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
+                </div>
+                <div class="tier-card">
+                    <h4>2-10 Tickets</h4>
+                    <div class="tier-price">$60<span style="font-size: 0.8rem; font-weight: normal;"> each</span></div>
+                    <div style="background: #DAA520; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">BEST VALUE</div>
+                    <ul>
+                        <li>2-10 gala admissions</li>
+                        <li>Complimentary buffet</li>
+                        <li>One drink per ticket</li>
+                        <li>Save $15-150 per ticket</li>
+                    </ul>
+                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
+                </div>
+                <div class="tier-card">
+                    <h4>Group of 11+</h4>
+                    <div class="tier-price">$55<span style="font-size: 0.8rem; font-weight: normal;"> each</span></div>
+                    <ul>
+                        <li>11+ gala admissions</li>
+                        <li>Complimentary buffet</li>
+                        <li>One drink per ticket</li>
+                        <li>Maximum savings</li>
+                    </ul>
+                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
+                </div>
+                <div class="tier-card premium">
+                    <h4>Bring Your Entire Group</h4>
+                    <div class="tier-price">$2,500</div>
+                    <ul>
+                        <li>Unlimited group size</li>
+                        <li>Reserved group seating</li>
+                        <li>Complimentary buffet for all</li>
+                        <li>One drink per person</li>
+                        <li>Special group recognition</li>
+                    </ul>
+                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BOOK GROUP</button>
                 </div>
             </div>
         </section>
@@ -287,11 +311,18 @@
                             </div>
                             <div class="form-group">
                                 <label>Number of Tickets *</label>
-                                <select required>
-                                    <option>Select quantity</option>
+                                <select id="ticketQuantity" onchange="updateTicketPrice()" required>
+                                    <option value="">Select quantity</option>
                                     <option value="1">1 Ticket - $75</option>
-                                    <option value="2">2 Tickets - $120</option>
+                                    <option value="2-10">2-10 Tickets - $60 each</option>
+                                    <option value="11+">11+ Tickets - $55 each</option>
+                                    <option value="group">Bring Your Entire Group - $2,500</option>
                                 </select>
+                            </div>
+                            <div class="form-group" id="quantityInput" style="display: none;">
+                                <label>How many tickets? *</label>
+                                <input type="number" id="ticketCount" min="2" max="999" placeholder="Enter number of tickets" onchange="updateTicketPrice()">
+                                <p id="ticketPriceDisplay" style="margin-top: 0.5rem; font-weight: bold; color: #8B6F47;"></p>
                             </div>
                             <div class="form-group">
                                 <label>Referred by (Club Member) *</label>
@@ -1052,6 +1083,26 @@
         // Smooth scroll
         function scrollToTop() {
             window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Dynamic ticket pricing
+        function updateTicketPrice() {
+            const quantity = document.getElementById('ticketQuantity').value;
+            const quantityInput = document.getElementById('quantityInput');
+            const priceDisplay = document.getElementById('ticketPriceDisplay');
+
+            if (quantity === '2-10' || quantity === '11+') {
+                quantityInput.style.display = 'block';
+                const ticketCount = document.getElementById('ticketCount').value;
+                if (ticketCount) {
+                    const pricePerTicket = quantity === '2-10' ? 60 : 55;
+                    const total = ticketCount * pricePerTicket;
+                    priceDisplay.textContent = `${ticketCount} tickets × $${pricePerTicket} = $${total}`;
+                }
+            } else {
+                quantityInput.style.display = 'none';
+                priceDisplay.textContent = '';
+            }
         }
 
         function scrollToFormAccordion(formId) {
