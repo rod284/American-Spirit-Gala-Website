@@ -115,7 +115,7 @@
                 <div class="tier-card">
                     <h4>2-9 Tickets</h4>
                     <div class="tier-price">$60<span style="font-size: 0.8rem; font-weight: normal;"> each</span></div>
-                    <div style="background: #DAA520; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">BEST VALUE</div>
+                    <div style="background: #DAA520; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">BETTER VALUE</div>
                     <ul>
                         <li>2-9 gala admissions</li>
                         <li>Complimentary buffet</li>
@@ -124,11 +124,12 @@
                     </ul>
                     <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
                 </div>
-                <div class="tier-card">
-                    <h4>Group of 11+</h4>
+                <div class="tier-card premium">
+                    <h4>10 or More Tickets</h4>
                     <div class="tier-price">$55<span style="font-size: 0.8rem; font-weight: normal;"> each</span></div>
+                    <div style="background: #DAA520; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">GREAT VALUE</div>
                     <ul>
-                        <li>11+ gala admissions</li>
+                        <li>10+ gala admissions</li>
                         <li>Complimentary buffet</li>
                         <li>One drink per ticket</li>
                         <li>Maximum savings</li>
@@ -136,16 +137,17 @@
                     <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
                 </div>
                 <div class="tier-card premium">
-                    <h4>Bring Your Entire Group</h4>
+                    <h4>Bring Your Entire Posse</h4>
                     <div class="tier-price">$2,500</div>
+                    <div style="background: #6B4423; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">HUGE CONTRIBUTOR</div>
                     <ul>
                         <li>Unlimited group size</li>
                         <li>Reserved group seating</li>
                         <li>Complimentary buffet for all</li>
                         <li>One drink per person</li>
-                        <li>Special group recognition</li>
+                        <li>Special posse recognition</li>
                     </ul>
-                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BOOK GROUP</button>
+                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BOOK POSSE</button>
                 </div>
             </div>
         </section>
@@ -314,9 +316,9 @@
                                 <select id="ticketQuantity" onchange="updateTicketPrice()" required>
                                     <option value="">Select quantity</option>
                                     <option value="1">1 Ticket - $75</option>
-                                    <option value="2-9">2-9 Tickets - $60 each</option>
-                                    <option value="11+">11+ Tickets - $55 each</option>
-                                    <option value="group">Bring Your Entire Group - $2,500</option>
+                                    <option value="2-9">2-9 Tickets - $60 each (Better Value)</option>
+                                    <option value="10+">10+ Tickets - $55 each (Great Value)</option>
+                                    <option value="group">Bring Your Entire Posse - $2,500 (Huge Contributor)</option>
                                 </select>
                             </div>
                             <div class="form-group" id="quantityInput" style="display: none;">
@@ -1091,7 +1093,7 @@
             const quantityInput = document.getElementById('quantityInput');
             const priceDisplay = document.getElementById('ticketPriceDisplay');
 
-            if (quantity === '2-9' || quantity === '11+') {
+            if (quantity === '2-9' || quantity === '10+') {
                 quantityInput.style.display = 'block';
                 const ticketCount = document.getElementById('ticketCount').value;
                 if (ticketCount) {
