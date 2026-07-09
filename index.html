@@ -113,14 +113,14 @@
                     <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
                 </div>
                 <div class="tier-card">
-                    <h4>2-10 Tickets</h4>
+                    <h4>2-9 Tickets</h4>
                     <div class="tier-price">$60<span style="font-size: 0.8rem; font-weight: normal;"> each</span></div>
                     <div style="background: #DAA520; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">BEST VALUE</div>
                     <ul>
-                        <li>2-10 gala admissions</li>
+                        <li>2-9 gala admissions</li>
                         <li>Complimentary buffet</li>
                         <li>One drink per ticket</li>
-                        <li>Save $15-150 per ticket</li>
+                        <li>Save $15-135 per ticket</li>
                     </ul>
                     <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
                 </div>
@@ -314,7 +314,7 @@
                                 <select id="ticketQuantity" onchange="updateTicketPrice()" required>
                                     <option value="">Select quantity</option>
                                     <option value="1">1 Ticket - $75</option>
-                                    <option value="2-10">2-10 Tickets - $60 each</option>
+                                    <option value="2-9">2-9 Tickets - $60 each</option>
                                     <option value="11+">11+ Tickets - $55 each</option>
                                     <option value="group">Bring Your Entire Group - $2,500</option>
                                 </select>
@@ -1091,11 +1091,11 @@
             const quantityInput = document.getElementById('quantityInput');
             const priceDisplay = document.getElementById('ticketPriceDisplay');
 
-            if (quantity === '2-10' || quantity === '11+') {
+            if (quantity === '2-9' || quantity === '11+') {
                 quantityInput.style.display = 'block';
                 const ticketCount = document.getElementById('ticketCount').value;
                 if (ticketCount) {
-                    const pricePerTicket = quantity === '2-10' ? 60 : 55;
+                    const pricePerTicket = quantity === '2-9' ? 60 : 55;
                     const total = ticketCount * pricePerTicket;
                     priceDisplay.textContent = `${ticketCount} tickets × $${pricePerTicket} = $${total}`;
                 }
