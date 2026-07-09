@@ -101,8 +101,28 @@
         <section id="tickets">
             <h2>Saddle Up: Bring Your Posse</h2>
             <p style="text-align: center; margin-bottom: 1.5rem;">Rope in your companions and secure your place at the roundup.</p>
-            <div style="text-align: center;">
-                <button class="btn" onclick="scrollToFormAccordion('tickets')">SADDLE UP</button>
+            <div class="tiers-container">
+                <div class="tier-card premium">
+                    <h4>2 Event Tickets</h4>
+                    <div class="tier-price">$120</div>
+                    <div style="background: #DAA520; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: center; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.8rem;">BEST VALUE</div>
+                    <ul>
+                        <li>2 gala admissions</li>
+                        <li>Complimentary buffet</li>
+                        <li>One drink per ticket</li>
+                    </ul>
+                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY 2 TICKETS</button>
+                </div>
+                <div class="tier-card">
+                    <h4>Single Ticket</h4>
+                    <div class="tier-price">$75</div>
+                    <ul>
+                        <li>1 gala admission</li>
+                        <li>Complimentary buffet</li>
+                        <li>One drink</li>
+                    </ul>
+                    <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY 1 TICKET</button>
+                </div>
             </div>
         </section>
 
