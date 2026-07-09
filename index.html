@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>American Spirit Gala 2026</title>
+    <title>The Good, The Kind, and The Giving 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Georgia', serif; line-height: 1.6; color: #1a1a1a; background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); }
-        nav { background: linear-gradient(90deg, #b91c1c 0%, #1e3a8a 50%, #ffffff 100%); padding: 0.8rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        nav { background: linear-gradient(90deg, #6B4423 0%, #8B6F47 50%, #D2B48C 100%); padding: 0.8rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         nav ul { display: flex; list-style: none; gap: 1.5rem; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; justify-content: center; align-items: center; }
         nav a { color: white; text-decoration: none; font-weight: bold; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; padding: 0.4rem 0.8rem; border-radius: 3px; }
         nav a:hover { background: rgba(255,255,255,0.3); transform: scale(1.05); }
-        header { background: linear-gradient(135deg, #b91c1c 0%, #1e3a8a 50%, #ffffff 100%); color: white; text-align: center; padding: 3rem 2rem; border-bottom: 5px solid #b91c1c; }
+        header { background: linear-gradient(135deg, #6B4423 0%, #8B6F47 50%, #D2B48C 100%); color: white; text-align: center; padding: 3rem 2rem; border-bottom: 5px solid #8B6F47; }
         header p { font-size: 1.3rem; margin-bottom: 1rem; }
         header h1 { font-size: 4rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-weight: bold; letter-spacing: 2px; }
-        .event-details { font-size: 1.1rem; margin: 1.5rem 0; background: rgba(255,255,255,0.1); padding: 2rem; border-left: 5px solid #fbbf24; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .countdown { font-size: 1.3rem; font-weight: bold; margin-top: 1rem; color: #fbbf24; }
+        .event-details { font-size: 1.1rem; margin: 1.5rem 0; background: rgba(255,255,255,0.1); padding: 2rem; border-left: 5px solid #DAA520; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .countdown { font-size: 1.3rem; font-weight: bold; margin-top: 1rem; color: #DAA520; }
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        section { margin: 2rem 0; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 5px solid #b91c1c; scroll-margin-top: 120px; }
-        section h2 { font-size: 2.5rem; color: #b91c1c; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px; border-bottom: 3px solid #1e3a8a; padding-bottom: 1rem; text-align: center; }
-        section h3 { font-size: 1.3rem; color: #1e3a8a; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+        section { margin: 2rem 0; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 5px solid #8B6F47; scroll-margin-top: 120px; }
+        section h2 { font-size: 2.5rem; color: #8B6F47; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px; border-bottom: 3px solid #6B4423; padding-bottom: 1rem; text-align: center; }
+        section h3 { font-size: 1.3rem; color: #6B4423; margin-top: 1.5rem; margin-bottom: 0.8rem; }
         .tiers-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .tier-card { background: white; border: 2px solid #1e3a8a; padding: 1.5rem; border-radius: 8px; transition: all 0.3s; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .tier-card { background: white; border: 2px solid #8B6F47; padding: 1.5rem; border-radius: 8px; transition: all 0.3s; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .tier-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
-        .tier-card.premium { border: 3px solid #b91c1c; background: linear-gradient(135deg, #fef2f2 0%, #eff6ff 100%); }
-        .tier-card h4 { color: #b91c1c; font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .tier-price { font-size: 1.5rem; color: #1e3a8a; font-weight: bold; margin: 0.8rem 0; }
+        .tier-card.premium { border: 3px solid #8B6F47; background: linear-gradient(135deg, #F5E6D3 0%, #F0E6D2 100%); }
+        .tier-card h4 { color: #8B6F47; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .tier-price { font-size: 1.5rem; color: #6B4423; font-weight: bold; margin: 0.8rem 0; }
         .tier-card ul { list-style: none; margin: 0.8rem 0; font-size: 0.9rem; }
         .tier-card li { padding: 0.3rem 0; }
-        .tier-card li:before { content: "✓ "; color: #1e3a8a; margin-right: 0.5rem; }
+        .tier-card li:before { content: "✓ "; color: #8B6F47; margin-right: 0.5rem; }
         .form-group { margin: 1rem 0; }
         label { display: block; margin-bottom: 0.4rem; font-weight: bold; font-size: 0.95rem; }
-        input, textarea, select { width: 100%; padding: 0.6rem; border: 2px solid #1e3a8a; border-radius: 5px; font-size: 0.95rem; font-family: inherit; }
-        input:focus, textarea:focus, select:focus { outline: none; border-color: #b91c1c; box-shadow: 0 0 0 3px rgba(185,28,28,0.1); }
+        input, textarea, select { width: 100%; padding: 0.6rem; border: 2px solid #8B6F47; border-radius: 5px; font-size: 0.95rem; font-family: inherit; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #8B6F47; box-shadow: 0 0 0 3px rgba(139,111,71,0.1); }
         textarea { resize: vertical; min-height: 80px; }
-        .btn { background: linear-gradient(90deg, #b91c1c 0%, #1e3a8a 100%); color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; font-size: 0.95rem; font-weight: bold; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; margin-top: 1rem; display: inline-block; }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
+        .btn { background: linear-gradient(90deg, #8B6F47 0%, #6B4423 100%); color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; font-size: 0.95rem; font-weight: bold; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; margin-top: 1rem; display: inline-block; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(139,111,71,0.4); }
         .btn-block { width: 100%; display: block; }
         .committee-list { display: flex; flex-direction: column; gap: 0.1rem; margin: 1.5rem 0; }
-        .committee-item { background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%); padding: 0.8rem 1rem; border-radius: 5px; border-left: 4px solid #b91c1c; font-size: 0.9rem; }
+        .committee-item { background: linear-gradient(135deg, #F5E6D3 0%, #ffffff 100%); padding: 0.8rem 1rem; border-radius: 5px; border-left: 4px solid #8B6F47; font-size: 0.9rem; }
         .accordion { margin: 1.5rem 0; }
-        .accordion-item { border: 2px solid #1e3a8a; margin-bottom: 0.8rem; border-radius: 8px; overflow: hidden; scroll-margin-top: 120px; }
-        .accordion-header { background: linear-gradient(90deg, #b91c1c 0%, #1e3a8a 100%); color: white; padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; }
-        .accordion-header:hover { background: linear-gradient(90deg, #8b1414 0%, #172554 100%); }
+        .accordion-item { border: 2px solid #8B6F47; margin-bottom: 0.8rem; border-radius: 8px; overflow: hidden; scroll-margin-top: 120px; }
+        .accordion-header { background: linear-gradient(90deg, #8B6F47 0%, #6B4423 100%); color: white; padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-header:hover { background: linear-gradient(90deg, #7a5c3a 0%, #5c3a1b 100%); }
         .accordion-content { padding: 1.5rem; display: none; background: white; }
         .accordion-content.active { display: block; }
         .accordion-toggle { font-size: 1.3rem; }
-        .npo-section { background: linear-gradient(135deg, #fef2f2 0%, #eff6ff 100%); padding: 1.5rem; border-radius: 8px; border-left: 5px solid #b91c1c; margin: 1.5rem 0; }
+        .npo-section { background: linear-gradient(135deg, #F5E6D3 0%, #F0E6D2 100%); padding: 1.5rem; border-radius: 8px; border-left: 5px solid #8B6F47; margin: 1.5rem 0; }
         .radio-group { display: flex; gap: 2rem; margin: 0.8rem 0; flex-wrap: wrap; }
         .radio-group label { display: flex; align-items: center; margin: 0; font-weight: normal; }
         .radio-group input { width: auto; margin-right: 0.5rem; }
@@ -55,15 +55,15 @@
         .password-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; }
         .password-modal.active { display: flex; }
         .password-modal-content { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); max-width: 350px; text-align: center; }
-        .password-modal-content h2 { color: #b91c1c; margin-bottom: 0.8rem; }
+        .password-modal-content h2 { color: #8B6F47; margin-bottom: 0.8rem; }
         .password-modal-content p { color: #666; margin-bottom: 1rem; font-size: 0.9rem; }
         .password-modal-content input { padding: 0.6rem; margin-bottom: 1rem; }
         .password-modal-content button { padding: 0.6rem 1.5rem; width: 100%; }
         #backpage { display: none; }
         #backpage.unlocked { display: block; }
-        .dashboard { background: linear-gradient(135deg, #fef2f2 0%, #eff6ff 100%); padding: 1.5rem; border-radius: 8px; border-left: 5px solid #b91c1c; margin-bottom: 1.5rem; }
+        .dashboard { background: linear-gradient(135deg, #F5E6D3 0%, #F0E6D2 100%); padding: 1.5rem; border-radius: 8px; border-left: 5px solid #8B6F47; margin-bottom: 1.5rem; }
         .dashboard-stat { margin: 0.8rem 0; font-size: 0.95rem; }
-        .dashboard-stat strong { color: #b91c1c; }
+        .dashboard-stat strong { color: #8B6F47; }
         #progressBar { transition: width 0.3s; }
         @media (max-width: 768px) { header h1 { font-size: 2rem; } section { padding: 1rem; } nav ul { gap: 0.8rem; } nav a { font-size: 0.8rem; padding: 0.2rem 0.4rem; } .tiers-container { grid-template-columns: 1fr; } }
     </style>
@@ -84,11 +84,11 @@
     <header id="home">
         <p style="color: white; font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: bold;"><a href="#forms" onclick="scrollToFormAccordion('sponsorship')" style="color: white; text-decoration: underline; cursor: pointer;">Title Sponsor</a></p>
         <p style="color: white; font-size: 1.1rem; margin-top: 0.2rem;">Presents</p>
-        <h1>AMERICAN SPIRIT GALA</h1>
+        <h1>THE GOOD, THE KIND, AND THE GIVING</h1>
         <div class="event-details">
             <p><strong><a href="javascript:void(0)" onclick="addToCalendar()" style="color: white; text-decoration: underline; cursor: pointer;">Saturday, November 12, 2026 • 5:30 PM</a></strong></p>
             <p><a href="tel:+16025551234" style="color: white; text-decoration: underline;">Backyard Desert Ridge, Phoenix</a></p>
-            <p style="margin-top: 0.8rem;">Celebrating Community, Unity, and Giving Back to Arizona Families</p>
+            <p style="margin-top: 0.8rem;">A Cowboy-Themed Celebration of Charity, Community, and Compassion</p>
             <p class="countdown">EVENT STARTS IN: <span id="countdown"></span></p>
         </div>
     </header>
@@ -97,7 +97,7 @@
         <!-- TICKETS SECTION -->
         <section id="tickets">
             <h2>Entertain your Family, Customers and Friends</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem;">Select your tickets and secure your admission to the American Spirit Gala.</p>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Select your tickets and secure your admission to The Good, The Kind, and The Giving.</p>
             <div style="text-align: center;">
                 <button class="btn" onclick="scrollToFormAccordion('tickets')">BUY TICKETS</button>
             </div>
@@ -1318,11 +1318,11 @@
         // Add to Calendar
         function addToCalendar() {
             const event = {
-                title: 'American Spirit Gala',
+                title: 'The Good, The Kind, and The Giving',
                 start: new Date('2026-11-12T17:30:00'),
                 end: new Date('2026-11-12T22:00:00'),
                 location: 'Backyard Desert Ridge, Phoenix, AZ',
-                description: 'American Spirit Gala - Celebrating Community, Unity, and Giving Back to Arizona Families'
+                description: 'The Good, The Kind, and The Giving - A Cowboy-Themed Celebration of Charity, Community, and Compassion'
             };
 
             const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start.toISOString().replace(/[-:]/g,'').split('.')[0]}Z/${event.end.toISOString().replace(/[-:]/g,'').split('.')[0]}Z&location=${encodeURIComponent(event.location)}&details=${encodeURIComponent(event.description)}`;
