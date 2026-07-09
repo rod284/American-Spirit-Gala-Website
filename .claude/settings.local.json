@@ -44,7 +44,31 @@
       "Skill(deep-research)",
       "Skill(deep-research:*)",
       "mcp__visualize__read_me",
-      "mcp__visualize__show_widget"
+      "mcp__visualize__show_widget",
+      "Bash(ls -la \"C:\\\\Users\\\\rodde\\\\OneDrive\\\\Documentos\\\\AllHandsOnDeck\\\\\" | grep -i \"logo\\\\|nhn\\\\|\\\\.png\\\\|\\\\.jpg\\\\|\\\\.jpeg\\\\|\\\\.gif\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s \"https://www.google.com/search?q=customizable+lanyards+bulk+purchase\")",
+      "Bash(grep -n \"\\\\$50\" 'C:\\\\Users\\\\rodde\\\\OneDrive\\\\Documentos\\\\AllHandsOnDeck\\\\index.html')",
+      "Read(//c/Users/rodde/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/7707a282-c18f-4c69-afd8-1bd2bdc82849/a5c75126-f749-4717-85a8-50a656cd5e64/skills/xlsx/**)",
+      "Bash(extract-text \"C:\\\\Users\\\\rodde\\\\Downloads\\\\AHOD tracking_6_17_2026.xlsx\")",
+      "Bash(curl -s \"https://nhnarizona.org\")",
+      "Bash(grep -n \"id=\\\\\"membersList\\\\\"\\\\|</div>$\\\\|</section>\" \"C:\\\\Users\\\\rodde\\\\OneDrive\\\\Documentos\\\\AllHandsOnDeck\\\\index.html\")",
+      "Bash(curl -s -I https://backyarddesertridge.com/)",
+      "Bash(curl -s -I https://allhandsondecknhn.netlify.app/)",
+      "Bash(powershell -Command \"Start-Process -FilePath 'index.html'\")",
+      "Bash(python create_committee_spreadsheet.py)",
+      "Bash(pip install *)",
+      "mcp__87b16fdd-f50c-40bf-86ba-7cbb0cddffef__read_file_content",
+      "Bash(cd /d \"C:\\\\Users\\\\rodde\\\\OneDrive\\\\Documentos\\\\AllHandsOnDeck\")",
+      "Bash(grep -n \"\\\\$60\\\\|\\\\$100.*ticket\" index.html)",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\Downloads\\\\Neighbors Helping Neighbors\" -Recurse -ErrorAction SilentlyContinue | Select-Object FullName, @{Name=\"Size\"; Expression={if\\($_.PSIsContainer\\){\"[Folder]\"}else{\"{0:N0} bytes\" -f $_.Length}}} | Sort-Object FullName)",
+      "Bash(cd \"C:\\\\Users\\\\rodde\\\\Downloads\\\\Neighbors *)",
+      "Bash(awk -F, '{print $1}')",
+      "mcp__87b16fdd-f50c-40bf-86ba-7cbb0cddffef__create_file",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'Theme update: Cowboy-themed '\\\\''The Good, The Kind, and The Giving'\\\\'' event *)"
     ]
   }
 }
