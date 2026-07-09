@@ -1095,9 +1095,16 @@
 
             if (quantity === '2-9' || quantity === '10+') {
                 quantityInput.style.display = 'block';
-                const ticketCount = document.getElementById('ticketCount').value;
+                const ticketCount = parseInt(document.getElementById('ticketCount').value);
                 if (ticketCount) {
-                    const pricePerTicket = quantity === '2-9' ? 60 : 55;
+                    let pricePerTicket;
+                    if (ticketCount === 1) {
+                        pricePerTicket = 75;
+                    } else if (ticketCount >= 2 && ticketCount <= 9) {
+                        pricePerTicket = 60;
+                    } else {
+                        pricePerTicket = 55;
+                    }
                     const total = ticketCount * pricePerTicket;
                     priceDisplay.textContent = `${ticketCount} tickets × $${pricePerTicket} = $${total}`;
                 }
